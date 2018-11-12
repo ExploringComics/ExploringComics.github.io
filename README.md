@@ -24,7 +24,24 @@ First dataset `dc-wikia-data.csv` has 6896 rows and 13 columns, whereas `marvel-
 More information on dataset analysis could be found [here](http://nbviewer.jupyter.org/github/ExploringComics/ExploringComics.github.io/blob/master/notebooks/DataAnalysis.ipynb).
 
 # List of internal milestones
-TODO
+**Milestone 1**: Proposals
+_Deadline_: October 26th  
+- Abstract in 300 words
+- Research questions
+- Dataset description and analysis
+
+**Milestone 2**: Functional project prototype review
+_Deadline_: November 20th  
+- Collection of design requirements techniques used together with sketches
+- Initial version of visualizations
+- Technical implementation
+- Website with the visualizations
+
+**Milestone 3**: Final project
+_Deadline_: December 18th
+- Presentation
+- Screencast
+- Process Book finished
 
 # Questions for the Professor
 TODO

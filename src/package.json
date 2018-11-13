@@ -1,0 +1,26 @@
+{
+  "name": "exploring-comics",
+  "description": "Exploring Comics: Diversity and Comics",
+  "keywords": [
+    "comicvine",
+    "comic"
+  ],
+  "version": "0.0.1",
+  "main": "exploring-comics",
+  "author": "team names!",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ExploringComics/ExploringComics.github.io"
+  },
+  "licenses": [
+    {
+      "type": "GNU General Public License v3.0",
+      "url": "https://www.gnu.org/licenses/gpl-3.0.en.html"
+    }
+  ],
+  "private": false,
+  "dependencies": {
+    "d3": "latest"
+  },
+  "devDependencies": {}
+}

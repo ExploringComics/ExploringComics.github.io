@@ -1,3 +1,24 @@
+<div align="center">
+  <p>
+  <img src="https://assets5.domestika.org/project-items/001/868/985/e8e24835862413.570645ed44513-big.gif?1487327675" width="150" />
+  </p>
+  <p>
+    <a href="">
+      <img alt="First release" src="https://img.shields.io/badge/release-v1.0-brightgreen.svg" />
+    </a>
+  </p>
+
+  <p>
+    <strong>Exploring Comics</strong>
+  </p>
+  
+  <p>
+    <a href="https://ExploringComics.github.io">
+      Website
+    </a>
+  </p>
+</div>
+
 # Exploring Comics: Diversity and Comics
 Project for COM-480 Data Visualization Course at EPFL
 

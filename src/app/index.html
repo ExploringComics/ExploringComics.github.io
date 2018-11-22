@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  lang="en">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Exploring Comics</title>
@@ -10,9 +10,14 @@
         <link rel="stylesheet" href="https://bootswatch.com//4/sketchy/bootstrap.css" media="screen">
         <link rel="stylesheet" href="https://bootswatch.com//_assets/css/custom.min.css">
 
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
         <!-- Favicon -->
 		<link rel="shortcut icon" type="image/png" href="../../images/comic-book-boom-clipart.png"/>
 
+        <!-- Our CSS -->
+        <link rel="stylesheet" href="css/chord.css">
 
     </head>
     <body style="background-color: #F8F6F3">
@@ -24,35 +29,91 @@
         </div>
 
 
-        <div class="container">
+        <div class="container" id="surrounding_div">
 
             <div class="page-header" id="banner">
                 <div class="row">
-                    <div class="col-lg-8 col-md-7 col-sm-6">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
                         <h1>Sandstone</h1>
                         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum faucibus euismod magna, eget porttitor tortor malesuada ac. In neque magna, tristique iaculis nisi a, iaculis ornare mauris. Praesent viverra faucibus tristique. Donec rutrum malesuada ex eget rhoncus. Maecenas id sapien in nisl tincidunt congue. Praesent quis egestas odio, sit amet faucibus urna. Sed dapibus mi id eros posuere lacinia. Phasellus eget arcu dui. Mauris egestas semper enim quis blandit. Nunc ut lobortis mauris. Phasellus semper dui vitae purus tincidunt fringilla.</p>
                         <p class="lead"> Team yeah!  Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8 col-md-7 col-sm-6">
+                    <div class="col-lg-12 col-md-12 col-sm-12" style="text-align: center">
                         <img src="https://cdn-images-1.medium.com/max/800/1*pkzA29T9shiDTTsN1BW8Fg.gif" alt="Italian Trulli">
 
                     </div>
-
                 </div>
             </div>
 
-            <div>
+            <!-- Visualizations -->
+            <div class="bs-docs-section">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <h1>Visualization</h1>
+                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum faucibus euismod magna, eget porttitor tortor malesuada ac. In neque magna, tristique iaculis nisi a, iaculis ornare mauris. Praesent viverra faucibus tristique. Donec rutrum malesuada ex eget rhoncus. Maecenas id sapien in nisl tincidunt congue. Praesent quis egestas odio, sit amet faucibus urna. Sed dapibus mi id eros posuere lacinia. Phasellus eget arcu dui. Mauris egestas semper enim quis blandit. Nunc ut lobortis mauris. Phasellus semper dui vitae purus tincidunt fringilla.</p>
+                        <p class="lead"> Team yeah!  Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                    </div>
+                </div>
+
+                <br />
+
+                <!-- Buttons selection -->
+                <div class="row">
+
+                    <div class="dropdown" id="btn-order1">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            logarithm
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <a id="logarithm" class="dropdown-item active">logarithm</a>
+                            <a id="normal" class="dropdown-item">normal</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown" id="btn-order2">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            characterOrigin
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                            <a id="characterOrigin" class="dropdown-item active">characterOrigin</a>
+                            <a id="ascending" class="dropdown-item">ascending</a>
+                            <a id="descending" class="dropdown-item">descending</a>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- Buttons END -->
+
+                <!-- Chord Visualization -->
+                <div id="chord" style="text-align:center"></div>
+                <!-- Chord Visualization END -->
 
             </div>
 
-
-
         </div>
 
+        <br /><br />
 
-        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <div class="footer">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12" style="text-align: center;">
+                    <p>&copy; 2018. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+
+        <!--<script src="https://d3js.org/d3.v5.min.js"></script>-->
+        <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" charset="utf-8"></script>
+        <script src=https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.3.0/math.min.js></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+        <script src="js/data-handlers.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

@@ -122,8 +122,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
         .style("stroke", "black")
         .style("opacity", 0.7)
         .attr("d", d3.arc().innerRadius(rOut).outerRadius(rInner))
-        .on("mouseover", fade(0.00, "visible"))
-        .on("mousemove", fade(0.00, "visible"))
+        .on("mousemove", fade(0, "visible"))
         .on("mouseout", fade(1, "hidden"));
 
 

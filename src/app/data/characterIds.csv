@@ -1,15 +1,91 @@
-characterId,characterOrigin
-1,human
-2,human
-3,human
-4,alien
-5,alien
-6,alien
-7,alien
-8,alien
-9,other
-10,other
-11,other
-12,other
-13,other
-14,other
+characterId,characterName,team,characterOrigin
+9319,Brainwave Jr.,Suicide Squad,Mutant
+3588,Deathstroke,Injustice League,Human
+3189,Aurora,X Men,Mutant
+125503,Bailey Hoskins,X Men,Mutant
+10004,Chemo,Injustice League,Other
+25850,Babe,Suicide Squad,Human
+21245,Chronos,Injustice League,Human
+6943,Fatality,Injustice League,Alien
+30056,Bird-Brain,X Men,Animal
+42873,Everyman,Injustice League,Human
+8345,Black Manta,Injustice League,Human
+40593,Angel Salvadore,X Men,Mutant
+4916,Black Adam,Suicide Squad,God/Eternal
+90001,Bingo,Suicide Squad,Animal
+9548,Despero,Injustice League,Alien
+5812,Black Spider,Injustice League,Human
+10189,Big Sir,Injustice League,Human
+68435,Adam Cray,Suicide Squad,Human
+2359,Artemis,Suicide Squad,God/Eternal
+11203,Effigy,Injustice League,Human
+40815,Blackguard,Suicide Squad,Human
+1462,Beast,X Men,Mutant
+15108,Adam X,X Men,Mutant
+13369,Arclight,X Men,Mutant
+40669,Bling!,X Men,Mutant
+6129,Bane,Suicide Squad,Human
+2537,Cheshire,Injustice League,Human
+5932,Bolt,Suicide Squad,Human
+9708,Banshee,X Men,Mutant
+4916,Black Adam,Injustice League,God/Eternal
+15127,Archer,X Men,Mutant
+14552,Beautiful Dreamer,X Men,Mutant
+40909,Aliyah Bishop,X Men,Mutant
+19006,Count Vertigo,Injustice League,Human
+3283,Blackheath,X Men,Mutant
+23368,Air Wave,Suicide Squad,Human
+4921,Atom Smasher,Suicide Squad,Human
+3188,Beak,X Men,Mutant
+1699,Batman,Suicide Squad,Human
+8344,Cheetah (Minerva),Injustice League,Human
+55832,Agamemno,Injustice League,God/Eternal
+5368,Barbara Gordon,Suicide Squad,Human
+88576,Alexander Petrov,Injustice League,Human
+3553,Avalanche,X Men,Mutant
+41840,Ariel,X Men,Alien
+10970,Amanda Sefton,X Men,Human
+1699,Batman,Injustice League,Human
+5812,Black Spider,Suicide Squad,Human
+4442,Armor,X Men,Mutant
+4568,Black Tom Cassidy,X Men,Mutant
+10574,Artie Maddicks,X Men,Mutant
+1698,Catwoman,Injustice League,Human
+15111,Black Box,X Men,Mutant
+116956,Bonnie,Suicide Squad,Human
+3583,Arthur Light,Injustice League,Human
+14896,Alysande Stuart,X Men,Human
+152950,Alchemaster,Suicide Squad,Human
+9589,Clayface (Karlo),Injustice League,Mutant
+14868,Amelia Voght,X Men,Mutant
+6263,Dr. Sivana,Injustice League,Human
+10186,Clock King,Injustice League,Human
+146014,Akando,Suicide Squad,Animal
+5702,Black Orchid,Suicide Squad,Human
+4920,Amanda Waller,Suicide Squad,Human
+127953,Battleaxe,Suicide Squad,Human
+3583,Arthur Light,Suicide Squad,Human
+2392,Captain Cold,Injustice League,Human
+40597,Blindfold,X Men,Mutant
+8263,Blockbuster,Suicide Squad,Human
+8312,Bizarro,Injustice League,Other
+6029,Behemoth,Suicide Squad,Mutant
+10189,Big Sir,Suicide Squad,Human
+1503,Bishop,X Men,Mutant
+132952,Azucar,Suicide Squad,Human
+126139,Afterthought,Suicide Squad,Human
+12548,Blink,X Men,Mutant
+4918,Dr. Psycho,Injustice League,Human
+31109,Blackstarr,Suicide Squad,Human
+8345,Black Manta,Suicide Squad,Human
+131891,Bloodletter,Suicide Squad,Human
+2112,Angel,X Men,Mutant
+40458,Anole,X Men,Mutant
+8312,Bizarro,Suicide Squad,Other
+3737,Amazo,Injustice League,Robot
+10924,Circe,Injustice League,God/Eternal
+19089,Doctor Alchemy,Injustice League,Human
+5932,Bolt,Injustice League,Human
+29255,Alchemy,X Men,Mutant
+15329,Bedlam,X Men,Mutant
+10187,Cluemaster,Injustice League,Human

@@ -26,7 +26,7 @@ function getMatrixCommonActors(data, filteredCharacterIds) {
                 matrix[a.id][b.id] = 0
             }
             else {
-                matrix[a.id][b.id] = + 500 // TODO; change this size if needed!!! Depends on quantity of nodes
+                matrix[a.id][b.id] = + 10 // TODO; change this size if needed!!! Depends on quantity of nodes
             }
         });
     });

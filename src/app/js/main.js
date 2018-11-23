@@ -10,7 +10,7 @@ let svg;
 let metricsBox;
 let lastLayout; //store layout between updates
 
-let colorCharacterId = '#008080';
+//let colorCharacterId = '#008080';
 
 // size of the visualization
 const wChord = 900,
@@ -23,6 +23,16 @@ const wChord = 900,
 const marginChord = {top: 50, right: 20, bottom: 50, left: 20},
     widthChord = wChord - marginChord.left - marginChord.right,
     heightChord = hChord - marginChord.top - marginChord.bottom;
+
+// Colors based on the groups
+const lookupColorCharacterId = {
+    'Human': "#7f5579",
+    'Alien': "#41cd38",
+    'Animal': "#1f787c",
+    'Mutant': "#2d4a5a",
+    'God/Eternal': "#d5d505",
+    'Other': "#7e7878"
+};
 
 function drawChord(matrix, labels) { // try to improve those callings and refactor
     /**
@@ -102,8 +112,12 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
         .attr("class", "group");
 
     let paths = g.append("path")
-        .style("stroke", colorCharacterId)
-        .style("fill", colorCharacterId)
+        .style("stroke", function (d) {
+            return lookupColorCharacterId[labels[d.index]['characterOrigin']];
+        })
+        .style("fill", function (d) {
+            return lookupColorCharacterId[labels[d.index]['characterOrigin']];
+        })
         .style("stroke", "black")
         .style("opacity", 0.7)
         .attr("d", d3.arc().innerRadius(rOut).outerRadius(rInner))
@@ -127,7 +141,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
             return d.angle > Math.PI ? "end" : null;
         })
         .text(function (d, i) {
-            return labels[i]['characterId'];
+            return labels[i]['characterName'];
         });
 
     paths.transition()
@@ -174,7 +188,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
                 var p = document.createElement('p');
                 p.className = "title-general-metrics-box";
                 p.innerHTML = characterId;
-                p.style.color = colorCharacterId;
+                p.style.color = lookupColorCharacterId[characterOrigin];
                 document.getElementById('general-metrics-box').appendChild(p);
 
                 var p = document.createElement('div');

@@ -1,31 +1,91 @@
-id,api_detail_url,name,site_detail_url,team,origin
-68435,https://comicvine.gamespot.com/api/character/4005-68435/,Adam Cray,https://comicvine.gamespot.com/adam-cray/4005-68435/,Suicide Squad,Human
-126139,https://comicvine.gamespot.com/api/character/4005-126139/,Afterthought,https://comicvine.gamespot.com/afterthought/4005-126139/,Suicide Squad,Human
-23368,https://comicvine.gamespot.com/api/character/4005-23368/,Air Wave,https://comicvine.gamespot.com/air-wave/4005-23368/,Suicide Squad,Human
-146014,https://comicvine.gamespot.com/api/character/4005-146014/,Akando,https://comicvine.gamespot.com/akando/4005-146014/,Suicide Squad,Animal
-152950,https://comicvine.gamespot.com/api/character/4005-152950/,Alchemaster,https://comicvine.gamespot.com/alchemaster/4005-152950/,Suicide Squad,Human
-4920,https://comicvine.gamespot.com/api/character/4005-4920/,Amanda Waller,https://comicvine.gamespot.com/amanda-waller/4005-4920/,Suicide Squad,Human
-2359,https://comicvine.gamespot.com/api/character/4005-2359/,Artemis,https://comicvine.gamespot.com/artemis/4005-2359/,Suicide Squad,God/Eternal
-3583,https://comicvine.gamespot.com/api/character/4005-3583/,Arthur Light,https://comicvine.gamespot.com/arthur-light/4005-3583/,Suicide Squad,Human
-4921,https://comicvine.gamespot.com/api/character/4005-4921/,Atom Smasher,https://comicvine.gamespot.com/atom-smasher/4005-4921/,Suicide Squad,Human
-132952,https://comicvine.gamespot.com/api/character/4005-132952/,Azucar,https://comicvine.gamespot.com/azucar/4005-132952/,Suicide Squad,Human
-55832,https://comicvine.gamespot.com/api/character/4005-55832/,Agamemno,https://comicvine.gamespot.com/agamemno/4005-55832/,Injustice League,God/Eternal
-88576,https://comicvine.gamespot.com/api/character/4005-88576/,Alexander Petrov,https://comicvine.gamespot.com/alexander-petrov/4005-88576/,Injustice League,Human
-3737,https://comicvine.gamespot.com/api/character/4005-3737/,Amazo,https://comicvine.gamespot.com/amazo/4005-3737/,Injustice League,Robot
-3583,https://comicvine.gamespot.com/api/character/4005-3583/,Arthur Light,https://comicvine.gamespot.com/arthur-light/4005-3583/,Injustice League,Human
-1699,https://comicvine.gamespot.com/api/character/4005-1699/,Batman,https://comicvine.gamespot.com/batman/4005-1699/,Injustice League,Human
-10189,https://comicvine.gamespot.com/api/character/4005-10189/,Big Sir,https://comicvine.gamespot.com/big-sir/4005-10189/,Injustice League,Human
-8312,https://comicvine.gamespot.com/api/character/4005-8312/,Bizarro,https://comicvine.gamespot.com/bizarro/4005-8312/,Injustice League,Other
-4916,https://comicvine.gamespot.com/api/character/4005-4916/,Black Adam,https://comicvine.gamespot.com/black-adam/4005-4916/,Injustice League,God/Eternal
-8345,https://comicvine.gamespot.com/api/character/4005-8345/,Black Manta,https://comicvine.gamespot.com/black-manta/4005-8345/,Injustice League,Human
-5812,https://comicvine.gamespot.com/api/character/4005-5812/,Black Spider,https://comicvine.gamespot.com/black-spider/4005-5812/,Injustice League,Human
-15108,https://comicvine.gamespot.com/api/character/4005-15108/,Adam X,https://comicvine.gamespot.com/adam-x/4005-15108/,X Men,Mutant
-29255,https://comicvine.gamespot.com/api/character/4005-29255/,Alchemy,https://comicvine.gamespot.com/alchemy/4005-29255/,X Men,Mutant
-40909,https://comicvine.gamespot.com/api/character/4005-40909/,Aliyah Bishop,https://comicvine.gamespot.com/aliyah-bishop/4005-40909/,X Men,Mutant
-14896,https://comicvine.gamespot.com/api/character/4005-14896/,Alysande Stuart,https://comicvine.gamespot.com/alysande-stuart/4005-14896/,X Men,Human
-10970,https://comicvine.gamespot.com/api/character/4005-10970/,Amanda Sefton,https://comicvine.gamespot.com/amanda-sefton/4005-10970/,X Men,Human
-14868,https://comicvine.gamespot.com/api/character/4005-14868/,Amelia Voght,https://comicvine.gamespot.com/amelia-voght/4005-14868/,X Men,Mutant
-2112,https://comicvine.gamespot.com/api/character/4005-2112/,Angel,https://comicvine.gamespot.com/angel/4005-2112/,X Men,Mutant
-40593,https://comicvine.gamespot.com/api/character/4005-40593/,Angel Salvadore,https://comicvine.gamespot.com/angel-salvadore/4005-40593/,X Men,Mutant
-40458,https://comicvine.gamespot.com/api/character/4005-40458/,Anole,https://comicvine.gamespot.com/anole/4005-40458/,X Men,Mutant
-15127,https://comicvine.gamespot.com/api/character/4005-15127/,Archer,https://comicvine.gamespot.com/archer/4005-15127/,X Men,Mutant
+id,name,team,origin
+9319,Brainwave Jr.,Suicide Squad,Mutant
+3588,Deathstroke,Injustice League,Human
+3189,Aurora,X Men,Mutant
+125503,Bailey Hoskins,X Men,Mutant
+10004,Chemo,Injustice League,Other
+25850,Babe,Suicide Squad,Human
+21245,Chronos,Injustice League,Human
+6943,Fatality,Injustice League,Alien
+30056,Bird-Brain,X Men,Animal
+42873,Everyman,Injustice League,Human
+8345,Black Manta,Injustice League,Human
+40593,Angel Salvadore,X Men,Mutant
+4916,Black Adam,Suicide Squad,God/Eternal
+90001,Bingo,Suicide Squad,Animal
+9548,Despero,Injustice League,Alien
+5812,Black Spider,Injustice League,Human
+10189,Big Sir,Injustice League,Human
+68435,Adam Cray,Suicide Squad,Human
+2359,Artemis,Suicide Squad,God/Eternal
+11203,Effigy,Injustice League,Human
+40815,Blackguard,Suicide Squad,Human
+1462,Beast,X Men,Mutant
+15108,Adam X,X Men,Mutant
+13369,Arclight,X Men,Mutant
+40669,Bling!,X Men,Mutant
+6129,Bane,Suicide Squad,Human
+2537,Cheshire,Injustice League,Human
+5932,Bolt,Suicide Squad,Human
+9708,Banshee,X Men,Mutant
+4916,Black Adam,Injustice League,God/Eternal
+15127,Archer,X Men,Mutant
+14552,Beautiful Dreamer,X Men,Mutant
+40909,Aliyah Bishop,X Men,Mutant
+19006,Count Vertigo,Injustice League,Human
+3283,Blackheath,X Men,Mutant
+23368,Air Wave,Suicide Squad,Human
+4921,Atom Smasher,Suicide Squad,Human
+3188,Beak,X Men,Mutant
+1699,Batman,Suicide Squad,Human
+8344,Cheetah (Minerva),Injustice League,Human
+55832,Agamemno,Injustice League,God/Eternal
+5368,Barbara Gordon,Suicide Squad,Human
+88576,Alexander Petrov,Injustice League,Human
+3553,Avalanche,X Men,Mutant
+41840,Ariel,X Men,Alien
+10970,Amanda Sefton,X Men,Human
+1699,Batman,Injustice League,Human
+5812,Black Spider,Suicide Squad,Human
+4442,Armor,X Men,Mutant
+4568,Black Tom Cassidy,X Men,Mutant
+10574,Artie Maddicks,X Men,Mutant
+1698,Catwoman,Injustice League,Human
+15111,Black Box,X Men,Mutant
+116956,Bonnie,Suicide Squad,Human
+3583,Arthur Light,Injustice League,Human
+14896,Alysande Stuart,X Men,Human
+152950,Alchemaster,Suicide Squad,Human
+9589,Clayface (Karlo),Injustice League,Mutant
+14868,Amelia Voght,X Men,Mutant
+6263,Dr. Sivana,Injustice League,Human
+10186,Clock King,Injustice League,Human
+146014,Akando,Suicide Squad,Animal
+5702,Black Orchid,Suicide Squad,Human
+4920,Amanda Waller,Suicide Squad,Human
+127953,Battleaxe,Suicide Squad,Human
+3583,Arthur Light,Suicide Squad,Human
+2392,Captain Cold,Injustice League,Human
+40597,Blindfold,X Men,Mutant
+8263,Blockbuster,Suicide Squad,Human
+8312,Bizarro,Injustice League,Other
+6029,Behemoth,Suicide Squad,Mutant
+10189,Big Sir,Suicide Squad,Human
+1503,Bishop,X Men,Mutant
+132952,Azucar,Suicide Squad,Human
+126139,Afterthought,Suicide Squad,Human
+12548,Blink,X Men,Mutant
+4918,Dr. Psycho,Injustice League,Human
+31109,Blackstarr,Suicide Squad,Human
+8345,Black Manta,Suicide Squad,Human
+131891,Bloodletter,Suicide Squad,Human
+2112,Angel,X Men,Mutant
+40458,Anole,X Men,Mutant
+8312,Bizarro,Suicide Squad,Other
+3737,Amazo,Injustice League,Robot
+10924,Circe,Injustice League,God/Eternal
+19089,Doctor Alchemy,Injustice League,Human
+5932,Bolt,Injustice League,Human
+29255,Alchemy,X Men,Mutant
+15329,Bedlam,X Men,Mutant
+10187,Cluemaster,Injustice League,Human

@@ -20,7 +20,7 @@ const wChord = 900,
     paddingChord = 0.02;
 
 // position of the visualization
-const marginChord = {top: 50, right: 20, bottom: 50, left: 20},
+const marginChord = {top: 10, right: 10, bottom: 10, left: 10},
     widthChord = wChord - marginChord.left - marginChord.right,
     heightChord = hChord - marginChord.top - marginChord.bottom;
 
@@ -58,6 +58,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
 
         svg = d3.select("#chord")
             .append("svg:svg")
+            .attr("font-size", 10)
             .attr("width", widthChord)
             .attr("height", heightChord)
             .append("svg:g")
@@ -113,7 +114,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
 
     let paths = g.append("path")
         .style("stroke", function (d) {
-            return lookupColorCharacterId[labels[d.index]['characterOrigin']];
+            return d => d3.rgb(lookupColorCharacterId[labels[d.index]['characterOrigin']]).darker() //lookupColorCharacterId[labels[d.index]['characterOrigin']];
         })
         .style("fill", function (d) {
             return lookupColorCharacterId[labels[d.index]['characterOrigin']];

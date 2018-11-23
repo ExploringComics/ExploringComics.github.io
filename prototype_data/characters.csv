@@ -1,91 +1,91 @@
-id,name,team,origin
-9319,Brainwave Jr.,Suicide Squad,Mutant
-3588,Deathstroke,Injustice League,Human
-3189,Aurora,X Men,Mutant
-125503,Bailey Hoskins,X Men,Mutant
-10004,Chemo,Injustice League,Other
-25850,Babe,Suicide Squad,Human
-21245,Chronos,Injustice League,Human
-6943,Fatality,Injustice League,Alien
-30056,Bird-Brain,X Men,Animal
-42873,Everyman,Injustice League,Human
-8345,Black Manta,Injustice League,Human
-40593,Angel Salvadore,X Men,Mutant
-4916,Black Adam,Suicide Squad,God/Eternal
-90001,Bingo,Suicide Squad,Animal
-9548,Despero,Injustice League,Alien
-5812,Black Spider,Injustice League,Human
-10189,Big Sir,Injustice League,Human
-68435,Adam Cray,Suicide Squad,Human
-2359,Artemis,Suicide Squad,God/Eternal
-11203,Effigy,Injustice League,Human
-40815,Blackguard,Suicide Squad,Human
-1462,Beast,X Men,Mutant
-15108,Adam X,X Men,Mutant
-13369,Arclight,X Men,Mutant
-40669,Bling!,X Men,Mutant
-6129,Bane,Suicide Squad,Human
-2537,Cheshire,Injustice League,Human
-5932,Bolt,Suicide Squad,Human
-9708,Banshee,X Men,Mutant
-4916,Black Adam,Injustice League,God/Eternal
-15127,Archer,X Men,Mutant
-14552,Beautiful Dreamer,X Men,Mutant
-40909,Aliyah Bishop,X Men,Mutant
-19006,Count Vertigo,Injustice League,Human
-3283,Blackheath,X Men,Mutant
-23368,Air Wave,Suicide Squad,Human
-4921,Atom Smasher,Suicide Squad,Human
-3188,Beak,X Men,Mutant
-1699,Batman,Suicide Squad,Human
-8344,Cheetah (Minerva),Injustice League,Human
-55832,Agamemno,Injustice League,God/Eternal
-5368,Barbara Gordon,Suicide Squad,Human
-88576,Alexander Petrov,Injustice League,Human
-3553,Avalanche,X Men,Mutant
-41840,Ariel,X Men,Alien
-10970,Amanda Sefton,X Men,Human
-1699,Batman,Injustice League,Human
-5812,Black Spider,Suicide Squad,Human
-4442,Armor,X Men,Mutant
-4568,Black Tom Cassidy,X Men,Mutant
-10574,Artie Maddicks,X Men,Mutant
-1698,Catwoman,Injustice League,Human
-15111,Black Box,X Men,Mutant
-116956,Bonnie,Suicide Squad,Human
-3583,Arthur Light,Injustice League,Human
-14896,Alysande Stuart,X Men,Human
-152950,Alchemaster,Suicide Squad,Human
-9589,Clayface (Karlo),Injustice League,Mutant
-14868,Amelia Voght,X Men,Mutant
-6263,Dr. Sivana,Injustice League,Human
-10186,Clock King,Injustice League,Human
-146014,Akando,Suicide Squad,Animal
-5702,Black Orchid,Suicide Squad,Human
-4920,Amanda Waller,Suicide Squad,Human
-127953,Battleaxe,Suicide Squad,Human
-3583,Arthur Light,Suicide Squad,Human
-2392,Captain Cold,Injustice League,Human
-40597,Blindfold,X Men,Mutant
-8263,Blockbuster,Suicide Squad,Human
-8312,Bizarro,Injustice League,Other
-6029,Behemoth,Suicide Squad,Mutant
-10189,Big Sir,Suicide Squad,Human
-1503,Bishop,X Men,Mutant
-132952,Azucar,Suicide Squad,Human
-126139,Afterthought,Suicide Squad,Human
-12548,Blink,X Men,Mutant
-4918,Dr. Psycho,Injustice League,Human
-31109,Blackstarr,Suicide Squad,Human
-8345,Black Manta,Suicide Squad,Human
-131891,Bloodletter,Suicide Squad,Human
-2112,Angel,X Men,Mutant
-40458,Anole,X Men,Mutant
-8312,Bizarro,Suicide Squad,Other
-3737,Amazo,Injustice League,Robot
-10924,Circe,Injustice League,God/Eternal
-19089,Doctor Alchemy,Injustice League,Human
-5932,Bolt,Injustice League,Human
-29255,Alchemy,X Men,Mutant
-15329,Bedlam,X Men,Mutant
-10187,Cluemaster,Injustice League,Human
+id,name,team,origin,image
+146014,Akando,Suicide Squad,Animal,https://comicvine.gamespot.com/api/image/square_avatar/6293578-akando_prime_earth_0001.jpg
+131891,Bloodletter,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5372876-suicide%20squad%20most%20wanted%20-%20el%20diablo%20and%20boomerang%20001-018.jpg
+8312,Bizarro,Injustice League,Other,https://comicvine.gamespot.com/api/image/square_avatar/4453107-ac_cv40_54d51f4d2d6a49.41214327.jpg
+9708,Banshee,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5889291-sean_cassidy_%28earth-616%29_from_uncanny_avengers_vol_1_12.jpg
+40458,Anole,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5541897-victor_borkowski_%28earth-616%29_exm.jpg
+132952,Azucar,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5447436-suicide%20squad%20most%20wanted%20-%20el%20diablo%20and%20boomerang%20%282016-%29%20002-019.jpg
+4568,Black Tom Cassidy,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/134777-112211-black-tom-cassidy.jpg
+29255,Alchemy,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/6513741-thomas_jones_%28earth-616%29_from_death_of_x_vol_1_4_001.jpg
+19006,Count Vertigo,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/5789293-screen%20shot%202017-04-05%20at%201.51.59%20pm.png
+1698,Catwoman,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/5555748-0765257915-3301a.jpg
+2112,Angel,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5053055-4623273865-UNCX2.jpg
+1699,Batman,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/6198653-batman%2012.jpg
+10924,Circe,Injustice League,God/Eternal,https://comicvine.gamespot.com/api/image/square_avatar/6545844-circe_prime_earth_005%20%282%29.jpg
+10970,Amanda Sefton,X Men,Human,https://comicvine.gamespot.com/api/image/square_avatar/4760740-sin%20t%C3%ADtulo.jpg
+10186,Clock King,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/3154372-screen%20shot%202013-07-05%20at%204.21.52%20pm.png
+14868,Amelia Voght,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/1875204-amelia__1_.jpg
+3588,Deathstroke,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/6421465-7189769152-64211.jpg
+13369,Arclight,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5336238-image.jpeg
+5932,Bolt,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/632464-wolvie_md_2_dcp_001.jpg
+8344,Cheetah (Minerva),Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/5529023-cheetah690.jpg
+126139,Afterthought,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5033057-screen%20shot%202016-02-03%20at%206.39.32%20am.png
+1462,Beast,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5271307-4665552949-5204563-5589293201-latest
+127953,Battleaxe,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5159101-battleaxe.png
+6263,Dr. Sivana,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/3134428-sivanna.png
+8312,Bizarro,Suicide Squad,Other,https://comicvine.gamespot.com/api/image/square_avatar/4453107-ac_cv40_54d51f4d2d6a49.41214327.jpg
+9548,Despero,Injustice League,Alien,https://comicvine.gamespot.com/api/image/square_avatar/2992356-df.png
+25850,Babe,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/6621955-15a1aada-eaf4-4703-9c39-b5bf543540cc.jpeg
+5932,Bolt,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/632464-wolvie_md_2_dcp_001.jpg
+1503,Bishop,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/3383271-jj.jpg
+6129,Bane,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5614213-bane_bm18.jpg
+8345,Black Manta,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/2344623-aqm_cv12.jpg
+14896,Alysande Stuart,X Men,Human,https://comicvine.gamespot.com/api/image/square_avatar/5772005-alysande_stuart_%28earth-616%29_from_excalibur_vol_1_30_001.png
+40909,Aliyah Bishop,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/82266-6520-aliyah-bishop.jpg
+15329,Bedlam,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/135719-109130-jesse-bedlam.jpg
+2392,Captain Cold,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/6436322-7e19d32dbbf4d92a964a4f67b0820bb8.jpg
+10004,Chemo,Injustice League,Other,https://comicvine.gamespot.com/api/image/square_avatar/745281-chemo.jpg
+4921,Atom Smasher,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/824668-atom_smasher_5.jpg
+125503,Bailey Hoskins,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/4985516-bailey-hoskins.jpg
+10189,Big Sir,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/133860-87146-big-sir.jpg
+4916,Black Adam,Suicide Squad,God/Eternal,https://comicvine.gamespot.com/api/image/square_avatar/2432749-screen_shot_2012_06_27_at_4.51.45_pm.png
+9589,Clayface (Karlo),Injustice League,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/3100972-bmtdk_23-3-clayface_ipfpg5kgey_.jpg
+4920,Amanda Waller,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/6061590-suicide%20squad%20008.jpg
+40815,Blackguard,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/213850-137326-blackguard.jpg
+3189,Aurora,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/6163413-aurora.jpg
+3583,Arthur Light,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/3533765-%24_57.jpg
+6943,Fatality,Injustice League,Alien,https://comicvine.gamespot.com/api/image/square_avatar/3871100-fatality08b.jpg
+3188,Beak,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/76894-138657-beak.jpg
+3553,Avalanche,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/3138020-villainsforhire00104.jpg
+4918,Dr. Psycho,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/6049751-psycho.jpg
+10574,Artie Maddicks,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5494072-artiexmen92.jpg
+3283,Blackheath,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/3109843-thunderbolts075.jpg
+152950,Alchemaster,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/6678429-alchemaster.jpg
+40593,Angel Salvadore,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/238334-31621-tempest.jpg
+21245,Chronos,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/3133754-1.png
+12548,Blink,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/2056018-2055990_newmutants_34_cover.jpeg
+15111,Black Box,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/141273-37189-commcast.jpg
+5368,Barbara Gordon,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/6472091-bg_cv27-1-600x910.jpg
+8263,Blockbuster,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/2185500-blockbuster.jpg
+8345,Black Manta,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/2344623-aqm_cv12.jpg
+9319,Brainwave Jr.,Suicide Squad,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/1153742-cropped_brainwave.jpg
+10187,Cluemaster,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/3932935-img_0231.png
+55832,Agamemno,Injustice League,God/Eternal,https://comicvine.gamespot.com/api/image/square_avatar/421773-Agamemno.jpg
+116956,Bonnie,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/4924738-screen%20shot%202015-11-23%20at%2010.38.11%20am.png
+30056,Bird-Brain,X Men,Animal,https://comicvine.gamespot.com/api/image/square_avatar/2893428-ohotmu_x_men__1___page_10.jpg
+5812,Black Spider,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5403082-1472239104156.png
+15108,Adam X,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/6513750-adam_neramani_%28earth-616%29_from_captain_marvel_vol_3_3_001.jpg
+19089,Doctor Alchemy,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/746603-alchemy_1.jpg
+42873,Everyman,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/244940-81502-everyman.jpg
+11203,Effigy,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/95940-110354-effigy.jpg
+5702,Black Orchid,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5540835-img_5946.jpg
+2537,Cheshire,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/5888762-rco010_1470991735.jpg
+15127,Archer,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/285162-52924-archer.jpg
+40597,Blindfold,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/2800972-blindfoldlegacy4mainpic.png
+6029,Behemoth,Suicide Squad,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5616027-1128117269-latest
+5812,Black Spider,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/5403082-1472239104156.png
+14552,Beautiful Dreamer,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/492275-beautifuldreamer.jpg
+23368,Air Wave,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/194960-104295-air-wave-iii.jpg
+4442,Armor,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/2110792-1322849573.jpg
+4916,Black Adam,Injustice League,God/Eternal,https://comicvine.gamespot.com/api/image/square_avatar/2432749-screen_shot_2012_06_27_at_4.51.45_pm.png
+1699,Batman,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/6198653-batman%2012.jpg
+31109,Blackstarr,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5406057-image.jpeg
+88576,Alexander Petrov,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/2043068-element_petrov.gif
+3583,Arthur Light,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/3533765-%24_57.jpg
+90001,Bingo,Suicide Squad,Animal,https://comicvine.gamespot.com/api/image/square_avatar/4344568-3081765284_d9e2c0e0ff_b.jpg
+2359,Artemis,Suicide Squad,God/Eternal,https://comicvine.gamespot.com/api/image/square_avatar/6576106-tumblr_p624ctu1tp1wka8c9o2_540.jpg
+68435,Adam Cray,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/4190345-untitled-3.jpg
+3737,Amazo,Injustice League,Robot,https://comicvine.gamespot.com/api/image/square_avatar/796242-amazo_2.jpg
+40669,Bling!,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5775800-roxy%20washington%20aka%20bling!%202.png
+41840,Ariel,X Men,Alien,https://comicvine.gamespot.com/api/image/square_avatar/1901108-ariel.jpg
+10189,Big Sir,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/133860-87146-big-sir.jpg

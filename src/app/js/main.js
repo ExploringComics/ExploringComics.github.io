@@ -122,7 +122,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
         .style("stroke", "black")
         .style("opacity", 0.7)
         .attr("d", d3.arc().innerRadius(rOut).outerRadius(rInner))
-        .on("mousemove", fade(0, "visible"))
+        .on("click", fade(0, "visible"))
         .on("mouseout", fade(1, "hidden"));
 
 
@@ -176,6 +176,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
             // Popup box when element is clicked
             if (showInfos === "visible") {
                 let characterId = labels[i]['characterId'];
+                let characterImage = labels[i]['characterImage'];
                 let characterOrigin = labels[i]['characterOrigin'];
 
                 var list = document.getElementById("general-metrics-box");
@@ -187,7 +188,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
 
                 var p = document.createElement('p');
                 p.className = "title-general-metrics-box";
-                p.innerHTML = characterId;
+                p.innerHTML = "<b>Id:</b> " + characterId;
                 p.style.color = lookupColorCharacterId[characterOrigin];
                 document.getElementById('general-metrics-box').appendChild(p);
 
@@ -195,9 +196,8 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
                 p.className = "title-general-metrics-box";
 
                 // TODO: here add some info
-                p.innerHTML = "Avg PRs/month: " + //+ generalMetrics['meanPrs'] +
-                    "<br/>Avg Actors/month: " + // generalMetrics['meanActors'] +
-                    "<br/>Avg PRs/Actor: "; //math.round(generalMetrics['meanPrs'] / generalMetrics['meanActors'])  ;
+                p.innerHTML = "<b>Origin:</b> " + characterOrigin +
+                                "<img src=\"" + characterImage + "\" alt=\"Flowers in Chania\" style=\"width:80px;height:80px;\">";
                 document.getElementById('general-metrics-box').appendChild(p);
             }
             metricsBox

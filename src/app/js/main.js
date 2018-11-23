@@ -24,21 +24,6 @@ const marginChord = {top: 50, right: 20, bottom: 50, left: 20},
     widthChord = wChord - marginChord.left - marginChord.right,
     heightChord = hChord - marginChord.top - marginChord.bottom;
 
-// button 1 initial value
-let applyLog = 1;
-
-// button 2 initial value
-let sortingMethod = 'characterOrigin';
-
-function applyLogarithm(value){
-    applyLog = value;
-    loadChords();
-}
-function setSortingMethod(method){
-    sortingMethod = method;
-    loadChords();
-}
-
 function drawChord(matrix, labels) { // try to improve those callings and refactor
     /**
      * Draw chord diagram where the connections are the the log of the number of common actors of two characterIds
@@ -52,12 +37,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
     labels = labels.filter( function(el) {
         return !filteredCharacterIds.includes(el['characterId']);
     } );
-    let chord;
-    switch (sortingMethod) {
-        case 'characterOrigin': chord = d3.chord().padAngle(paddingChord); break;
-        case 'ascending': chord = d3.chord().padAngle(paddingChord).sortGroups(d3.ascending).sortChords(d3.ascending); break;
-        case 'descending': chord = d3.chord().padAngle(paddingChord).sortGroups(d3.descending).sortChords(d3.descending); break;
-    }
+    let chord = d3.chord().padAngle(paddingChord);
 
     if(firstCall){
         metricsBox = d3.select("#chord")
@@ -224,12 +204,8 @@ function loadChords(){
             /***
              * Function treats and reads the data, call functions to build the relationships matrix and draw the Chord diagram
              */
-            //relationships = relationships.map(rowConverterRelationships);
-
             let matrix = getMatrixCommonActors(relationships, filteredCharacterIds);
-            if (applyLog){
-                matrix = matrix.map(row => row.map(x => x > 30 ? Math.log(x) : 0));
-            }
+
             drawChord(matrix, characterIds);
         });
 }
@@ -364,39 +340,8 @@ function returnAllCharacterIds(){
     loadChords();
 }
 
-function onBtnOrderClick1(_, index, parent) {
-    let id = parent[index].id;
-    d3.select('#dropdownMenuButton1').html(parent[index].innerHTML);
-
-    for (let child of parent) {
-        d3.select(child).classed('active', child.id === id);
-    }
-
-    let num = ((id === "logarithm") ? 1 : 0);
-
-    applyLogarithm(num);
-}
-
-function onBtnOrderClick2(_, index, parent) {
-    let id = parent[index].id;
-    d3.select('#dropdownMenuButton2').html(parent[index].innerHTML);
-
-    for (let child of parent) {
-        d3.select(child).classed('active', child.id === id);
-    }
-
-    setSortingMethod(id);
-}
-
-
 loadChords();
 
 d3.select("#clear_button")
     .style("opacity", 0)
     .on("click", returnAllCharacterIds);
-
-d3.selectAll("#btn-order1 .dropdown-menu a")
-    .on('click', onBtnOrderClick1);
-
-d3.selectAll("#btn-order2 .dropdown-menu a")
-    .on('click', onBtnOrderClick2);

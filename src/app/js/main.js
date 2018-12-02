@@ -422,3 +422,65 @@ loadChords();
 d3.select("#clear_button")
     .style("opacity", 0)
     .on("click", returnAllCharacterIds);
+	
+//Parsets
+var chart = d3v3.parsets()
+      .dimensions([ "Sex", "Alignment", "Alive", "Identity"]);
+
+var vis = d3v3.select("#parsets").append("svg")
+    .attr("width", chart.width())
+    .attr("height", chart.height());
+
+	
+d3v3.csv("data/first_bipartite.csv", function(error, csv) {
+  vis.datum(csv).call(chart);
+});
+
+//Mosaic Plot
+d3.json('data/mosaic_ch.json', function (data) {
+	d3.shuffle(data);
+	d3.mosaicPlot(data, {
+	  id: 'appearance-mosaic',
+	  rows: ['Black Hair', 'Brown Hair', 'Blond Hair', 'Red Hair', 'No Hair'],
+	  columns: ['Brown Eyes', 'Blue Eyes', 'Green Eyes', 'Red Eyes', 'Black Eyes'],
+	  series: ['Female Characters', 'Male Characters'],
+	  colorScheme: ['#e2272a', '#00a037'],
+	  scaleZ: {
+		uniform: false,
+		independent: true,
+		paddingMidst: 0.02,
+		
+	  },
+	  scaleY: {
+		uniform: false,
+		independent:true,
+		paddingInner: 0.2,
+		paddingOuter: 0,
+		paddingMidst: 0
+	  },
+	  scaleX: {
+		uniform: false,
+		paddingInner: 0.05,
+		paddingOuter: 0,
+		paddingMidst: 0
+	  },
+	  labels: {
+		show: true
+	  },
+	  tooltip: {
+		html: function (d) {
+		  var html = 'Eyes: ' + d.column + '<br/>Hair: ' + d.row;
+		  if (d.series) {
+			html += '<br/>Sex: ' + d.series;
+		  }		  
+		  html += '<br/>Count: ' + d.value;
+		  if (d.image && d.name) {
+			html += '<br/>Representative: ' + d.name;
+			html += "<br/><img src=\"" + d.image + "\" style=\"width:250px;height:375px;\"/>"
+		  }
+		  return html;
+		}
+	  },
+	  stroke: 'currentColor'
+	});
+  });

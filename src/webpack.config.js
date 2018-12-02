@@ -10,11 +10,11 @@ module.exports = {
         inline: true,
         progress: true,
         contentBase: './app',
-        port: 8080
+        port: 3000
     },
     devtool: 'source-map',
     entry: [
-        'webpack-dev-server/client?http://localhost:8080',
+        'webpack-dev-server/client?http://localhost:3000',
         path.resolve(__dirname, 'app/js/main.js')
     ],
     output: {

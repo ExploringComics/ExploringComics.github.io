@@ -14,9 +14,10 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
         <!-- Favicon -->
-		<link rel="shortcut icon" type="image/png" href="../../images/comic-book-boom-clipart.png"/>
+		<link rel="shortcut icon" type="image/png" href="img/comic-book-boom-clipart.png"/>
 
         <!-- Our CSS -->
+		<link rel="stylesheet" href="css/d3.parsets.css">
         <link rel="stylesheet" href="css/chord.css">
         <link rel="stylesheet" href="css/bipartite.css">
 
@@ -52,7 +53,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12" style="text-align: center">
-                        <img src="https://cdn-images-1.medium.com/max/800/1*pkzA29T9shiDTTsN1BW8Fg.gif" alt="Italian Trulli">
+                        <img src="img/sm_bat.gif" alt="Italian Trulli">
 
                     </div>
                 </div>
@@ -65,7 +66,6 @@
                         <h1>Chord</h1>
                         <p class="lead">At first, we wanted to focus on diversity on comics. Soon we realized that only looking into gender diversity would not only be non-satisfactory, but also obsolete, because of the fact that our visualization would not provide any new information to the reader. For that, we decided to also look into imaginary origins of the comics characters that appear in our dataset. That is why we now analyzed the Comic Vine datasets obtained from the Comic Vine website. We performed the analysis over datasets in order to get a deeper understanding of how different features were represented, but also which categorical features were available for the possible groupings of our characters. We also analysed the year span over which our characters appeared, for the possibility of representing our data as a timeline.
                         </p>
-
                     </div>
                 </div>
 
@@ -75,6 +75,39 @@
                 <div id="chord" style="text-align:center"></div>
                 <!-- Chord Visualization END -->
 
+				<div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <h1>An innocent blonde or a devilish redhead?</h1>
+                        <p class="lead">How does your average comic book character look like? Quite predictably, it turns out. Regardless of whether the character is male or female, DC or Marvel, good or bad, most of the characters in comics have a very distinct look: <span style="font-weight: bold;"> black hair and blue eyes</span>.
+						<br/>
+						<br/>From the dataset we have determined that out of all the characters with specified eye color over 30% have blue eyes, and over 30% of the characters with recognizable hair color have black hair. While this might not seem like such a significant percentage, it is worth noting that there are 26 different options for different eye colors, and 28 for different hair colors, and only one of these is present in over 30% of characters.
+						<br/>
+						<br/>The most space for different face features seems to be given to the characters with non-binary gender characteristics, possibly because they are usually at the same time described as ghosts, robots or aliens - thus expected to look unlike your average heroes or villains.
+						</p>
+						<div class="col-lg-12 col-md-12 col-sm-12" style="text-align: center">
+							<img src="img/sm_ww.jpg" alt="Giova"/>
+						</div>
+						<br/>
+						<p class="lead">
+						Play with the mosaic diagram we have created based on the most common physical attributes of the characters, and don't forget to hover to see a picture of one of the most famous representatives of certain appearance.
+                        </p>
+                    </div>
+                </div>
+				
+				<div id="appearance-mosaic" style="text-align:center"></div>
+				
+				<div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <h1>The Good, the Bad, and the Evil</h1>
+                        <p class="lead">Are you wondering whether most of the female characters in comics act innocent and cooperate with other good characters with a well known identity, or they are more often represented as secret villains? Do the heroes or criminals die faster? How many neutral characters can even survive in the interesting and fantastic world of comics?
+						<br/>
+						<br/>In the following visualization you can explore these and many more questions. Just hover over each of the colorful lines to get more details about the percentage of characters with a certain trait or change the order of the parallel planes and their inner sorting to get some new insights. 
+                        </p>
+                    </div>
+                </div>				
+                <div id="parsets" style="text-align:center"></div>
+            </div>
+				
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <h1>Bipartition</h1>
@@ -104,6 +137,11 @@
         </div>
 
         <!--<script src="https://d3js.org/d3.v5.min.js"></script>-->
+		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<script>
+			d3v3 = d3
+			window.d3 = null
+		</script>
         <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
         <!--<script src="https://vizjs.org/viz.v1.1.0.min.js"></script>-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
@@ -113,6 +151,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
         <script src="js/viz.v1.1.0.min.js"></script>
+		<script src="js/d3.parsets.js"></script>
+        <script src="js/core.js"></script>
+        <script src="js/mosaic-plot.js"></script>
         <script src="js/data-handlers.js"></script>
         <script src="js/main.js"></script>
         <script src="js/bipartite.js"></script>

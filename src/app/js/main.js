@@ -192,7 +192,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
                 let characterDeck = labels[i]['deck'];
                 let characterUrl = labels[i]['siteDetailUrl'];
                 let characterAliases = labels[i]['aliases'];
-                let characterBirth = ((labels[i]['birth']=='') ? 'Undefined' : labels[i]['birth']);
+                let characterBirth = ((labels[i]['birth']=='') ? ' - ' : labels[i]['birth']);
                 let characterRealName = labels[i]['realName'];
 
                 // clear previous text in the box

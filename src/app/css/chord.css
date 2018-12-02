@@ -1,4 +1,4 @@
-div.general-metrics-box {
+div.character-popup-box {
     position: absolute;
     text-align: left;
     width: 110px;
@@ -15,7 +15,29 @@ div.general-metrics-box {
     background: rgba(255, 255, 255, 0.7)
 }
 
-p.title-general-metrics-box {
+p.title-character-popup-box {
+    font-weight: bold;
+}
+
+div.character-info-box {
+    position: absolute;
+    font-size: 11pt;
+    text-align: left;
+    width: 310px;
+    height: 650px;
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 10;
+    border: 3px solid;
+    margin: 10px -200px;
+    padding: 10px 10px 10px 10px;
+    border-color: #9a9a9a;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background: rgba(255, 255, 255, 0.7)
+}
+
+p.title-character-info-box {
     font-weight: bold;
 }
 

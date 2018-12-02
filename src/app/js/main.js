@@ -7,7 +7,8 @@ let filteredCharacterIds = [];
 let firstCall = 1;
 
 let svg;
-let metricsBox;
+let characterPopupBox;
+let characterInfoBox;
 let lastLayout; //store layout between updates
 
 //let colorCharacterId = '#008080';
@@ -50,10 +51,16 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
     let chord = d3.chord().padAngle(paddingChord);
 
     if(firstCall){
-        metricsBox = d3.select("#chord")
+        characterPopupBox = d3.select("#chord")
             .append("div")
-            .attr("class", "general-metrics-box")
-            .attr("id", "general-metrics-box")
+            .attr("class", "character-popup-box")
+            .attr("id", "character-popup-box")
+            .style("visibility", "hidden");
+
+        characterInfoBox = d3.select("#chord")
+            .append("div")
+            .attr("class", "character-info-box")
+            .attr("id", "character-info-box")
             .style("visibility", "hidden");
 
         svg = d3.select("#chord")
@@ -175,11 +182,21 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
 
             // Popup box when element is clicked
             if (showInfos === "visible") {
+
+                // Fill in popup box
                 let characterId = labels[i]['characterId'];
                 let characterImage = labels[i]['characterImage'];
                 let characterOrigin = labels[i]['characterOrigin'];
+                let characterName = labels[i]['characterName'];
+                let characterGender = ((labels[i]['gender']===1) ? 'Male' : 'Female');
+                let characterDeck = labels[i]['deck'];
+                let characterUrl = labels[i]['siteDetailUrl'];
+                let characterAliases = labels[i]['aliases'];
+                let characterBirth = ((labels[i]['birth']=='') ? 'Undefined' : labels[i]['birth']);
+                let characterRealName = labels[i]['realName'];
 
-                var list = document.getElementById("general-metrics-box");
+                // clear previous text in the box
+                let list = document.getElementById("character-popup-box");
                 if (list.hasChildNodes()) {
                     while (list.hasChildNodes()) {
                         list.removeChild(list.firstChild);
@@ -187,22 +204,64 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
                 }
 
                 var p = document.createElement('p');
-                p.className = "title-general-metrics-box";
+                p.className = "title-character-popup-box";
                 p.innerHTML = "<b>Id:</b> " + characterId;
                 p.style.color = lookupColorCharacterId[characterOrigin];
-                document.getElementById('general-metrics-box').appendChild(p);
+                document.getElementById('character-popup-box').appendChild(p);
 
-                var p = document.createElement('div');
-                p.className = "title-general-metrics-box";
+                var div = document.createElement('div');
+                div.className = "title-character-popup-box";
+                div.innerHTML = "<b>Origin:</b> " + characterOrigin +
+                    "<img src=\"" + characterImage + "\" alt=\"Flowers in Chania\" style=\"width:80px;height:80px;\">";
+                document.getElementById('character-popup-box').appendChild(div);
 
-                // TODO: here add some info
-                p.innerHTML = "<b>Origin:</b> " + characterOrigin +
-                                "<img src=\"" + characterImage + "\" alt=\"Flowers in Chania\" style=\"width:80px;height:80px;\">";
-                document.getElementById('general-metrics-box').appendChild(p);
+                // Fill in info box
+                // clear previous text in the box
+                let list_info = document.getElementById("character-info-box");
+                if (list_info.hasChildNodes()) {
+                    while (list_info.hasChildNodes()) {
+                        list_info.removeChild(list_info.firstChild);
+                    }
+                }
+
+                var p = document.createElement('p');
+                p.className = "title-character-info-box";
+                p.innerHTML = "<h3>"+characterName+"</h3>";
+                p.style.color = lookupColorCharacterId[characterOrigin];
+                document.getElementById('character-info-box').appendChild(p);
+
+                var div = document.createElement('div');
+                //div.className = "title-character-info-box";
+                div.innerHTML = "<div class=\"row\">" +
+                    "<div class=\"col-lg-6 col-md-6 col-sm-6\" style='font-size: 9pt'>" +
+                        "<p><b>Id:</b> " + characterId + "</p>" +
+                        "<p><b>Real Name:</b> " + characterRealName + "</p>" +
+                        "<p><b>Aliases:</b> " + characterAliases + "</p>" +
+                        "<p><b>Birth:</b> " + characterBirth + "</p>" +
+                        "<p><b>Origin:</b> " + characterOrigin + "</p>" +
+                        "<p><b>Gender:</b> " + characterGender + "</p>" +
+                    "</div>"+
+                    "<div class=\"col-lg-6 col-md-6 col-sm-6\">" +
+                        "<img src=\"" + characterImage + "\" alt=\"Flowers in Chania\" style=\"width:110px;height:110px;\">" +
+                    "</div></div><br/>";
+                document.getElementById('character-info-box').appendChild(div);
+
+                var divText = document.createElement('div');
+                divText.className = "title-character-info-box";
+                divText.innerHTML = "<div>" + characterDeck + "</div>" +
+                    "<br/>More info on link: <a href='"+characterUrl+"'> click here</a>";
+                document.getElementById('character-info-box').appendChild(divText);
+
             }
-            metricsBox
+
+            characterPopupBox
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 50) + "px")
+                .style("visibility", showInfos);
+
+            characterInfoBox
+                .style("left", (svg.width) + "px")
+                .style("top", (svg.height) + "px")
                 .style("visibility", showInfos);
         }
     }

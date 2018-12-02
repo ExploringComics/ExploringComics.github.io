@@ -1,91 +1,191 @@
-characterId,characterName,team,characterOrigin,characterImage
-146014,Akando,Suicide Squad,Animal,https://comicvine.gamespot.com/api/image/square_avatar/6293578-akando_prime_earth_0001.jpg
-131891,Bloodletter,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5372876-suicide%20squad%20most%20wanted%20-%20el%20diablo%20and%20boomerang%20001-018.jpg
-8312,Bizarro,Injustice League,Other,https://comicvine.gamespot.com/api/image/square_avatar/4453107-ac_cv40_54d51f4d2d6a49.41214327.jpg
-9708,Banshee,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5889291-sean_cassidy_%28earth-616%29_from_uncanny_avengers_vol_1_12.jpg
-40458,Anole,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5541897-victor_borkowski_%28earth-616%29_exm.jpg
-132952,Azucar,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5447436-suicide%20squad%20most%20wanted%20-%20el%20diablo%20and%20boomerang%20%282016-%29%20002-019.jpg
-4568,Black Tom Cassidy,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/134777-112211-black-tom-cassidy.jpg
-29255,Alchemy,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/6513741-thomas_jones_%28earth-616%29_from_death_of_x_vol_1_4_001.jpg
-19006,Count Vertigo,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/5789293-screen%20shot%202017-04-05%20at%201.51.59%20pm.png
-1698,Catwoman,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/5555748-0765257915-3301a.jpg
-2112,Angel,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5053055-4623273865-UNCX2.jpg
-1699,Batman,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/6198653-batman%2012.jpg
-10924,Circe,Injustice League,God/Eternal,https://comicvine.gamespot.com/api/image/square_avatar/6545844-circe_prime_earth_005%20%282%29.jpg
-10970,Amanda Sefton,X Men,Human,https://comicvine.gamespot.com/api/image/square_avatar/4760740-sin%20t%C3%ADtulo.jpg
-10186,Clock King,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/3154372-screen%20shot%202013-07-05%20at%204.21.52%20pm.png
-14868,Amelia Voght,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/1875204-amelia__1_.jpg
-3588,Deathstroke,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/6421465-7189769152-64211.jpg
-13369,Arclight,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5336238-image.jpeg
-5932,Bolt,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/632464-wolvie_md_2_dcp_001.jpg
-8344,Cheetah (Minerva),Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/5529023-cheetah690.jpg
-126139,Afterthought,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5033057-screen%20shot%202016-02-03%20at%206.39.32%20am.png
-1462,Beast,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5271307-4665552949-5204563-5589293201-latest
-127953,Battleaxe,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5159101-battleaxe.png
-6263,Dr. Sivana,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/3134428-sivanna.png
-8312,Bizarro,Suicide Squad,Other,https://comicvine.gamespot.com/api/image/square_avatar/4453107-ac_cv40_54d51f4d2d6a49.41214327.jpg
-9548,Despero,Injustice League,Alien,https://comicvine.gamespot.com/api/image/square_avatar/2992356-df.png
-25850,Babe,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/6621955-15a1aada-eaf4-4703-9c39-b5bf543540cc.jpeg
-5932,Bolt,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/632464-wolvie_md_2_dcp_001.jpg
-1503,Bishop,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/3383271-jj.jpg
-6129,Bane,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5614213-bane_bm18.jpg
-8345,Black Manta,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/2344623-aqm_cv12.jpg
-14896,Alysande Stuart,X Men,Human,https://comicvine.gamespot.com/api/image/square_avatar/5772005-alysande_stuart_%28earth-616%29_from_excalibur_vol_1_30_001.png
-40909,Aliyah Bishop,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/82266-6520-aliyah-bishop.jpg
-15329,Bedlam,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/135719-109130-jesse-bedlam.jpg
-2392,Captain Cold,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/6436322-7e19d32dbbf4d92a964a4f67b0820bb8.jpg
-10004,Chemo,Injustice League,Other,https://comicvine.gamespot.com/api/image/square_avatar/745281-chemo.jpg
-4921,Atom Smasher,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/824668-atom_smasher_5.jpg
-125503,Bailey Hoskins,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/4985516-bailey-hoskins.jpg
-10189,Big Sir,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/133860-87146-big-sir.jpg
-4916,Black Adam,Suicide Squad,God/Eternal,https://comicvine.gamespot.com/api/image/square_avatar/2432749-screen_shot_2012_06_27_at_4.51.45_pm.png
-9589,Clayface (Karlo),Injustice League,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/3100972-bmtdk_23-3-clayface_ipfpg5kgey_.jpg
-4920,Amanda Waller,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/6061590-suicide%20squad%20008.jpg
-40815,Blackguard,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/213850-137326-blackguard.jpg
-3189,Aurora,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/6163413-aurora.jpg
-3583,Arthur Light,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/3533765-%24_57.jpg
-6943,Fatality,Injustice League,Alien,https://comicvine.gamespot.com/api/image/square_avatar/3871100-fatality08b.jpg
-3188,Beak,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/76894-138657-beak.jpg
-3553,Avalanche,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/3138020-villainsforhire00104.jpg
-4918,Dr. Psycho,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/6049751-psycho.jpg
-10574,Artie Maddicks,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5494072-artiexmen92.jpg
-3283,Blackheath,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/3109843-thunderbolts075.jpg
-152950,Alchemaster,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/6678429-alchemaster.jpg
-40593,Angel Salvadore,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/238334-31621-tempest.jpg
-21245,Chronos,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/3133754-1.png
-12548,Blink,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/2056018-2055990_newmutants_34_cover.jpeg
-15111,Black Box,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/141273-37189-commcast.jpg
-5368,Barbara Gordon,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/6472091-bg_cv27-1-600x910.jpg
-8263,Blockbuster,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/2185500-blockbuster.jpg
-8345,Black Manta,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/2344623-aqm_cv12.jpg
-9319,Brainwave Jr.,Suicide Squad,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/1153742-cropped_brainwave.jpg
-10187,Cluemaster,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/3932935-img_0231.png
-55832,Agamemno,Injustice League,God/Eternal,https://comicvine.gamespot.com/api/image/square_avatar/421773-Agamemno.jpg
-116956,Bonnie,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/4924738-screen%20shot%202015-11-23%20at%2010.38.11%20am.png
-30056,Bird-Brain,X Men,Animal,https://comicvine.gamespot.com/api/image/square_avatar/2893428-ohotmu_x_men__1___page_10.jpg
-5812,Black Spider,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5403082-1472239104156.png
-15108,Adam X,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/6513750-adam_neramani_%28earth-616%29_from_captain_marvel_vol_3_3_001.jpg
-19089,Doctor Alchemy,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/746603-alchemy_1.jpg
-42873,Everyman,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/244940-81502-everyman.jpg
-11203,Effigy,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/95940-110354-effigy.jpg
-5702,Black Orchid,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5540835-img_5946.jpg
-2537,Cheshire,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/5888762-rco010_1470991735.jpg
-15127,Archer,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/285162-52924-archer.jpg
-40597,Blindfold,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/2800972-blindfoldlegacy4mainpic.png
-6029,Behemoth,Suicide Squad,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5616027-1128117269-latest
-5812,Black Spider,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/5403082-1472239104156.png
-14552,Beautiful Dreamer,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/492275-beautifuldreamer.jpg
-23368,Air Wave,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/194960-104295-air-wave-iii.jpg
-4442,Armor,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/2110792-1322849573.jpg
-4916,Black Adam,Injustice League,God/Eternal,https://comicvine.gamespot.com/api/image/square_avatar/2432749-screen_shot_2012_06_27_at_4.51.45_pm.png
-1699,Batman,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/6198653-batman%2012.jpg
-31109,Blackstarr,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5406057-image.jpeg
-88576,Alexander Petrov,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/2043068-element_petrov.gif
-3583,Arthur Light,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/3533765-%24_57.jpg
-90001,Bingo,Suicide Squad,Animal,https://comicvine.gamespot.com/api/image/square_avatar/4344568-3081765284_d9e2c0e0ff_b.jpg
-2359,Artemis,Suicide Squad,God/Eternal,https://comicvine.gamespot.com/api/image/square_avatar/6576106-tumblr_p624ctu1tp1wka8c9o2_540.jpg
-68435,Adam Cray,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/4190345-untitled-3.jpg
-3737,Amazo,Injustice League,Robot,https://comicvine.gamespot.com/api/image/square_avatar/796242-amazo_2.jpg
-40669,Bling!,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5775800-roxy%20washington%20aka%20bling!%202.png
-41840,Ariel,X Men,Alien,https://comicvine.gamespot.com/api/image/square_avatar/1901108-ariel.jpg
-10189,Big Sir,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/133860-87146-big-sir.jpg
+characterId,characterName,team,characterOrigin,characterImage,deck,siteDetailUrl,aliases,gender,birth,realName
+5932,Bolt,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/632464-wolvie_md_2_dcp_001.jpg,"The father of Dreadbolt, Bolt used electricity and teleportation to achieve his goals.",https://comicvine.gamespot.com/bolt/4005-5932/,"Larry Bolatinsky
+Lawrence Peter Bolatinsky",1,,Lawrence Peter Bolatinsky
+6129,Bane,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5614213-bane_bm18.jpg,"Forced to serve a life sentence for the crimes of his father, Bane was born and raised in the underground prison, Peña Duro. There, he forged himself into the pinnacle of physical and mental potential all without seeing the light of day. Escaping to Gotham City, Bane challenged Batman and became famous as ""The Man Who Broke the Bat"".",https://comicvine.gamespot.com/bane/4005-6129/,The Man Who Broke the Bat; Antonio Diego; The Masked Man; Ubu; Batman,1,,None
+6943,Fatality,Injustice League,Alien,https://comicvine.gamespot.com/api/image/square_avatar/3871100-fatality08b.jpg,"Yrra Cynril is the sole survivor of the planet Xanshi. Her planet's destruction was caused by a Green Lantern (John Stewart), which led her to embark on a violent quest for revenge against the entire Green Lanterns Corps. She fought Green Lantern Kyle Rayner many times. For a long while she was a member of the Star Sapphire Corps, during which she became friendly to the Green Lanterns. Recently, their influence on her has waned and she has resumed her old grudges.",https://comicvine.gamespot.com/fatality/4005-6943/,Yrra Cynril; Fatality; Star Sapphire of Space Sector 1313; Prisoner 4449; Verrat Din,2,,Yrra Cynril
+40909,Aliyah Bishop,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/82266-6520-aliyah-bishop.jpg,Aliyah Bishop is the daughter of the X-Man Bishop and Sh'iar Royal Deathbird. So far she has only appeared in an alternate reality.,https://comicvine.gamespot.com/aliyah-bishop/4005-40909/,"Majestrix Sh'iar
+Aliyah Neramani ",2,,Aliyah Bishop
+127953,Battleaxe,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5159101-battleaxe.png,A member of the Suicide Squad. Killed in Action on a mission.,https://comicvine.gamespot.com/battleaxe/4005-127953/,None,2,,None
+5932,Bolt,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/632464-wolvie_md_2_dcp_001.jpg,"The father of Dreadbolt, Bolt used electricity and teleportation to achieve his goals.",https://comicvine.gamespot.com/bolt/4005-5932/,"Larry Bolatinsky
+Lawrence Peter Bolatinsky",1,,Lawrence Peter Bolatinsky
+55832,Agamemno,Injustice League,God/Eternal,https://comicvine.gamespot.com/api/image/square_avatar/421773-Agamemno.jpg,"Cosmic villian and would-be universe conqueror.
+Battled the Justice League of America in the Silver Age.",https://comicvine.gamespot.com/agamemno/4005-55832/,None,1,,Unpronounceable/Unspellable
+15329,Bedlam,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/135719-109130-jesse-bedlam.jpg,"Bedlam, a mutant with the ability to generate a bio-electric field for a variety of effects, is a former member of X-Force and skilled in covert ops.",https://comicvine.gamespot.com/bedlam/4005-15329/,"Jesse Aaronson
+Jesse Bedlam",1,,Jesse Aaronson
+6029,Behemoth,Suicide Squad,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5616027-1128117269-latest,,https://comicvine.gamespot.com/behemoth/4005-6029/,Taro Raiden,1,,Taro Raiden
+8312,Bizarro,Suicide Squad,Other,https://comicvine.gamespot.com/api/image/square_avatar/4453107-ac_cv40_54d51f4d2d6a49.41214327.jpg,Bizarro is an imperfect duplicate of Superman. Everything Bizarro does is deliberately backwards or the opposite of normal.,https://comicvine.gamespot.com/bizarro/4005-8312/,Bizarro #1; Bizarro-Superman; The Thing of Steel; The Imperfect Superman; B-0,1,,El-Kal
+12548,Blink,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/2056018-2055990_newmutants_34_cover.jpeg,"Blink is a purple-skinned mutant with the power to teleport. Her ""Age of Apocalypse"" counterpart was the popular member and leader of the Exiles.",https://comicvine.gamespot.com/blink/4005-12548/,Clarice Ferguson,2,,Clarice Ferguson
+88576,Alexander Petrov,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/2043068-element_petrov.gif,Alexander Petrov works for the Keystone Police Department as a forensic scientist. To enhance his prospects of promotion he took up the mantle or Mr Element.,https://comicvine.gamespot.com/alexander-petrov/4005-88576/,Mr. Element,1,,Alexander Petrov
+8345,Black Manta,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/2344623-aqm_cv12.jpg,"A notorious pirate and assassin, Black Manta is one of the most ruthless and feared super villains on Earth, and Aquaman's mortal enemy.",https://comicvine.gamespot.com/black-manta/4005-8345/,"Devil Ray
+Scourge of the Seven Seas
+Ray Delane
+Fisher King
+David Hyde",1,,David Hyde
+5812,Black Spider,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5403082-1472239104156.png,He tends to use the latest in high tech weaponry such as laser assisted rifles. He is an Olympic level athlete and has trained intensely in many forms of physical combat. There have been three that have taken on the identity.,https://comicvine.gamespot.com/black-spider/4005-5812/,"Eric Needham
+Johnny LaMonica
+
+",1,,Derrick Coe
+5368,Barbara Gordon,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/6472091-bg_cv27-1-600x910.jpg,"Barbara Gordon was the first modern age Batgirl until she was brutally shot by the Joker, rendering her paralyzed from the waist down. Barbara reinvented herself as Oracle, providing intelligence to the DCU heroes and leading the Birds of Prey. She has recently become Batgirl once again to protect Gotham City.",https://comicvine.gamespot.com/barbara-gordon/4005-5368/,Amy Beddoes; Batgirl; Oracle; Babs; Nightwing,2,"Sep 23, 1990",Barbara Gordon
+2537,Cheshire,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/5888762-rco010_1470991735.jpg,Cheshire is one of the deadliest assassins in the DC universe. She is an expert in both martial arts and the use of poisons.,https://comicvine.gamespot.com/cheshire/4005-2537/,Jade Nguyen,2,,Jade Nguyen
+9589,Clayface (Karlo),Injustice League,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/3100972-bmtdk_23-3-clayface_ipfpg5kgey_.jpg,"Basil Karlo was an actor who upon discovering that a remake of one of his classic horror movies was being made went insane and began killing the cast and crew, wearing the mask of the film's villain Clayface, until stopped by Batman. Initially having no superpowers, Karlo joined with a group of other ""Clayfaces"" and stole their combined powers, allowing him to shapeshift into any forms he wants.",https://comicvine.gamespot.com/clayface-karlo/4005-9589/,Basil Karlo; Matt Hagen,1,,Basil Karlo
+3737,Amazo,Injustice League,Robot,https://comicvine.gamespot.com/api/image/square_avatar/796242-amazo_2.jpg,Created by Professor Ivo with revolutionary Absorption Cell Technology. This android can replicate the powers of any metahuman he encounters.,https://comicvine.gamespot.com/amazo/4005-3737/,"The Amazing Android
+Project A.M.A.Z.O.
+Timazo
+Humazo",1,,Amazo
+3283,Blackheath,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/3109843-thunderbolts075.jpg,A supervillain who later joined the Thunderbolts seeking redemption.,https://comicvine.gamespot.com/blackheath/4005-3283/,"Samuel Smithers
+Plantman",1,,Samuel Smithers
+4442,Armor,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/2110792-1322849573.jpg,"Hisako Ichiki is a teenage mutant from Japan that studied at the Xavier Institute before becoming an X-Man. Her mutant power allows her to create psionic ""armor"", giving her enhanced strength and durability. She is currently enrolled at the Jean Grey School for Higher Learning.",https://comicvine.gamespot.com/armor/4005-4442/,"Hisako Ichiki
+X-Girl",2,,Hisako Ichiki
+21245,Chronos,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/3133754-1.png,"David Clinton discovered the secrets of time travel. As the criminal Chronos, he became an enemy of the Atom, Blue Beetle, and the Justice League of America.",https://comicvine.gamespot.com/chronos/4005-21245/,"David Clinton
+David Langhorn Clinton
+The Time Thief",1,,David Langhorn Clinton
+68435,Adam Cray,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/4190345-untitled-3.jpg,Adam Cray was the third man who used the identity of the Atom. He was killed in action during his time with the Suicide Squad.,https://comicvine.gamespot.com/adam-cray/4005-68435/,"Atom
+Adam Cray",1,,Adam Cray
+19006,Count Vertigo,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/5789293-screen%20shot%202017-04-05%20at%201.51.59%20pm.png,"Werner Zytle is the ruler of the country Vlatava, and one of the archenemies of Green Arrow. He uses a device implanted in his head to disorient his foes.",https://comicvine.gamespot.com/count-vertigo/4005-19006/,Count Werner Vertigo; Mr. Zytle; Count Zytle; Warren Zytle,1,,Count Werner Vertigo / Werner Zytle
+10970,Amanda Sefton,X Men,Human,https://comicvine.gamespot.com/api/image/square_avatar/4760740-sin%20t%C3%ADtulo.jpg,Amanda is the former ruler of Limbo. She is also the former girlfriend of Nightcrawler from the X-Men. She has been a member of Excalibur.,https://comicvine.gamespot.com/amanda-sefton/4005-10970/,"Jimaine Szardos
+Day Tripper
+Magik
+Magicienne
+Mistress of Limbo",2,,Jimaine Szardos
+10924,Circe,Injustice League,God/Eternal,https://comicvine.gamespot.com/api/image/square_avatar/6545844-circe_prime_earth_005%20%282%29.jpg,"Circe is a legendary sorceress from Greek mythology who acts as a super-villain and enemy to Wonder Woman. Immortal and undying, she is a centuries-old enchantress with goddess-level powers. Her place in history is famous for Homer's Odyssey.",https://comicvine.gamespot.com/circe/4005-10924/,Donna Milton; Cassandra Colchis; Wonder Woman,2,,Circe
+9319,Brainwave Jr.,Suicide Squad,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/1153742-cropped_brainwave.jpg,Henry King Jr. is the son of the 1940's criminal mentalist Brain Wave and Merry the Gimmick Girl. Henry would be a founding member of the first Infinity Inc. but eventually went mad due to his powers.,https://comicvine.gamespot.com/brainwave-jr/4005-9319/,"Henry King, Jr.
+Brainwave Jr.
+Brainwave
+Hank",1,,Henri Roy Jr.
+1699,Batman,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/6198653-batman%2012.jpg,"Bruce Wayne, who witnessed the murder of his multi-millionaire parents as a child, swore to avenge their deaths. He trained extensively to achieve mental and physical perfection, mastering martial arts, detective skills, and criminal psychology. Costumed as a bat to prey on the fears of criminals, and utilizing a high-tech arsenal, he became the legendary Batman.",https://comicvine.gamespot.com/batman/4005-1699/,Bruce Wayne; The Caped Crusader; The Dark Knight; The World's Greatest Detective; The Dark Knight Detective,1,"Feb 19, 1972",Bruce Wayne
+9708,Banshee,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5889291-sean_cassidy_%28earth-616%29_from_uncanny_avengers_vol_1_12.jpg,"Banshee was a mutant with a sonic scream. Born in Ireland, he pursued a career in Interpol, the X-Men, Generation X as Co-Headmaster, and founded X-Corp. He was the father of Theresa Cassidy as well as Black Tom Cassidy's cousin.",https://comicvine.gamespot.com/banshee/4005-9708/,Sean Cassidy; Madame Banshee; Irish; Death,1,,Sean Cassidy
+90001,Bingo,Suicide Squad,Animal,https://comicvine.gamespot.com/api/image/square_avatar/4344568-3081765284_d9e2c0e0ff_b.jpg,Member of the Banana Splits.,https://comicvine.gamespot.com/bingo/4005-90001/,None,1,,None
+2359,Artemis,Suicide Squad,God/Eternal,https://comicvine.gamespot.com/api/image/square_avatar/6576106-tumblr_p624ctu1tp1wka8c9o2_540.jpg,"Artemis is the Shim'Tar (greatest warrior) of the Egyptian Amazons of Bana-Mighdall. For a short time, she also held the title of Wonder Woman. Currently, she is teamed up with The Outlaws.",https://comicvine.gamespot.com/artemis/4005-2359/,Javelin; Requiem; Shim'Tar; Wonder Woman; Artemis of Bana-Mighdall,2,,Artemis of Bana-Mighdall
+25850,Babe,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/6621955-15a1aada-eaf4-4703-9c39-b5bf543540cc.jpeg,,https://comicvine.gamespot.com/babe/4005-25850/,"Baby Boom
+Baby Doll",2,,Mary Dahl
+41840,Ariel,X Men,Alien,https://comicvine.gamespot.com/api/image/square_avatar/1901108-ariel.jpg,"An alien from a glamourous planet, Ariel has the natural ability to teleport through doorways.  She gathered young mutants to form the Fallen Angels and later discovered that she was also a mutant, albeit one of her alien species.",https://comicvine.gamespot.com/ariel/4005-41840/,None,2,,Ariel
+10186,Clock King,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/3154372-screen%20shot%202013-07-05%20at%204.21.52%20pm.png,"In the past The Clock King has been a member of both the Injustice League and the Suicide Squad. Having no training or super powers, his potential lies in his nearly superhuman proficiency with time, timing, and strategy. He is a unique threat to all he encounters.",https://comicvine.gamespot.com/clock-king/4005-10186/,"King Clock
+William Tockman
+Temple Fugate
+Tempus Fugit",1,,William Tockman
+13369,Arclight,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5336238-image.jpeg,Arclight is a mutant that appeared in the X-Men franchise. She was a member of the Marauders where she used her shock wave powers to lead them.,https://comicvine.gamespot.com/arclight/4005-13369/,Philippa Sontag,2,,Philippa Sontag
+31109,Blackstarr,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5406057-image.jpeg,"Blackstarr is an alpha-level metahuman. She was a member of the Suicide Squad. By unlocking the secrets of the unified field theory, Blackstarr could tap into the very fabric of the cosmos.",https://comicvine.gamespot.com/blackstarr/4005-31109/,"Rachael Berkowitz
+Rachel Berkowitz
+Myra Berkowitz ",2,,Rachel Berkowitz
+8312,Bizarro,Injustice League,Other,https://comicvine.gamespot.com/api/image/square_avatar/4453107-ac_cv40_54d51f4d2d6a49.41214327.jpg,Bizarro is an imperfect duplicate of Superman. Everything Bizarro does is deliberately backwards or the opposite of normal.,https://comicvine.gamespot.com/bizarro/4005-8312/,Bizarro #1; Bizarro-Superman; The Thing of Steel; The Imperfect Superman; B-0,1,,El-Kal
+4921,Atom Smasher,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/824668-atom_smasher_5.jpg,"The Godson of the original Atom, all Al ever wanted was to be a super-hero. Achieving this, he's found himself on both sides of the fence, a hero of the JSA and an enemy of them, with Black Adam.",https://comicvine.gamespot.com/atom-smasher/4005-4921/,"Albert Julian Rothstein
+Nuklon
+Al Rothstein",1,"Oct 12, 1967",Albert Julian Rothstein
+11203,Effigy,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/95940-110354-effigy.jpg,Effigy is an enemy of Green Lantern who can control flames in much the same way as Green Lantern uses his power ring.,https://comicvine.gamespot.com/effigy/4005-11203/,Martin Van Wyck ,1,,Martin Van Wyck
+40593,Angel Salvadore,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/238334-31621-tempest.jpg,"Angel Salvadore was a winged mutant with an insectoid physiology. Once a student at the Xavier Institute, she became known as Angel until she lost her mutant powers on M-Day. She then joined the New Warriors as Tempest until the group disbanded. She is married to Barnell Bohusk.",https://comicvine.gamespot.com/angel-salvadore/4005-40593/,Tempest; Angie; MsA,2,,Angel Salvadore
+2392,Captain Cold,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/6436322-7e19d32dbbf4d92a964a4f67b0820bb8.jpg,"Captain Cold, Leonard Snart, is a villain in DC comics. Snart is the ruthless and intelligent leader of the Rogues, a criminal team operating in Central City, and wields a cold gun during the commission of their crimes.",https://comicvine.gamespot.com/captain-cold/4005-2392/,"Citizen Cold
+Kid Kold
+Len Snart
+Leonard Snart
+Leonards Wynters
+The Man Who Mastered Absolute Zero",1,,Leonard Snart
+131891,Bloodletter,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5372876-suicide%20squad%20most%20wanted%20-%20el%20diablo%20and%20boomerang%20001-018.jpg,Gang member turned soldier by an ambitious general,https://comicvine.gamespot.com/bloodletter/4005-131891/,None,1,,None
+1698,Catwoman,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/5555748-0765257915-3301a.jpg,"Catwoman, the costumed alias persona of Selina Kyle, is a cat burglar with an on-again, off-again, romantic relationship with Batman. She is shown as a woman who is very strong-willed, independent and morally dubious.",https://comicvine.gamespot.com/catwoman/4005-1698/,Selina Kyle; Selina Falcone; Selina Wayne; Batwoman; Belinda,2,"Mar 14, 1975",Selina Kyle
+3188,Beak,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/76894-138657-beak.jpg,"Beak's mutation manifested at puberty, developing into a humanoid/avian hybrid much like the physiology found in flightless birds.  He is amongst the number of mutants depowered due to the events of M-Day, his body reverting back to human form.",https://comicvine.gamespot.com/beak/4005-3188/,Blackwing; Barnell Bohusk,1,,Barnell Bohusk
+10189,Big Sir,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/133860-87146-big-sir.jpg,"Big Sir is the superstrong, but mentally slow, member of the Injustice League. He has no special fighting skills, just a single-mindedness towards violence and destruction.",https://comicvine.gamespot.com/big-sir/4005-10189/,"Dufus P. Ratchet
+Frank Jones",1,,Dufus P. Ratchet
+126139,Afterthought,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5033057-screen%20shot%202016-02-03%20at%206.39.32%20am.png,"A member of the Suicide Squad with experimental implants that allow him to see a few seconds into his immediate future. This makes him a formidable hand-to-hand combatant, as he always knows what moves his enemy will make.",https://comicvine.gamespot.com/afterthought/4005-126139/,Afa,1,,Afa
+8344,Cheetah (Minerva),Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/5529023-cheetah690.jpg,"Barbara Ann Minerva was an archaeologist who used an ancient ritual to turn herself into the avatar of Urzkartaga, but because she didn't meet the requirement of virginity, she was cursed by the god to suffer from an unending hunger for human flesh.",https://comicvine.gamespot.com/cheetah-minerva/4005-8344/,Barbara Ann Minerva; Bride of Urzkartaga; Priscilla Rich; Deborah Domaine; Sabrina Ballesteros,2,,Barbara Ann Minerva
+4918,Dr. Psycho,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/6049751-psycho.jpg,Doctor Psycho is a murderous psychopath with an intense hatred of women. He is a telepathic super-villain with mind control powers who acts as an enemy to Wonder Woman. His insane motives are violently sadistic.,https://comicvine.gamespot.com/dr-psycho/4005-4918/,"Doctor Psycho
+Dr. Psycho
+Edgar Cizko
+Captain Wonder
+Leon Zeiko",1,,Edgar Cizko
+4568,Black Tom Cassidy,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/134777-112211-black-tom-cassidy.jpg,"A mutant criminal, Sean Cassidy's cousin, and the Juggernaut's former partner.",https://comicvine.gamespot.com/black-tom-cassidy/4005-4568/,"Thomas Samuel Eamon Cassidy
+Black Tom
+Barrington
+Mr. Thomas Smalls
+The Viper",1,,Thomas Samuel Eamon Cassidy
+42873,Everyman,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/244940-81502-everyman.jpg,"Everyman received his superpowers from Lex Luthor's Everyman Project.
+He was part of Luthor's Infinity Inc.",https://comicvine.gamespot.com/everyman/4005-42873/,"Hannibal Bates
+Everyman
+Skyman
+Oliver Queen
+Dark Arrow
+Sarge Steel",1,,Hannibal Bates
+1699,Batman,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/6198653-batman%2012.jpg,"Bruce Wayne, who witnessed the murder of his multi-millionaire parents as a child, swore to avenge their deaths. He trained extensively to achieve mental and physical perfection, mastering martial arts, detective skills, and criminal psychology. Costumed as a bat to prey on the fears of criminals, and utilizing a high-tech arsenal, he became the legendary Batman.",https://comicvine.gamespot.com/batman/4005-1699/,Bruce Wayne; The Caped Crusader; The Dark Knight; The World's Greatest Detective; The Dark Knight Detective,1,"Feb 19, 1972",Bruce Wayne
+116956,Bonnie,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/4924738-screen%20shot%202015-11-23%20at%2010.38.11%20am.png,Assistant to Amanda Waller in the newly-redesigned Belle Reve,https://comicvine.gamespot.com/bonnie/4005-116956/,None,2,,None
+4916,Black Adam,Injustice League,God/Eternal,https://comicvine.gamespot.com/api/image/square_avatar/2432749-screen_shot_2012_06_27_at_4.51.45_pm.png,"The original champion of the Wizard, Black Adam's disdain for morality and hunger for power were punished with eternal imprisonment within the tomb of Ramesses II. Following his escape, he usurped the throne of Kahndaq by force, and has become one of the most powerful enemies of Billy Batson, the superhero known as Shazam.",https://comicvine.gamespot.com/black-adam/4005-4916/,Teth-Adam; The Mighty Adam; Theo Adam; Khem-Adam; Mighty Adam,1,,Teth-Adam
+14868,Amelia Voght,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/1875204-amelia__1_.jpg,Voght was a former nurse and partner to Charles Xavier. She left Xavier after he began forming the X-Men and later joined Magneto's Acolytes.,https://comicvine.gamespot.com/amelia-voght/4005-14868/,Amelia C. Voght,2,,Amelia C. Voght
+14896,Alysande Stuart,X Men,Human,https://comicvine.gamespot.com/api/image/square_avatar/5772005-alysande_stuart_%28earth-616%29_from_excalibur_vol_1_30_001.png,"Alysande is the twin sister of Alistaire Stewart and a Brigadier in the Weird Happenings Organization, otherwise known as W.H.O.",https://comicvine.gamespot.com/alysande-stuart/4005-14896/,"Brigadier Stuart
+Sandy Stuart",2,,None
+146014,Akando,Suicide Squad,Animal,https://comicvine.gamespot.com/api/image/square_avatar/6293578-akando_prime_earth_0001.jpg,New member of the Suicide Squad with ties to the Red,https://comicvine.gamespot.com/akando/4005-146014/,None,1,,None
+6263,Dr. Sivana,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/3134428-sivanna.png,"Dr. Sivana is a scientific genius and is one of Captain Marvel's archenemies. He has also been involved with other heroes in the DC universe, and is regularly seen as part of supervillain team-ups.",https://comicvine.gamespot.com/dr-sivana/4005-6263/,"Thaddeus Bodog Sivana
+Doctor Sivana
+Dr. Sivana
+Sivana
+The World's Wickedest Scientist",1,,Thaddeus Bodog Sivana
+1462,Beast,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5271307-4665552949-5204563-5589293201-latest,"A founding member of the X-Men, Dr. Hank McCoy is a mutant possessing animal-like strength and agility. Despite being covered in blue fur and resembling a ferocious beast, Hank possesses an astounding intellect and a superb wit. He is currently helping run the Jean Grey School, while also serving with the Avengers.",https://comicvine.gamespot.com/beast/4005-1462/,Dr. Hank McCoy; Magilla Gorilla; Golden Armed Boy; Mutate #666; Beastmaster,1,,Henry Philip McCoy
+152950,Alchemaster,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/6678429-alchemaster.jpg,Alchemist and recruit of the Suicide Squad.,https://comicvine.gamespot.com/alchemaster/4005-152950/,None,1,,Hans Rischar
+15111,Black Box,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/141273-37189-commcast.jpg,"Black Box, formerly known as Commcast, is a cyberpath who used to work with Cable.",https://comicvine.gamespot.com/black-box/4005-15111/,"Garabed Bashur
+Commcast
+Black Box",1,,Garabed Bashur
+3583,Arthur Light,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/3533765-%24_57.jpg,"Dr. Light is a recurring enemy of the Justice League and the Teen Titans, manipulating light energy for various nefarious purposes.",https://comicvine.gamespot.com/arthur-light/4005-3583/,"Arthur Light
+Doctor Light
+Dr. Light
+Dr Light",1,,Arthur Light
+5702,Black Orchid,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5540835-img_5946.jpg,"Susan Linden-Thorne was the original Black Orchid who could fight crime by infiltrating criminals using her perfect disguises. Stuck in an abusive marriage, Susan was revived by her scientist friend into a plant/human hybrid after being killed by her husband. She was later killed while trying to infiltrate LexCorp. Two of her plant hybrid clones survived and became the new Black Orchids.",https://comicvine.gamespot.com/black-orchid/4005-5702/,Susan Linden-Thorne,2,,Susan Linden-Thorne
+40597,Blindfold,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/2800972-blindfoldlegacy4mainpic.png,"Though Blindfold has no eyes, she can see better than most. A prescient gifted with the power to foresee the future before it happens, she is now a student at the Jean Grey School for Higher Learning.",https://comicvine.gamespot.com/blindfold/4005-40597/,Ruth Aldine,2,,Ruth Aldine
+3583,Arthur Light,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/3533765-%24_57.jpg,"Dr. Light is a recurring enemy of the Justice League and the Teen Titans, manipulating light energy for various nefarious purposes.",https://comicvine.gamespot.com/arthur-light/4005-3583/,"Arthur Light
+Doctor Light
+Dr. Light
+Dr Light",1,,Arthur Light
+4916,Black Adam,Suicide Squad,God/Eternal,https://comicvine.gamespot.com/api/image/square_avatar/2432749-screen_shot_2012_06_27_at_4.51.45_pm.png,"The original champion of the Wizard, Black Adam's disdain for morality and hunger for power were punished with eternal imprisonment within the tomb of Ramesses II. Following his escape, he usurped the throne of Kahndaq by force, and has become one of the most powerful enemies of Billy Batson, the superhero known as Shazam.",https://comicvine.gamespot.com/black-adam/4005-4916/,Teth-Adam; The Mighty Adam; Theo Adam; Khem-Adam; Mighty Adam,1,,Teth-Adam
+5812,Black Spider,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/5403082-1472239104156.png,He tends to use the latest in high tech weaponry such as laser assisted rifles. He is an Olympic level athlete and has trained intensely in many forms of physical combat. There have been three that have taken on the identity.,https://comicvine.gamespot.com/black-spider/4005-5812/,"Eric Needham
+Johnny LaMonica
+
+",1,,Derrick Coe
+3189,Aurora,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/6163413-aurora.jpg,"Aurora, the twin sister of Northstar, was a founding member of Alpha Flight. She also suffers from dissociative identity disorder, which often causes her to be caught in precarious situations.",https://comicvine.gamespot.com/aurora/4005-3189/,"Jeanne-Marie Beaubier
+Aurora Trigger",2,,Jeanne-Marie Beaubier
+10004,Chemo,Injustice League,Other,https://comicvine.gamespot.com/api/image/square_avatar/745281-chemo.jpg,"Composed of an unknown combination of experimental chemicals, the creature called Chemo is a living WMD, possessing a unique form of pseudo-life that gives him a primitive, evil intelligence.",https://comicvine.gamespot.com/chemo/4005-10004/,None,1,,None
+40815,Blackguard,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/213850-137326-blackguard.jpg,Blackguard was a short-lived solo super-villain and operative for *The 1000*. He was deemed a failure and The Directer of the 1000 with the aid of Mindancer attempted to kill him (Booster Gold 1986 #3),https://comicvine.gamespot.com/blackguard/4005-40815/,"Richard Hertz
+Dick Hertz",1,,Richard Hertz
+29255,Alchemy,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/6513741-thomas_jones_%28earth-616%29_from_death_of_x_vol_1_4_001.jpg,A mutant teen who can turn any substance into another chemical element. He often has trouble with trolls.,https://comicvine.gamespot.com/alchemy/4005-29255/,None,1,,Thomas Jones
+15108,Adam X,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/6513750-adam_neramani_%28earth-616%29_from_captain_marvel_vol_3_3_001.jpg,"Adam-X has the power to ""flash fry"" or burn the blood of an adversary once it has been oxygenated, usually done by opening a wound on them using his Thet'je blades.",https://comicvine.gamespot.com/adam-x/4005-15108/,Adam Neramani; Adam X-Treme; The X-Treme; Forsaken One; Burner,1,,Adam Neramani
+15127,Archer,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/285162-52924-archer.jpg,"Reigning from the distant future of Earth #1191, Archer was a member of the X.S.E. But unhappy and feeling that his beliefs differed from the X.S.E., he became a member of the X.U.E. to be more proactive.",https://comicvine.gamespot.com/archer/4005-15127/,Jude Black,1,,Unknown
+4920,Amanda Waller,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/6061590-suicide%20squad%20008.jpg,"A high-level government bureaucrat with an almost completely classified record, Amanda Waller is the ruthless creator and director of Task Force X - better known as the Suicide Squad.",https://comicvine.gamespot.com/amanda-waller/4005-4920/,"
+Doctor Waller
+Mama Waller
+Mockingbird
+Ms. Waller
+White Queen
+The Wall",2,,Amanda Blake Waller
+14552,Beautiful Dreamer,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/492275-beautifuldreamer.jpg,A Morlock telepath with the ability to alter other peoples memories.,https://comicvine.gamespot.com/beautiful-dreamer/4005-14552/,"Ilona Bean
+Dreamer ",2,,None
+132952,Azucar,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/5447436-suicide%20squad%20most%20wanted%20-%20el%20diablo%20and%20boomerang%20%282016-%29%20002-019.jpg,Mysterious woman from Gotham who met El Diablo in Metropolis.,https://comicvine.gamespot.com/azucar/4005-132952/,Veronica Lopez,2,,Veronica Lopez
+8263,Blockbuster,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/2185500-blockbuster.jpg,Mark Desmond was a chemist whose experiments intending to increase his strength turned him into a mindless monster.,https://comicvine.gamespot.com/blockbuster/4005-8263/,"Mark Desmond
+Blockbuster",1,,Mark Desmond
+3553,Avalanche,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/3138020-villainsforhire00104.jpg,A former member of the Brotherhood of Evil Mutants and Freedom Force.  Avalanche has the ability to create vibratory waves that affects inorganic matter.  He often uses his power to affect the earth.,https://comicvine.gamespot.com/avalanche/4005-3553/,Dominikos Ioannis Petrakis; Avalanche; Jon Bloom; Dominic Szilard; Dominic Janos Petros,1,,Dominikos Ioannis Petrakis
+23368,Air Wave,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/194960-104295-air-wave-iii.jpg,"When he turned seventeen, young Hal Jordan (cousin of the famous Hal Jordan, Green Lantern) was given the costume of his father, the Golden Age Air Wave. Hal became the new Air Wave, able to convert and manipulate radio waves. Air Wave died during the Infinite Crisis.",https://comicvine.gamespot.com/air-wave/4005-23368/,"Air Wave
+Harold Jordan
+Hal Jordan
+Larry Jordan
+Maser",1,,Harold Lawrence Jordan
+3588,Deathstroke,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/6421465-7189769152-64211.jpg,"Genetically engineered to surpass all human limits, Slade Wilson was once a soldier but now works as one of the most feared assassins in the DC Universe. He has frequently clashed with the Teen Titans, Batman, the Justice League, Green Arrow, and even gods!",https://comicvine.gamespot.com/deathstroke/4005-3588/,Deathstroke the Terminator; Slade Wilson; The Balkan; Raptor; Twilight,1,,Slade Joseph Wilson
+125503,Bailey Hoskins,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/4985516-bailey-hoskins.jpg,Bailey Hoskins is a mutant selected to join the X-Men but he can only use his powers once.,https://comicvine.gamespot.com/bailey-hoskins/4005-125503/,X-Ceptional,1,,Bailey Hoskins
+10574,Artie Maddicks,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5494072-artiexmen92.jpg,"Arthur ""Artie"" Maddicks is a mute mutant telepath who communicates by telepathically projecting images. Artie is best known as the sidekick and best friend of Leech. He was depowered due to the events of M-Day.",https://comicvine.gamespot.com/artie-maddicks/4005-10574/,Arthur Maddicks,1,,Arthur Maddicks
+19089,Doctor Alchemy,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/746603-alchemy_1.jpg,"Albert Desmond used a special gun to commit crimes as Mr. Element.  Later, he discovered the fabled Philosopher's Stone and used it to do battle with a number of heroes, most often the Flash.",https://comicvine.gamespot.com/doctor-alchemy/4005-19089/,Mr. Element; Albert Desmond; Dr. Alchemy; Alvin Desmond; Mister Element,1,,Albert Desmond
+30056,Bird-Brain,X Men,Animal,https://comicvine.gamespot.com/api/image/square_avatar/2893428-ohotmu_x_men__1___page_10.jpg,"A human-bird hybrid Ani-Mate who escaped from 'Paradise' Island, Bird-Brain was adopted by the New Mutants.  His attempts to help his fellow Ani-Mates led to the tragic death of Cypher.",https://comicvine.gamespot.com/bird-brain/4005-30056/,"Bird Brain
+Bird Boy",1,,Bird Brain
+10187,Cluemaster,Injustice League,Human,https://comicvine.gamespot.com/api/image/square_avatar/3932935-img_0231.png,"Cluemaster was once known as Arthur Brown, a failed game show host who turned to a life of crime, leaving trademark clues as to his actions. He had a daughter, Stephanie, who took up the name Spoiler. After Stephanie's death revenge becomes his only goal.",https://comicvine.gamespot.com/cluemaster/4005-10187/,"Aaron Black
+Arthur Brown
+Cluemeister
+The Client
+The Reformer",1,,Arthur Brown
+9548,Despero,Injustice League,Alien,https://comicvine.gamespot.com/api/image/square_avatar/2992356-df.png,"One of the Justice League's oldest foes, Despero was transformed by the Flame of Pytar into a galactic tyrant whose psychic might is matched only by his prowess as a physical juggernaut.",https://comicvine.gamespot.com/despero/4005-9548/,"Despero the Reborn
+Destroyer of Worlds",1,,Despero
+10189,Big Sir,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/133860-87146-big-sir.jpg,"Big Sir is the superstrong, but mentally slow, member of the Injustice League. He has no special fighting skills, just a single-mindedness towards violence and destruction.",https://comicvine.gamespot.com/big-sir/4005-10189/,"Dufus P. Ratchet
+Frank Jones",1,,Dufus P. Ratchet
+2112,Angel,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5053055-4623273865-UNCX2.jpg,"A mutant and original member of the X-Men, Warren received his angelic wings at a young age along with a unique healing factor in his blood. After being twisted into a weapon of Apocalypse, Warren became the cold and distant Archangel. In the years since then, he's gone back and forth between his two identities.",https://comicvine.gamespot.com/angel/4005-2112/,Angel; Warren Worthington III; Dark Angel; Avenging Angel; The Fallen,1,,Warren Kenneth Worthington III
+40669,Bling!,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5775800-roxy%20washington%20aka%20bling!%202.png,"Bling! was a student at the Xavier Institute for Higher Learning. A young mutant in training, she eventually joined the X-Men to help them battle Apocalypse. She later was placed among the younger students and X-Men-in-Training and eventually became a fully-fledged member of the X-Men again after they relocated to Utopia. Placed alongside the other teenage mutants again, she currently studies at the Jean Grey Academy.",https://comicvine.gamespot.com/bling/4005-40669/,"Roxanne Washington
+Roxy Washington
+Roxie",2,,Roxanne Washington
+1503,Bishop,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/3383271-jj.jpg,"Lucas Bishop is a mutant from the 22nd century that traveled into the past, becoming a member of the X-Men, and later, the Uncanny X-Force. He has the power to channel kinetic energy, releasing it generally through beams of energy.",https://comicvine.gamespot.com/bishop/4005-1503/,"Lucas Bishop
+Luke Bishop
+Arch-Bishop",1,,Lucas Bishop
+40458,Anole,X Men,Mutant,https://comicvine.gamespot.com/api/image/square_avatar/5541897-victor_borkowski_%28earth-616%29_exm.jpg,"The reptilian mutant known as Anole was a student at the Xavier Institute. Openly gay and leader of the Alpha Squadron, he was recently promoted to the New X-Men squad before it was disbanded and is currently a member of the Young X-Men. He is currently enrolled at the Jean Grey School for Higher Learning.",https://comicvine.gamespot.com/anole/4005-40458/,Vic,1,,Victor Borkowski
+8345,Black Manta,Suicide Squad,Human,https://comicvine.gamespot.com/api/image/square_avatar/2344623-aqm_cv12.jpg,"A notorious pirate and assassin, Black Manta is one of the most ruthless and feared super villains on Earth, and Aquaman's mortal enemy.",https://comicvine.gamespot.com/black-manta/4005-8345/,"Devil Ray
+Scourge of the Seven Seas
+Ray Delane
+Fisher King
+David Hyde",1,,David Hyde

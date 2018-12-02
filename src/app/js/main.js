@@ -27,12 +27,16 @@ const marginChord = {top: 10, right: 10, bottom: 10, left: 10},
 
 // Colors based on the groups
 const lookupColorCharacterId = {
-    'Human': "#7f5579",
-    'Alien': "#41cd38",
-    'Animal': "#1f787c",
-    'Mutant': "#2d4a5a",
-    'God/Eternal': "#d5d505",
-    'Other': "#7e7878"
+    'Human': "#DB7093",
+    'Alien': "#3CB371",
+    'Animal': "#8B4513",
+    'Mutant': "#006400",
+    'God/Eternal': "#FFD700",
+    'Other': "#7e7878",
+    'Cyborg':"#2F4F4F",
+    'Infection':"#00FFFF",
+    'Robot':"#4B0082",
+    'Radiation':"#B22222"
 };
 
 function drawChord(matrix, labels) { // try to improve those callings and refactor

@@ -422,6 +422,21 @@ loadChords();
 d3.select("#clear_button")
     .style("opacity", 0)
     .on("click", returnAllCharacterIds);
+
+// Timeline
+var testData = [
+    {times: [{"starting_time": 1355752800000,
+            "display": "circle"}, {"starting_time": 1355767900000, "ending_time": 1355774400000}]},
+    {times: [{"starting_time": 1355759910000,
+            "display":"circle"}, ]},
+    {times: [{"starting_time": 1355761910000, "ending_time": 1355763910000}]}
+];
+
+var timeline = d3v3.timeline();
+
+d3v3.select("#timeline").append("svg").attr("width", widthChord)
+    .datum(testData).call(timeline);
+
 	
 //Parsets
 var chart = d3v3.parsets()

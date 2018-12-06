@@ -425,17 +425,29 @@ d3.select("#clear_button")
 
 // Timeline
 var testData = [
-    {times: [{"starting_time": 1355752800000,
-            "display": "circle"}, {"starting_time": 1355767900000, "ending_time": 1355774400000}]},
-    {times: [{"starting_time": 1355759910000,
-            "display":"circle"}, ]},
-    {times: [{"starting_time": 1355761910000, "ending_time": 1355763910000}]}
+    {times: [{"starting_time": 1355752800000}, {"starting_time": 1355767900000, "ending_time": 1355774400000}]},
+    {times: [{label: "first female character", "starting_time": 1355759910000 }], id: 1488},
+    {times: [{label: "first gay character", "starting_time": 1355761910000}]}
 ];
 
-var timeline = d3v3.timeline();
+var timeline = d3v3.timeline()
+    .display("circle")
+    // .beginning(1355752800000) // we can optionally add beginning and ending times to speed up rendering a little
+    // .ending(1355774400000)
+    .tickFormat({
+        format: d3v3.time.format("%Y"),
+        tickTime: d3v3.time.hours,
+        tickInterval: 1,
+        tickSize: 6
+    })
+    .stack()
+    .click((d, i, datum) => {console.log(datum)});
 
-d3v3.select("#timeline").append("svg").attr("width", widthChord)
-    .datum(testData).call(timeline);
+d3v3.select("#timeline")
+    .append("svg")
+    .attr("width", widthChord)
+    .datum(testData)
+    .call(timeline);
 
 	
 //Parsets

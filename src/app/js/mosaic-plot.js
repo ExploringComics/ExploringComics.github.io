@@ -77,7 +77,7 @@ d3.components.mosaicPlot = {
     show: false,
     stroke: 'none',
     fill: '#fff',
-    fontSize: '1.8%',
+    fontSize: '1.4%',
     minWidth: '3%',
     minHeight: '1%',
     text: function (d) {
@@ -193,7 +193,7 @@ d3.mosaicPlot = function (data, options) {
       var rowRatio = rowValues[index] / rowAverage;
       var rowData = data.filter(function (d) {
         return d.row === row;
-      })
+      });
       var groupValues = groups.map(function (group) {
         return d3.sum(rowData, function (d) {
           return String(d.series) === group ? d.value : 0;
@@ -206,7 +206,7 @@ d3.mosaicPlot = function (data, options) {
           ratio: groupRatio,
           offset: rowOffset
         });
-        rowOffset += groupRatio - 1;
+        rowOffset += 0.4//groupRatio - 1;
       });
       if (index === 0) {
         firstRowOffset = rowOffset;

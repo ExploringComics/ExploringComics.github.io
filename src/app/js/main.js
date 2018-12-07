@@ -471,26 +471,28 @@ d3.json('data/mosaic_ch.json', function (data) {
 	  rows: ['Black Hair', 'Brown Hair', 'Blond Hair', 'Red Hair', 'No Hair'],
 	  columns: ['Brown Eyes', 'Blue Eyes', 'Green Eyes', 'Red Eyes', 'Black Eyes'],
 	  series: ['Female Characters', 'Male Characters'],
-	  colorScheme: ['#e2272a', '#00a037'],
+	  colorScheme: ['#fc363b', '#2766f6'],
 	  scaleZ: {
 		uniform: false,
-		independent: true,
-		paddingMidst: 0.02,
-		
+		independent: false,
+		paddingMidst: 0.05,
+
 	  },
 	  scaleY: {
 		uniform: false,
 		independent:true,
-		paddingInner: 0.2,
-		paddingOuter: 0,
-		paddingMidst: 0
+		paddingInner: 0.6,
+		//paddingOuter: 0.1,
+		// paddingMidst: 0
 	  },
 	  scaleX: {
 		uniform: false,
-		paddingInner: 0.05,
-		paddingOuter: 0,
-		paddingMidst: 0
+        independent:true,
+		paddingInner: 0.08,
+		// paddingOuter: 0,
+		// paddingMidst: 0
 	  },
+
 	  labels: {
 		show: true
 	  },
@@ -503,7 +505,7 @@ d3.json('data/mosaic_ch.json', function (data) {
 		  html += '<br/>Count: ' + d.value;
 		  if (d.image && d.name) {
 			html += '<br/>Representative: ' + d.name;
-			html += "<br/><img src=\"" + d.image + "\" style=\"width:250px;height:375px;\"/>"
+			html += "<br/><img src=\"" + d.image + "\" style=\"width:150px;height:175px;\"/>"
 		  }
 		  return html;
 		}

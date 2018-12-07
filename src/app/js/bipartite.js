@@ -48,7 +48,7 @@ var g = svgBp.append("g").attr("transform","translate(200,50)");
 var bp=viz.bP()
     .data(data)
     .min(12)
-    .pad(1)
+    .pad(5)
     .height(600)
     .width(500)
     .barSize(35)

@@ -11,6 +11,70 @@ let characterPopupBox;
 let characterInfoBox;
 let lastLayout; //store layout between updates
 
+// Colors based on the groups
+const genderColor = {
+    '0': "#FFD700",
+    '1': "#3CB371",
+    '2': "#DB7093"
+};
+
+// Colors based on the groups
+const originColor = {
+    'Human': "#DB7093",
+    'Alien': "#3CB371",
+    'Animal': "#8B4513",
+    'Mutant': "#006400",
+    'God/Eternal': "#FFD700",
+    'Other': "#7e7878",
+    'Cyborg':"#2F4F4F",
+    'Infection':"#00FFFF",
+    'Robot':"#4B0082",
+    'Radiation':"#B22222"
+};
+
+// Colors based on the groups
+const teamColor = {
+    'avengers': "#DB7093",
+    'defenders': "#3CB371",
+    'guardians-of-the-galaxy': "#8B4513",
+    'hydra': "#006400",
+    'injustice-league': "#FFD700",
+    'justice-league': "#7e7878",
+    'masters-of-evil':"#2F4F4F",
+    'shield':"#00FFFF",
+    'suicide-squad':"#4B0082",
+    'x-men':"#B22222"
+};
+
+
+var lookupColorCharacterId = teamColor
+var colorField = 'team'
+
+$('input[type=radio][name=options]').change(function() {
+    if (this.id == 'gender') {
+        lookupColorCharacterId = genderColor;
+		colorField = 'gender'
+		loadChords();
+    }
+    else if (this.id == 'origin') {
+        lookupColorCharacterId = originColor;
+		colorField = 'characterOrigin'
+		loadChords();
+    }
+	else if (this.id == 'team') {
+        lookupColorCharacterId = teamColor;
+		colorField = 'team'
+		loadChords();
+    }
+	//color buttons
+	/*console.log('gender', $("input:radio[id=gender]").prop('checked'));
+	console.log('origin', $("input:radio[id=origin]").prop('checked'));
+	console.log('team', $("input:radio[id=team]").prop('checked'));*/
+});
+
+
+
+
 //let colorCharacterId = '#008080';
 
 // size of the visualization
@@ -25,19 +89,7 @@ const marginChord = {top: 10, right: 10, bottom: 10, left: 10},
     widthChord = wChord - marginChord.left - marginChord.right,
     heightChord = hChord - marginChord.top - marginChord.bottom;
 
-// Colors based on the groups
-const lookupColorCharacterId = {
-    'Human': "#DB7093",
-    'Alien': "#3CB371",
-    'Animal': "#8B4513",
-    'Mutant': "#006400",
-    'God/Eternal': "#FFD700",
-    'Other': "#7e7878",
-    'Cyborg':"#2F4F4F",
-    'Infection':"#00FFFF",
-    'Robot':"#4B0082",
-    'Radiation':"#B22222"
-};
+
 
 function drawChord(matrix, labels) { // try to improve those callings and refactor
     /**
@@ -55,11 +107,11 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
     let chord = d3.chord().padAngle(paddingChord);
 
     if(firstCall){
-        characterPopupBox = d3.select("#chord")
+        /*characterPopupBox = d3.select("#chord")
             .append("div")
             .attr("class", "character-popup-box")
             .attr("id", "character-popup-box")
-            .style("visibility", "hidden");
+            .style("visibility", "hidden");*/
 
         characterInfoBox = d3.select("#chord")
             .append("div")
@@ -125,10 +177,10 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
 
     let paths = g.append("path")
         .style("stroke", function (d) {
-            return d => d3.rgb(lookupColorCharacterId[labels[d.index]['characterOrigin']]).darker() //lookupColorCharacterId[labels[d.index]['characterOrigin']];
+            return d => d3.rgb(lookupColorCharacterId[labels[d.index][colorField]]).darker() //lookupColorCharacterId[labels[d.index]['characterOrigin']];
         })
         .style("fill", function (d) {
-            return lookupColorCharacterId[labels[d.index]['characterOrigin']];
+            return lookupColorCharacterId[labels[d.index][colorField]];
         })
         .style("stroke", "black")
         .style("opacity", 0.7)
@@ -188,11 +240,11 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
             if (showInfos === "visible") {
 
                 // Fill in popup box
-                let characterId = labels[i]['characterId'];
+                //let characterId = labels[i]['characterId'];
                 let characterImage = labels[i]['characterImage'];
                 let characterOrigin = labels[i]['characterOrigin'];
                 let characterName = labels[i]['characterName'];
-                let characterGender = ((labels[i]['gender']===1) ? 'Male' : 'Female');
+                let characterGender = ((labels[i]['gender']==='1') ? 'Male' : (labels[i]['gender']==='2') ? 'Female': 'Other');
                 let characterDeck = labels[i]['deck'];
                 let characterUrl = labels[i]['siteDetailUrl'];
                 let characterAliases = labels[i]['aliases'];
@@ -200,7 +252,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
                 let characterRealName = labels[i]['realName'];
 
                 // clear previous text in the box
-                let list = document.getElementById("character-popup-box");
+                /*let list = document.getElementById("character-popup-box");
                 if (list.hasChildNodes()) {
                     while (list.hasChildNodes()) {
                         list.removeChild(list.firstChild);
@@ -217,7 +269,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
                 div.className = "title-character-popup-box";
                 div.innerHTML = "<b>Origin:</b> " + characterOrigin +
                     "<img src=\"" + characterImage + "\" alt=\"Flowers in Chania\" style=\"width:80px;height:80px;\">";
-                document.getElementById('character-popup-box').appendChild(div);
+                document.getElementById('character-popup-box').appendChild(div);*/
 
                 // Fill in info box
                 // clear previous text in the box
@@ -238,7 +290,6 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
                 //div.className = "title-character-info-box";
                 div.innerHTML = "<div class=\"row\">" +
                     "<div class=\"col-lg-6 col-md-6 col-sm-6\" style='font-size: 9pt'>" +
-                        "<p><b>Id:</b> " + characterId + "</p>" +
                         "<p><b>Real Name:</b> " + characterRealName + "</p>" +
                         "<p><b>Aliases:</b> " + characterAliases + "</p>" +
                         "<p><b>Birth:</b> " + characterBirth + "</p>" +
@@ -258,10 +309,10 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
 
             }
 
-            characterPopupBox
+            /*characterPopupBox
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 50) + "px")
-                .style("visibility", showInfos);
+                .style("visibility", showInfos);*/
 
             characterInfoBox
                 .style("left", (svg.width) + "px")

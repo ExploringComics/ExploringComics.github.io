@@ -1,686 +1,410 @@
+//  A timeline component for d3
 
-(function () {
-    d3v3.timeline = function() {
-        var DISPLAY_TYPES = ["circle", "rect"];
+function timeline(domElement) {
 
-        var hover = function () {},
-            mouseover = function () {},
-            mouseout = function () {},
-            click = function () {},
-            scroll = function () {},
-            labelFunction = function(label) { return label; },
-            navigateLeft = function () {},
-            navigateRight = function () {},
-            orient = "bottom",
-            width = null,
-            height = null,
-            rowSeparatorsColor = null,
-            backgroundColor = null,
-            tickFormat = { format: d3v3.time.format("%I %p"),
-                tickTime: d3v3.time.hours,
-                tickInterval: 1,
-                tickSize: 6,
-                tickValues: null
-            },
-            colorCycle = d3v3.scale.category20(),
-            colorPropertyName = null,
-            display = "rect",
-            beginning = 0,
-            labelMargin = 0,
-            ending = 0,
-            margin = {left: 30, right:30, top: 30, bottom:30},
-            stacked = false,
-            rotateTicks = false,
-            timeIsRelative = false,
-            fullLengthBackgrounds = false,
-            itemHeight = 20,
-            itemMargin = 5,
-            navMargin = 60,
-            showTimeAxis = true,
-            showAxisTop = false,
-            showTodayLine = false,
-            timeAxisTick = false,
-            timeAxisTickFormat = {stroke: "stroke-dasharray", spacing: "4 10"},
-            showTodayFormat = {marginTop: 25, marginBottom: 0, width: 1, color: colorCycle},
-            showBorderLine = false,
-            showBorderFormat = {marginTop: 25, marginBottom: 0, width: 1, color: colorCycle},
-            showAxisHeaderBackground = false,
-            showAxisNav = false,
-            showAxisCalendarYear = false,
-            axisBgColor = "white",
-            chartData = {}
-        ;
+    //--------------------------------------------------------------------------
+    //
+    // chart
+    //
 
-        var appendTimeAxis = function(g, xAxis, yPosition) {
+    // chart geometry
+    var margin = {top: 20, right: 20, bottom: 20, left: 20},
+        outerWidth = 960,
+        outerHeight = 500,
+        width = outerWidth - margin.left - margin.right,
+        height = outerHeight - margin.top - margin.bottom;
 
-            if(showAxisHeaderBackground){ appendAxisHeaderBackground(g, 0, 0); }
+    // global timeline variables
+    var timeline = {},   // The timeline
+        data = {},       // Container for the data
+        components = [], // All the components of the timeline for redrawing
+        bandGap = 25,    // Arbitray gap between to consecutive bands
+        bands = {},      // Registry for all the bands in the timeline
+        bandY = 0,       // Y-Position of the next band
+        bandNum = 0;     // Count of bands for ids
 
-            if(showAxisNav){ appendTimeAxisNav(g) };
+    // Create svg element
+    var svg = d3v3.select(domElement).append("svg")
+        .attr("class", "svg")
+        .attr("id", "svg")
+        .attr("width", outerWidth)
+        .attr("height", outerHeight)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top +  ")");
 
-            var axis = g.append("g")
-                .attr("class", "axis")
-                .attr("transform", "translate(" + 0 + "," + yPosition + ")")
-                .call(xAxis);
-        };
+    svg.append("clipPath")
+        .attr("id", "chart-area")
+        .append("rect")
+        .attr("width", width)
+        .attr("height", height);
 
-        var appendTimeAxisCalendarYear = function (nav) {
-            var calendarLabel = beginning.getFullYear();
+    var chart = svg.append("g")
+        .attr("class", "chart")
+        .attr("clip-path", "url(#chart-area)" );
 
-            if (beginning.getFullYear() != ending.getFullYear()) {
-                calendarLabel = beginning.getFullYear() + "-" + ending.getFullYear()
-            }
+    //--------------------------------------------------------------------------
+    //
+    // data
+    //
 
-            nav.append("text")
-                .attr("transform", "translate(" + 20 + ", 0)")
-                .attr("x", 0)
-                .attr("y", 14)
-                .attr("class", "calendarYear")
-                .text(calendarLabel)
-            ;
-        };
-        var appendTimeAxisNav = function (g) {
-            var timelineBlocks = 6;
-            var leftNavMargin = (margin.left - navMargin);
-            var incrementValue = (width - margin.left)/timelineBlocks;
-            var rightNavMargin = (width - margin.right - incrementValue + navMargin);
+    timeline.data = function(items) {
 
-            var nav = g.append('g')
-                .attr("class", "axis")
-                .attr("transform", "translate(0, 20)")
-            ;
+        var today = new Date(),
+            tracks = [],
+            yearMillis = 31622400000,
+            instantOffset = 10 * yearMillis;
 
-            if(showAxisCalendarYear) { appendTimeAxisCalendarYear(nav) };
+        data.items = items;
 
-            nav.append("text")
-                .attr("transform", "translate(" + leftNavMargin + ", 0)")
-                .attr("x", 0)
-                .attr("y", 14)
-                .attr("class", "chevron")
-                .text("<")
-                .on("click", function () {
-                    return navigateLeft(beginning, chartData);
-                })
-            ;
-
-            nav.append("text")
-                .attr("transform", "translate(" + rightNavMargin + ", 0)")
-                .attr("x", 0)
-                .attr("y", 14)
-                .attr("class", "chevron")
-                .text(">")
-                .on("click", function () {
-                    return navigateRight(ending, chartData);
-                })
-            ;
-        };
-
-        var appendAxisHeaderBackground = function (g, xAxis, yAxis) {
-            g.insert("rect")
-                .attr("class", "row-green-bar")
-                .attr("x", xAxis)
-                .attr("width", width)
-                .attr("y", yAxis)
-                .attr("height", itemHeight)
-                .attr("fill", axisBgColor);
-        };
-
-        var appendTimeAxisTick = function(g, xAxis, maxStack) {
-            g.append("g")
-                .attr("class", "axis")
-                .attr("transform", "translate(" + 0 + "," + (margin.top + (itemHeight + itemMargin) * maxStack) + ")")
-                .attr(timeAxisTickFormat.stroke, timeAxisTickFormat.spacing)
-                .call(xAxis.tickFormat("").tickSize(-(margin.top + (itemHeight + itemMargin) * (maxStack - 1) + 3), 0, 0));
-        };
-
-        var appendBackgroundBar = function (yAxisMapping, index, g, data, datum) {
-            var greenbarYAxis = ((itemHeight + itemMargin) * yAxisMapping[index]) + margin.top;
-            g.selectAll("svg").data(data).enter()
-                .insert("rect")
-                .attr("class", "row-green-bar")
-                .attr("x", fullLengthBackgrounds ? 0 : margin.left)
-                .attr("width", fullLengthBackgrounds ? width : (width - margin.right - margin.left))
-                .attr("y", greenbarYAxis)
-                .attr("height", itemHeight)
-                .attr("fill", backgroundColor instanceof Function ? backgroundColor(datum, index) : backgroundColor)
-            ;
-        };
-
-        var appendLabel = function (gParent, yAxisMapping, index, hasLabel, datum) {
-            var fullItemHeight    = itemHeight + itemMargin;
-            var rowsDown          = margin.top + (fullItemHeight/2) + fullItemHeight * (yAxisMapping[index] || 1);
-
-            gParent.append("text")
-                .attr("class", "timeline-label")
-                .attr("transform", "translate(" + labelMargin + "," + rowsDown + ")")
-                .text(hasLabel ? labelFunction(datum.label) : datum.id)
-                .on("click", function (d, i) { click(d, index, datum); });
-        };
-
-        function timeline (gParent) {
-            var g = gParent.append("g");
-            var gParentSize = gParent[0][0].getBoundingClientRect();
-
-            var gParentItem = d3v3.select(gParent[0][0]);
-
-            var yAxisMapping = {},
-                maxStack = 1,
-                minTime = 0,
-                maxTime = 0;
-
-            setWidth();
-
-            // check if the user wants relative time
-            // if so, substract the first timestamp from each subsequent timestamps
-            if(timeIsRelative){
-                g.each(function (d, i) {
-                    d.forEach(function (datum, index) {
-                        datum.times.forEach(function (time, j) {
-                            if(index === 0 && j === 0){
-                                originTime = time.starting_time;               //Store the timestamp that will serve as origin
-                                time.starting_time = 0;                        //Set the origin
-                                time.ending_time = time.ending_time - originTime;     //Store the relative time (millis)
-                            }else{
-                                time.starting_time = time.starting_time - originTime;
-                                time.ending_time = time.ending_time - originTime;
-                            }
-                        });
-                    });
-                });
-            }
-
-            // check how many stacks we're gonna need
-            // do this here so that we can draw the axis before the graph
-            if (stacked || ending === 0 || beginning === 0) {
-                g.each(function (d, i) {
-                    d.forEach(function (datum, index) {
-
-                        // create y mapping for stacked graph
-                        if (stacked && Object.keys(yAxisMapping).indexOf(index) == -1) {
-                            yAxisMapping[index] = maxStack;
-                            maxStack++;
-                        }
-
-                        // figure out beginning and ending times if they are unspecified
-                        datum.times.forEach(function (time, i) {
-                            if(beginning === 0)
-                                if (time.starting_time < minTime || (minTime === 0 && timeIsRelative === false))
-                                    minTime = time.starting_time;
-                            if(ending === 0)
-                                if (time.ending_time > maxTime)
-                                    maxTime = time.ending_time;
-                        });
-                    });
-                });
-
-                if (ending === 0) {
-                    ending = maxTime;
-                }
-                if (beginning === 0) {
-                    beginning = minTime;
-                }
-            }
-
-            var scaleFactor = (1/(ending - beginning)) * (width - margin.left - margin.right);
-
-            // draw the axis
-            var xScale = d3v3.time.scale()
-                .domain([beginning, ending])
-                .range([margin.left, width - margin.right]);
-
-            var xAxis = d3v3.svg.axis()
-                .scale(xScale)
-                .orient(orient)
-                .tickFormat(tickFormat.format)
-                .tickSize(tickFormat.tickSize);
-
-            if (tickFormat.tickValues != null) {
-                xAxis.tickValues(tickFormat.tickValues);
-            } else {
-                xAxis.ticks(tickFormat.numTicks || tickFormat.tickTime, tickFormat.tickInterval);
-            }
-
-            // draw the chart
-            g.each(function(d, i) {
-                chartData = d;
-                d.forEach( function(datum, index){
-                    var data = datum.times;
-                    var hasLabel = (typeof(datum.label) != "undefined");
-
-                    // issue warning about using id per data set. Ids should be individual to data elements
-                    if (typeof(datum.id) != "undefined") {
-                        console.warn("d3Timeline Warning: Ids per dataset is deprecated in favor of a 'class' key. Ids are now per data element.");
-                    }
-
-                    if (backgroundColor) { appendBackgroundBar(yAxisMapping, index, g, data, datum); }
-
-                    g.selectAll("svg").data(data).enter()
-                        .append(function(d, i) {
-                            return document.createElementNS(d3v3.ns.prefix.svg, "display" in d? d.display:display);
-                        })
-                        .attr("x", getXPos)
-                        .attr("y", getStackPosition)
-                        .attr("width", function (d, i) {
-                            return (d.ending_time - d.starting_time) * scaleFactor;
-                        })
-                        .attr("cy", function(d, i) {
-                            return getStackPosition(d, i) + itemHeight/2;
-                        })
-                        .attr("cx", getXPos)
-                        .attr("r", itemHeight / 2)
-                        .attr("height", itemHeight)
-                        .style("fill", function(d, i){
-                            var dColorPropName;
-                            if (d.color) return d.color;
-                            if( colorPropertyName ){
-                                dColorPropName = d[colorPropertyName];
-                                if ( dColorPropName ) {
-                                    return colorCycle( dColorPropName );
-                                } else {
-                                    return colorCycle( datum[colorPropertyName] );
-                                }
-                            }
-                            return colorCycle(index);
-                        })
-                        .on("mousemove", function (d, i) {
-                            hover(d, index, datum);
-                        })
-                        .on("mouseover", function (d, i) {
-                            mouseover(d, i, datum);
-                        })
-                        .on("mouseout", function (d, i) {
-                            mouseout(d, i, datum);
-                        })
-                        .on("click", function (d, i) {
-                            click(d, index, datum);
-                        })
-                        .attr("class", function (d, i) {
-                            return datum.class ? "timelineSeries_"+datum.class : "timelineSeries_"+index;
-                        })
-                        .attr("id", function(d, i) {
-                            // use deprecated id field
-                            if (datum.id && !d.id) {
-                                return 'timelineItem_'+datum.id;
-                            }
-
-                            return d.id ? d.id : "timelineItem_"+index+"_"+i;
-                        })
-                    ;
-
-                    g.selectAll("svg").data(data).enter()
-                        .append("text")
-                        .attr("x", getXTextPos)
-                        .attr("y", getStackTextPosition)
-                        .text(function(d) {
-                            return d.label;
-                        })
-                    ;
-
-                    if (rowSeparatorsColor) {
-                        var lineYAxis = ( itemHeight + itemMargin / 2 + margin.top + (itemHeight + itemMargin) * yAxisMapping[index]);
-                        gParent.append("svg:line")
-                            .attr("class", "row-separator")
-                            .attr("x1", 0 + margin.left)
-                            .attr("x2", width - margin.right)
-                            .attr("y1", lineYAxis)
-                            .attr("y2", lineYAxis)
-                            .attr("stroke-width", 1)
-                            .attr("stroke", rowSeparatorsColor);
-                    }
-
-                    // add the label
-                    if (hasLabel) { appendLabel(gParent, yAxisMapping, index, hasLabel, datum); }
-
-                    if (typeof(datum.icon) !== "undefined") {
-                        gParent.append("image")
-                            .attr("class", "timeline-label")
-                            .attr("transform", "translate("+ 0 +","+ (margin.top + (itemHeight + itemMargin) * yAxisMapping[index])+")")
-                            .attr("xlink:href", datum.icon)
-                            .attr("width", margin.left)
-                            .attr("height", itemHeight);
-                    }
-
-                    function getStackPosition(d, i) {
-                        if (stacked) {
-                            return margin.top + (itemHeight + itemMargin) * yAxisMapping[index];
-                        }
-                        return margin.top;
-                    }
-                    function getStackTextPosition(d, i) {
-                        if (stacked) {
-                            return margin.top + (itemHeight + itemMargin) * yAxisMapping[index] + itemHeight * 0.75;
-                        }
-                        return margin.top + itemHeight * 0.75;
-                    }
-                });
-            });
-
-            var belowLastItem = (margin.top + (itemHeight + itemMargin) * maxStack);
-            var aboveFirstItem = margin.top;
-            var timeAxisYPosition = showAxisTop ? aboveFirstItem : belowLastItem;
-            if (showTimeAxis) { appendTimeAxis(g, xAxis, timeAxisYPosition); }
-            if (timeAxisTick) { appendTimeAxisTick(g, xAxis, maxStack); }
-
-            if (width > gParentSize.width) {
-                var move = function() {
-                    var x = Math.min(0, Math.max(gParentSize.width - width, d3v3.event.translate[0]));
-                    zoom.translate([x, 0]);
-                    g.attr("transform", "translate(" + x + ",0)");
-                    scroll(x*scaleFactor, xScale);
-                };
-
-                var zoom = d3v3.behavior.zoom().x(xScale).on("zoom", move);
-
-                gParent
-                    .attr("class", "scrollable")
-                    .call(zoom);
-            }
-
-            if (rotateTicks) {
-                g.selectAll(".tick text")
-                    .attr("transform", function(d) {
-                        return "rotate(" + rotateTicks + ")translate("
-                            + (this.getBBox().width / 2 + 10) + "," // TODO: change this 10
-                            + this.getBBox().height / 2 + ")";
-                    });
-            }
-
-            var gSize = g[0][0].getBoundingClientRect();
-            setHeight();
-
-            if (showBorderLine) {
-                g.each(function (d, i) {
-                    d.forEach(function (datum) {
-                        var times = datum.times;
-                        times.forEach(function (time) {
-                            appendLine(xScale(time.starting_time), showBorderFormat);
-                            appendLine(xScale(time.ending_time), showBorderFormat);
-                        });
-                    });
-                });
-            }
-
-            if (showTodayLine) {
-                var todayLine = xScale(new Date());
-                appendLine(todayLine, showTodayFormat);
-            }
-
-            function getXPos(d, i) {
-                return margin.left + (d.starting_time - beginning) * scaleFactor;
-            }
-
-            function getXTextPos(d, i) {
-                return margin.left + (d.starting_time - beginning) * scaleFactor + 5;
-            }
-
-            function setHeight() {
-                if (!height && !gParentItem.attr("height")) {
-                    if (itemHeight) {
-                        // set height based off of item height
-                        height = gSize.height + gSize.top - gParentSize.top;
-                        // set bounding rectangle height
-                        d3v3.select(gParent[0][0]).attr("height", height);
-                    } else {
-                        throw "height of the timeline is not set";
-                    }
-                } else {
-                    if (!height) {
-                        height = gParentItem.attr("height");
-                    } else {
-                        gParentItem.attr("height", height);
-                    }
-                }
-            }
-
-            function setWidth() {
-                if (!width && !gParentSize.width) {
-                    try {
-                        width = gParentItem.attr("width");
-                        if (!width) {
-                            throw "width of the timeline is not set. As of Firefox 27, timeline().with(x) needs to be explicitly set in order to render";
-                        }
-                    } catch (err) {
-                        console.log( err );
-                    }
-                } else if (!(width && gParentSize.width)) {
-                    try {
-                        width = gParentItem.attr("width");
-                    } catch (err) {
-                        console.log( err );
-                    }
-                }
-                // if both are set, do nothing
-            }
-
-            function appendLine(lineScale, lineFormat) {
-                gParent.append("svg:line")
-                    .attr("x1", lineScale)
-                    .attr("y1", lineFormat.marginTop)
-                    .attr("x2", lineScale)
-                    .attr("y2", height - lineFormat.marginBottom)
-                    .style("stroke", lineFormat.color)//"rgb(6,120,155)")
-                    .style("stroke-width", lineFormat.width);
-            }
-
+        function compareAscending(item1, item2) {
+            // Every item must have two fields: 'start' and 'end'.
+            var result = item1.start - item2.start;
+            // earlier first
+            if (result < 0) { return -1; }
+            if (result > 0) { return 1; }
+            // longer first
+            result = item2.end - item1.end;
+            if (result < 0) { return -1; }
+            if (result > 0) { return 1; }
+            return 0;
         }
 
-        // SETTINGS
+        function compareDescending(item1, item2) {
+            // Every item must have two fields: 'start' and 'end'.
+            var result = item1.start - item2.start;
+            // later first
+            if (result < 0) { return 1; }
+            if (result > 0) { return -1; }
+            // shorter first
+            result = item2.end - item1.end;
+            if (result < 0) { return 1; }
+            if (result > 0) { return -1; }
+            return 0;
+        }
 
-        timeline.margin = function (p) {
-            if (!arguments.length) return margin;
-            margin = p;
-            return timeline;
-        };
+        function calculateTracks(items) {
+            var i, track;
 
-        timeline.orient = function (orientation) {
-            if (!arguments.length) return orient;
-            orient = orientation;
-            return timeline;
-        };
+            items.forEach(function (item) {
+                for (i = 0, track = 0; i < tracks.length; i++, track++) {
+                    //if (item.start > tracks[i]) { break; }
+                    if (item.end < tracks[i]) { break; }
+                }
+                item.track = track;
+                //tracks[track] = item.end; // if overlap: younger deeper
+                tracks[track] = item.start; // if overlap: older deeper
+            });
+        }
 
-        timeline.itemHeight = function (h) {
-            if (!arguments.length) return itemHeight;
-            itemHeight = h;
-            return timeline;
-        };
+        // Convert yearStrings into dates
+        data.items.forEach(function (item){
 
-        timeline.itemMargin = function (h) {
-            if (!arguments.length) return itemMargin;
-            itemMargin = h;
-            return timeline;
-        };
+            item.start = parseDate(item.start);
 
-        timeline.navMargin = function (h) {
-            if (!arguments.length) return navMargin;
-            navMargin = h;
-            return timeline;
-        };
+            item.end = new Date(item.start.getTime() + instantOffset);
+            item.instant = true;
 
-        timeline.height = function (h) {
-            if (!arguments.length) return height;
-            height = h;
-            return timeline;
-        };
+            if (item.end > today) { item.end = today};
+        });
 
-        timeline.width = function (w) {
-            if (!arguments.length) return width;
-            width = w;
-            return timeline;
-        };
+        data.items.sort(compareDescending);
+        calculateTracks(data.items);
+        data.nTracks = tracks.length;
+        data.minDate = d3v3.min(data.items, function (d) { return d.start; });
+        data.maxDate = d3v3.max(data.items, function (d) { return d.end; });
 
-        timeline.display = function (displayType) {
-            if (!arguments.length || (DISPLAY_TYPES.indexOf(displayType) == -1)) return display;
-            display = displayType;
-            return timeline;
-        };
-
-        timeline.labelFormat = function(f) {
-            if (!arguments.length) return labelFunction;
-            labelFunction = f;
-            return timeline;
-        };
-
-        timeline.tickFormat = function (format) {
-            if (!arguments.length) return tickFormat;
-            tickFormat = format;
-            return timeline;
-        };
-
-        timeline.hover = function (hoverFunc) {
-            if (!arguments.length) return hover;
-            hover = hoverFunc;
-            return timeline;
-        };
-
-        timeline.mouseover = function (mouseoverFunc) {
-            if (!arguments.length) return mouseover;
-            mouseover = mouseoverFunc;
-            return timeline;
-        };
-
-        timeline.mouseout = function (mouseoutFunc) {
-            if (!arguments.length) return mouseout;
-            mouseout = mouseoutFunc;
-            return timeline;
-        };
-
-        timeline.click = function (clickFunc) {
-            if (!arguments.length) return click;
-            click = clickFunc;
-            return timeline;
-        };
-
-        timeline.scroll = function (scrollFunc) {
-            if (!arguments.length) return scroll;
-            scroll = scrollFunc;
-            return timeline;
-        };
-
-        timeline.colors = function (colorFormat) {
-            if (!arguments.length) return colorCycle;
-            colorCycle = colorFormat;
-            return timeline;
-        };
-
-        timeline.beginning = function (b) {
-            if (!arguments.length) return beginning;
-            beginning = b;
-            return timeline;
-        };
-
-        timeline.ending = function (e) {
-            if (!arguments.length) return ending;
-            ending = e;
-            return timeline;
-        };
-
-        timeline.labelMargin = function (m) {
-            if (!arguments.length) return labelMargin;
-            labelMargin = m;
-            return timeline;
-        };
-
-        timeline.rotateTicks = function (degrees) {
-            if (!arguments.length) return rotateTicks;
-            rotateTicks = degrees;
-            return timeline;
-        };
-
-        timeline.stack = function () {
-            stacked = !stacked;
-            return timeline;
-        };
-
-        timeline.relativeTime = function() {
-            timeIsRelative = !timeIsRelative;
-            return timeline;
-        };
-
-        timeline.showBorderLine = function () {
-            showBorderLine = !showBorderLine;
-            return timeline;
-        };
-
-        timeline.showBorderFormat = function(borderFormat) {
-            if (!arguments.length) return showBorderFormat;
-            showBorderFormat = borderFormat;
-            return timeline;
-        };
-
-        timeline.showToday = function () {
-            showTodayLine = !showTodayLine;
-            return timeline;
-        };
-
-        timeline.showTodayFormat = function(todayFormat) {
-            if (!arguments.length) return showTodayFormat;
-            showTodayFormat = todayFormat;
-            return timeline;
-        };
-
-        timeline.colorProperty = function(colorProp) {
-            if (!arguments.length) return colorPropertyName;
-            colorPropertyName = colorProp;
-            return timeline;
-        };
-
-        timeline.rowSeparators = function (color) {
-            if (!arguments.length) return rowSeparatorsColor;
-            rowSeparatorsColor = color;
-            return timeline;
-
-        };
-
-        timeline.background = function (color) {
-            if (!arguments.length) return backgroundColor;
-            backgroundColor = color;
-            return timeline;
-        };
-
-        timeline.showTimeAxis = function () {
-            showTimeAxis = !showTimeAxis;
-            return timeline;
-        };
-
-        timeline.showAxisTop = function () {
-            showAxisTop = !showAxisTop;
-            return timeline;
-        };
-
-        timeline.showAxisCalendarYear = function () {
-            showAxisCalendarYear = !showAxisCalendarYear;
-            return timeline;
-        };
-
-        timeline.showTimeAxisTick = function () {
-            timeAxisTick = !timeAxisTick;
-            return timeline;
-        };
-
-        timeline.fullLengthBackgrounds = function () {
-            fullLengthBackgrounds = !fullLengthBackgrounds;
-            return timeline;
-        };
-
-        timeline.showTimeAxisTickFormat = function(format) {
-            if (!arguments.length) return timeAxisTickFormat;
-            timeAxisTickFormat = format;
-            return timeline;
-        };
-
-        timeline.showAxisHeaderBackground = function(bgColor) {
-            showAxisHeaderBackground = !showAxisHeaderBackground;
-            if(bgColor) { (axisBgColor = bgColor) };
-            return timeline;
-        };
-
-        timeline.navigate = function (navigateBackwards, navigateForwards) {
-            if (!arguments.length) return [navigateLeft, navigateRight];
-            navigateLeft = navigateBackwards;
-            navigateRight = navigateForwards;
-            showAxisNav = !showAxisNav;
-            return timeline;
-        };
 
         return timeline;
     };
-})();
+
+    //----------------------------------------------------------------------
+    //
+    // band
+    //
+
+    timeline.band = function (bandName, sizeFactor) {
+
+        var band = {};
+        band.id = "band" + bandNum;
+        band.x = 0;
+        band.y = bandY;
+        band.w = width;
+        band.h = height * (sizeFactor || 1);
+        band.trackOffset = 4;
+        // Prevent tracks from getting too high
+        band.trackHeight = Math.min((band.h - band.trackOffset) / data.nTracks, 20);
+        band.itemHeight = band.trackHeight * 0.8,
+            band.parts = [],
+            band.instantWidth = 100; // arbitray value
+
+        band.xScale = d3v3.time.scale()
+            .domain([data.minDate, data.maxDate])
+            .range([0, band.w]);
+
+        band.yScale = function (track) {
+            return band.trackOffset + track * band.trackHeight;
+        };
+
+        band.g = chart.append("g")
+            .attr("id", band.id)
+            .attr("transform", "translate(0," + band.y +  ")");
+
+        band.g.append("rect")
+            .attr("class", "band")
+            .attr("width", band.w)
+            .attr("height", band.h);
+
+        // Items
+        band.items = band.g.selectAll("g")
+            .data(data.items)
+            .enter().append("svg")
+            .attr("height", band.itemHeight)
+            .attr("class", function (d) { return d.instant ? "instant" : "interval";});
+
+        var instants = d3v3.select("#band" + bandNum).selectAll(".instant");
+        instants.append("circle")
+            .attr("cx", band.itemHeight / 2)
+            .attr("cy", band.itemHeight / 2)
+            .attr("r", 5);
+        instants.append("text")
+            .attr("class", "instantLabel")
+            .attr("x", 15)
+            .attr("y", 10)
+            .text(function (d) { return d.name; });
+
+        band.items.redraw = function() {
+
+            band.items
+                .attr("x", function (d) { return band.xScale(d.start);})
+                .attr("y", function (d) { return band.yScale(d.track); })
+                .attr("width", function (d) {
+                    return band.xScale(d.end) - band.xScale(d.start); });
+        };
+
+        band.parts.push(band.items);
+
+        band.redraw = function () {
+            band.parts.forEach(function(part) { part.redraw(); })
+        };
+
+        bands[bandName] = band;
+        components.push(band);
+        // Adjust values for next band
+        bandY += band.h + bandGap;
+        bandNum += 1;
+
+        return timeline;
+    };
+
+    //----------------------------------------------------------------------
+    //
+    // labels
+    //
+
+    timeline.labels = function (bandName) {
+
+        var band = bands[bandName];
+        var y = band.y + band.h + bandGap + 20;
+        var minLabel = chart.append("text")
+            .attr("class", "bandLabel")
+            .attr("x",4)
+            .attr("y", y)
+            .attr("text-anchor", "start");
+
+        var maxLabel = chart.append("text")
+            .attr("class", "bandLabel")
+            .attr("x", band.w - 4)
+            .attr("y", y)
+            .attr("text-anchor", "end");
+
+        var midLabel = chart.append("text")
+            .attr("class", "durationLabel")
+            .attr("x", band.w / 2)
+            .attr("y", y)
+            .attr("text-anchor", "center");
+
+        var labels = {};
+
+        labels.redraw = function () {
+            var min = band.xScale.domain()[0],
+                max = band.xScale.domain()[1];
+            minLabel.text(toYear(min));
+            maxLabel.text(toYear(max));
+            midLabel.text(max.getUTCFullYear() - min.getUTCFullYear());
+        };
+
+        band.parts.push(labels);
+        components.push(labels);
+
+        return timeline;
+    };
+
+    //----------------------------------------------------------------------
+    //
+    // tooltips
+    //
+
+    timeline.tooltips = function (bandName) {
+
+        var band = bands[bandName];
+
+        var tooltip = d3v3.select("body")
+            .append("div")
+            .attr("class", "tooltipTimeline");
+
+        function getHtml(element, d) {
+            // return d.name + "<br>" + toYear(d.start);
+            return "<div class=\"row\">" +
+                "<div class=\"col-lg-6 col-md-6 col-sm-6\" style='font-size: 9pt'>" +
+                "<p><b>Real Name:</b> " + d.name + "</p>" +
+                "<p><b>Aliases:</b> " + d['ALIGN'] + "</p>" +
+                "<p><b>First Appearance:</b> " + d.start + "</p>" +
+                "<p><b>Gender:</b> " + d['SEX'] + "</p>" +
+                "</div>"+
+                "<div class=\"col-lg-6 col-md-6 col-sm-6\">" +
+                // "<img src=\"" + characterImage + "\" alt=\"Flowers in Chania\" style=\"width:110px;height:110px;\">" +
+                "</div></div><br/>";
+        }
+
+        function showTooltip (d) {
+
+            var x = event.pageX < band.x + band.w / 2
+                ? event.pageX + 10
+                : event.pageX - 110,
+                y = event.pageY < band.y + band.h / 2
+                    ? event.pageY + 30
+                    : event.pageY - 30;
+
+            tooltip
+                .html(getHtml(d3v3.select(this), d))
+                .style("top", y + "px")
+                .style("left", x + "px")
+                .style("visibility", "visible");
+        }
+
+        function hideTooltip () {
+            tooltip.style("visibility", "hidden");
+        }
+
+        band.items
+            .on("mouseover", showTooltip)
+            .on("mouseout", hideTooltip);
+
+        return timeline;
+    };
+
+    //----------------------------------------------------------------------
+    //
+    // xAxis
+    //
+
+    timeline.xAxis = function (bandName, orientation) {
+
+        var band = bands[bandName];
+
+        var axis = d3v3.svg.axis()
+            .scale(band.xScale)
+            .orient(orientation || "bottom")
+            .tickSize(6, 0)
+            .tickFormat(function (d) { return toYear(d); });
+
+        var xAxis = chart.append("g")
+            .attr("class", "axis")
+            .attr("transform", "translate(0," + (band.y + band.h)  + ")");
+
+        xAxis.redraw = function () {
+            xAxis.call(axis);
+        };
+
+        band.parts.push(xAxis); // for brush.redraw
+        components.push(xAxis); // for timeline.redraw
+
+        return timeline;
+    };
+
+    //----------------------------------------------------------------------
+    //
+    // brush
+    //
+
+    timeline.brush = function (bandName, targetNames) {
+
+        var band = bands[bandName];
+
+        var brush = d3v3.svg.brush()
+            .x(band.xScale.range([0, band.w]))
+            .on("brush", function() {
+                var domain = brush.empty()
+                    ? band.xScale.domain()
+                    : brush.extent();
+                targetNames.forEach(function(d) {
+                    bands[d].xScale.domain(domain);
+                    bands[d].redraw();
+                });
+            });
+
+        var xBrush = band.g.append("svg")
+            .attr("class", "x brush")
+            .call(brush);
+
+        xBrush.selectAll("rect")
+            .attr("y", 4)
+            .attr("height", band.h - 4);
+
+        return timeline;
+    };
+
+    //----------------------------------------------------------------------
+    //
+    // redraw
+    //
+
+    timeline.redraw = function () {
+        components.forEach(function (component) {
+            component.redraw();
+        })
+    };
+
+    //--------------------------------------------------------------------------
+    //
+    // Utility functions
+    //
+
+    function parseDate(dateString) {
+        // 'dateString' must either conform to the ISO date format YYYY-MM-DD
+        // or be a full year without month and day.
+        // AD years may not contain letters, only digits '0'-'9'!
+        // Invalid AD years: '10 AD', '1234 AD', '500 CE', '300 n.Chr.'
+        // Valid AD years: '1', '99', '2013'
+        // BC years must contain letters or negative numbers!
+        // Valid BC years: '1 BC', '-1', '12 BCE', '10 v.Chr.', '-384'
+        // A dateString of '0' will be converted to '1 BC'.
+        // Because JazvaScript can't define AD years between 0..99,
+        // these years require a special treatment.
+
+        var format = d3v3.time.format("%Y-%b-%d"),
+            date,
+            year;
+
+        date = format.parse(dateString);
+
+        if (date !== null) return date;
+
+        // Create arbitrary year and then set the correct year
+        date = new Date(year, 5, 1);
+        date.setUTCFullYear(("0000" + year).slice(-4));
+
+        return date;
+    }
+
+    function toYear(date) {
+        // bcString is the prefix or postfix for BC dates.
+        // If bcString starts with '-' (minus),
+        // if will be placed in front of the year.
+        var year = date.getUTCFullYear();
+        // console.log(date.getUTCFullYear());
+        return year.toString();
+    }
+
+    return timeline;
+}

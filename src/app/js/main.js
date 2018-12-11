@@ -47,8 +47,8 @@ const teamColor = {
 };
 
 
-var lookupColorCharacterId = teamColor
-var colorField = 'team'
+var lookupColorCharacterId = teamColor;
+var colorField = 'team';
 
 $('input[type=radio][name=options]').change(function() {
     if (this.id == 'gender') {
@@ -306,7 +306,6 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
                 divText.innerHTML = "<div>" + characterDeck + "</div>" +
                     "<br/>More info on link: <a href='"+characterUrl+"'> click here</a>";
                 document.getElementById('character-info-box').appendChild(divText);
-
             }
 
             /*characterPopupBox
@@ -337,7 +336,6 @@ function loadChords(){
             drawChord(matrix, characterIds);
         });
 }
-
 
 function chordTween(oldLayout) {
     //this function will be called once per update cycle
@@ -475,32 +473,25 @@ d3.select("#clear_button")
     .on("click", returnAllCharacterIds);
 
 // Timeline
-var testData = [
-    {times: [{"starting_time": 1355752800000}, {"starting_time": 1355767900000, "ending_time": 1355774400000}]},
-    {times: [{label: "first female character", "starting_time": 1355759910000 }], id: 1488},
-    {times: [{label: "first gay character", "starting_time": 1355761910000}]}
-];
 
-var timeline = d3v3.timeline()
-    .display("circle")
-    // .beginning(1355752800000) // we can optionally add beginning and ending times to speed up rendering a little
-    // .ending(1355774400000)
-    .tickFormat({
-        format: d3v3.time.format("%Y"),
-        tickTime: d3v3.time.hours,
-        tickInterval: 1,
-        tickSize: 6
-    })
-    .stack()
-    .click((d, i, datum) => {console.log(datum)});
 
-d3v3.select("#timeline")
-    .append("svg")
-    .attr("width", widthChord)
-    .datum(testData)
-    .call(timeline);
+// Define domElement and sourceFile
+var domElement = "#timeline";
+var sourceFile = "data/marvel_timeline.csv";
+// Read in the data and construct the timeline
+d3.csv(sourceFile, function(dataset) {
+    timeline(domElement)
+        .data(dataset)
+        .band("mainBand", 0.82)
+        .band("naviBand", 0.08)
+        .xAxis("mainBand")
+        .tooltips("mainBand")
+        .xAxis("naviBand")
+        .labels("mainBand")
+        .brush("naviBand", ["mainBand"])
+        .redraw();
+});
 
-	
 //Parsets
 var chart = d3v3.parsets()
       .dimensions([ "Sex", "Alignment", "Alive", "Identity"]);

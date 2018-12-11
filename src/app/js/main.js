@@ -482,8 +482,8 @@ var sourceFile = "data/marvel_timeline.csv";
 d3.csv(sourceFile, function(dataset) {
     timeline(domElement)
         .data(dataset)
-        .band("mainBand", 0.82)
-        .band("naviBand", 0.08)
+        .band("mainBand", 0.8)
+        .band("naviBand", 0.1)
         .xAxis("mainBand")
         .tooltips("mainBand")
         .xAxis("naviBand")

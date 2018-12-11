@@ -238,10 +238,10 @@ function timeline(domElement) {
                 "<h3>"+d.name+"</h3>"+
                 "<div class=\"row\">" +
                 "<div class=\"col-lg-6 col-md-6 col-sm-6\" style='font-size:9pt'>" +
-                "<p><b>Real Name:</b>" + d.name + "</p>" +
-                "<p><b>Aliases:</b>" + d['ALIGN'] + "</p>" +
-                "<p><b>First Appearance:</b>" + d.start + "</p>" +
-                "<p><b>Gender:</b>" + d['SEX'] + "</p>" +
+                "<p><b>Real Name: </b>" + d.name + "</p>" +
+                "<p><b>Aliases: </b>" + d['ALIGN'] + "</p>" +
+                "<p><b>First Appearance: </b>" + toFirstAppearance(d.start) + "</p>" +
+                "<p><b>Gender: </b>" + d['SEX'] + "</p>" +
                 "</div>"+
                 "<div class=\"col-lg-6 col-md-6 col-sm-6\">" +
                 "<img src=\"" + d['urlslug'] + "\" alt=\"Flowers in Chania\" style=\"width:110px;height:110px;\">" +
@@ -368,6 +368,10 @@ function timeline(domElement) {
 
     function toYear(date) {
         return date.getUTCFullYear().toString();
+    }
+
+    function toFirstAppearance(date) {
+        return date.getUTCDay().toString() + "/" + date.getMonth().toString() + "/" + toYear(date);
     }
 
     return timeline;

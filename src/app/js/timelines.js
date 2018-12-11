@@ -2,10 +2,9 @@
 
 function timeline(domElement) {
 
-    //--------------------------------------------------------------------------
-    //
-    // chart
-    //
+    /* ************************************************************************
+     * chart
+     * ***********************************************************************/
 
     // chart geometry
     var margin = {top: 20, right: 20, bottom: 20, left: 20},
@@ -42,10 +41,9 @@ function timeline(domElement) {
         .attr("class", "chart")
         .attr("clip-path", "url(#chart-area)" );
 
-    //--------------------------------------------------------------------------
-    //
-    // data
-    //
+    /* ************************************************************************
+     * Data
+     * ***********************************************************************/
 
     timeline.data = function(items) {
 
@@ -55,19 +53,6 @@ function timeline(domElement) {
             instantOffset = 10 * yearMillis;
 
         data.items = items;
-
-        function compareAscending(item1, item2) {
-            // Every item must have two fields: 'start' and 'end'.
-            var result = item1.start - item2.start;
-            // earlier first
-            if (result < 0) { return -1; }
-            if (result > 0) { return 1; }
-            // longer first
-            result = item2.end - item1.end;
-            if (result < 0) { return -1; }
-            if (result > 0) { return 1; }
-            return 0;
-        }
 
         function compareDescending(item1, item2) {
             // Every item must have two fields: 'start' and 'end'.
@@ -91,7 +76,6 @@ function timeline(domElement) {
                     if (item.end < tracks[i]) { break; }
                 }
                 item.track = track;
-                //tracks[track] = item.end; // if overlap: younger deeper
                 tracks[track] = item.start; // if overlap: older deeper
             });
         }
@@ -117,10 +101,9 @@ function timeline(domElement) {
         return timeline;
     };
 
-    //----------------------------------------------------------------------
-    //
-    // band
-    //
+    /* ************************************************************************
+     * Band
+     * ***********************************************************************/
 
     timeline.band = function (bandName, sizeFactor) {
 
@@ -196,11 +179,9 @@ function timeline(domElement) {
         return timeline;
     };
 
-    //----------------------------------------------------------------------
-    //
-    // labels
-    //
-
+    /* ************************************************************************
+     * Labels
+     * ***********************************************************************/
     timeline.labels = function (bandName) {
 
         var band = bands[bandName];
@@ -239,10 +220,9 @@ function timeline(domElement) {
         return timeline;
     };
 
-    //----------------------------------------------------------------------
-    //
-    // tooltips
-    //
+    /* ************************************************************************
+     * Tooltips
+     * ***********************************************************************/
 
     timeline.tooltips = function (bandName) {
 
@@ -253,17 +233,20 @@ function timeline(domElement) {
             .attr("class", "tooltipTimeline");
 
         function getHtml(element, d) {
-            // return d.name + "<br>" + toYear(d.start);
-            return "<div class=\"row\">" +
-                "<div class=\"col-lg-6 col-md-6 col-sm-6\" style='font-size: 9pt'>" +
-                "<p><b>Real Name:</b> " + d.name + "</p>" +
-                "<p><b>Aliases:</b> " + d['ALIGN'] + "</p>" +
-                "<p><b>First Appearance:</b> " + d.start + "</p>" +
-                "<p><b>Gender:</b> " + d['SEX'] + "</p>" +
+
+            return "<p class='title-character-info-box'>"+
+                "<h3>"+d.name+"</h3>"+
+                "<div class=\"row\">" +
+                "<div class=\"col-lg-6 col-md-6 col-sm-6\" style='font-size:9pt'>" +
+                "<p><b>Real Name:</b>" + d.name + "</p>" +
+                "<p><b>Aliases:</b>" + d['ALIGN'] + "</p>" +
+                "<p><b>First Appearance:</b>" + d.start + "</p>" +
+                "<p><b>Gender:</b>" + d['SEX'] + "</p>" +
                 "</div>"+
                 "<div class=\"col-lg-6 col-md-6 col-sm-6\">" +
-                // "<img src=\"" + characterImage + "\" alt=\"Flowers in Chania\" style=\"width:110px;height:110px;\">" +
-                "</div></div><br/>";
+                "<img src=\"" + d['urlslug'] + "\" alt=\"Flowers in Chania\" style=\"width:110px;height:110px;\">" +
+                "</div></div><br/>" +
+                "</p>";
         }
 
         function showTooltip (d) {
@@ -293,10 +276,9 @@ function timeline(domElement) {
         return timeline;
     };
 
-    //----------------------------------------------------------------------
-    //
-    // xAxis
-    //
+    /* ************************************************************************
+     * xAxis
+     * ***********************************************************************/
 
     timeline.xAxis = function (bandName, orientation) {
 
@@ -322,10 +304,9 @@ function timeline(domElement) {
         return timeline;
     };
 
-    //----------------------------------------------------------------------
-    //
-    // brush
-    //
+    /* ************************************************************************
+     * Brush
+     * ***********************************************************************/
 
     timeline.brush = function (bandName, targetNames) {
 
@@ -354,10 +335,9 @@ function timeline(domElement) {
         return timeline;
     };
 
-    //----------------------------------------------------------------------
-    //
-    // redraw
-    //
+    /* ************************************************************************
+     * Redraw
+     * ***********************************************************************/
 
     timeline.redraw = function () {
         components.forEach(function (component) {
@@ -365,22 +345,11 @@ function timeline(domElement) {
         })
     };
 
-    //--------------------------------------------------------------------------
-    //
-    // Utility functions
-    //
+    /* ************************************************************************
+     * Utilities functions
+     * ***********************************************************************/
 
     function parseDate(dateString) {
-        // 'dateString' must either conform to the ISO date format YYYY-MM-DD
-        // or be a full year without month and day.
-        // AD years may not contain letters, only digits '0'-'9'!
-        // Invalid AD years: '10 AD', '1234 AD', '500 CE', '300 n.Chr.'
-        // Valid AD years: '1', '99', '2013'
-        // BC years must contain letters or negative numbers!
-        // Valid BC years: '1 BC', '-1', '12 BCE', '10 v.Chr.', '-384'
-        // A dateString of '0' will be converted to '1 BC'.
-        // Because JazvaScript can't define AD years between 0..99,
-        // these years require a special treatment.
 
         var format = d3v3.time.format("%Y-%b-%d"),
             date,
@@ -398,12 +367,7 @@ function timeline(domElement) {
     }
 
     function toYear(date) {
-        // bcString is the prefix or postfix for BC dates.
-        // If bcString starts with '-' (minus),
-        // if will be placed in front of the year.
-        var year = date.getUTCFullYear();
-        // console.log(date.getUTCFullYear());
-        return year.toString();
+        return date.getUTCFullYear().toString();
     }
 
     return timeline;

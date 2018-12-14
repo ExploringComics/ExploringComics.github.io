@@ -346,7 +346,9 @@
           categoryEnter.append("line")
               .style("stroke-width", 2);
           categoryEnter.append("text")
-              .attr("dy", "-.3em");
+              .attr("dy", "-.3em")
+			  .style("font-weight", 10000)
+			  .style("font-size", "1.2em");
           category.select("rect")
               .attr("width", function(d) { return d.dx; })
               .attr("class", function(d) {

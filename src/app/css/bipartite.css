@@ -1,7 +1,7 @@
 .mainBars rect{
     shape-rendering: auto;
     fill-opacity: 0;
-    stroke-width: 0.5px;
+    stroke-width: 1px;
     stroke: rgb(0, 0, 0);
     stroke-opacity: 0;
 }
@@ -9,6 +9,7 @@
     shape-rendering:crispEdges;
 }
 .edges{
-    stroke:none;
     fill-opacity:0.5;
+	stroke-width: 0px
+	stroke: rgb(0, 0, 0)
 }

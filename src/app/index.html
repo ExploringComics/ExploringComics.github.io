@@ -33,7 +33,10 @@
 
 
         <div class="container" id="surrounding_div">
-
+			<div class="container" id="button_div" style="text-align: center">
+				<a class="btn btn-info btn-lg" href="#" role="button">Process Book</a>
+				<a class="btn btn-success btn-lg" href="#" role="button">Video</a>
+			</div>
             <div class="page-header" id="banner">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
@@ -99,9 +102,9 @@
                     </div>
                 </div>
 
-                <!-- Mosaic Visualization -->
-				<div id="appearance-mosaic" style="text-align:center"></div>
-                <!-- Mosaic Visualization END -->
+                <!-- Bubble Visualization -->
+				<div id="bubble" style="text-align:center"></div>
+				<!-- Bubble Visualization END -->
 				
 
 
@@ -133,7 +136,7 @@
 						By now, our other visualizations have provided a way to analyze general statistics about all of the characters that appeared in the comics within the previous few decades. But what about the most famous teams and characters that we have all heard of? We have chosen 10 characters with the largest number of appearances in comic book issues out of each of the 10 most influential teams in the world of comics. It can be seen that the diversity on this selection of memorable characters has dropped significantly.
 						<br/>
 						<br/>
-						Look into the chord diagram and unfold some of the most interesting details about your favorite characters.
+						Look into the chord diagram and unfold some of the most interesting details about your favorite characters by clicking on their names or toggle the buttons and explore the distribution of characters by team, origin and gender.
                         </p>
                     </div>
                 </div>
@@ -198,7 +201,8 @@
         <script src=https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.3.0/math.min.js></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-
+		
+        <script src="js/bubble.js"></script>
         <script src="js/viz.v1.1.0.min.js"></script>
 		<script src="js/d3.parsets.js"></script>
         <script src="js/timelines.js"></script>

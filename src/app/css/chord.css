@@ -5,7 +5,7 @@ div.character-popup-box {
     height: 160px;
     border-radius: 8px;
     pointer-events: none;
-    z-index: 10;
+	
     border: 1px solid;
     margin: 10px 0px;
     padding: 10px 10px 10px 10px;
@@ -26,8 +26,7 @@ div.character-info-box {
     width: 310px;
     height: 650px;
     border-radius: 8px;
-    pointer-events: none;
-    z-index: 10;
+    /*pointer-events: none;*/
     border: 3px solid;
     margin: 10px -200px;
     padding: 10px 10px 10px 10px;

@@ -1,4 +1,4 @@
-    let characterIdsDataFile = 'data/characters_team_sort.csv';
+let characterIdsDataFile = 'data/characters_team_sort.csv';
 let relationshipsDataFile = 'data/relationships.csv';
 
 const colorConnection = "#E0E0E0";
@@ -57,7 +57,7 @@ const teamMap = {
 	'shield':"S.H.I.E.L.D.",
 	'suicide-squad':"Suicide Squad",
 	'x-men':"X-Men"
-}
+};
 
 
 var lookupColorCharacterId = teamColor;
@@ -534,112 +534,8 @@ d3.select("#clear_button")
     .style("opacity", 0)
     .on("click", returnAllCharacterIds);
 
-// Timeline
-var tooltip = d3.select("body")
-    .append("div")
-    .attr("class", "tooltipTimeline");
-
-function getHtml(element, d) {
-    d = d['data'];
-
-    return "<p class='title-character-info-box'>"+
-        "<h3>"+d.name+"</h3>"+
-        "<div class=\"row\">" +
-        "<div class=\"col-lg-6 col-md-6 col-sm-6\" style='font-size:9pt'>" +
-        "<p><b>Real Name: </b>" + d.name + "</p>" +
-        "<p><b>Aliases: </b>" + d['ALIGN'] + "</p>" +
-        "<p><b>First Appearance: </b>" + d.start + "</p>" +
-        "<p><b>Gender: </b>" + d['SEX'] + "</p>" +
-        "</div>"+
-        "<div class=\"col-lg-6 col-md-6 col-sm-6\">" +
-        "<img src=\"" + d['urlslug'] + "\" alt=\"Flowers in Chania\" style=\"width:110px;height:110px;\">" +
-        "</div></div><br/>" +
-        "</p>";
-}
-
-function showTooltip (d) {
-
-    let margin = {top: 20, right: 20, bottom: 20, left: 20};
-
-    const outerWidth = 960, outerHeight = 500;
-
-    // var x = ;
-    // var y = ;
-    var w = outerWidth - margin.left - margin.right;
-    var h = outerHeight - margin.top - margin.bottom;
-
-    var x = event.pageX < x + w / 2
-        ? event.pageX + 10
-        : event.pageX - 110,
-        y = event.pageY < y + h / 2
-            ? event.pageY + 30
-            : event.pageY - 30;
-
-    tooltip
-        .html(getHtml(d3v3.select(this), d))
-        .style("top", y + "px")
-        .style("left", x + "px")
-        .style("visibility", "visible");
-}
-
-function hideTooltip () {
-    tooltip.style("visibility", "hidden");
-}
 
 
-
-var data = [
-    {time: new Date(1977, 4,25), episode: 4, name: 'A New Hope'},
-    {time: new Date(1980, 4,17), episode: 5, name: 'The Empire Strikes Back'},
-    {time: new Date(1984, 4,25), episode: 6, name: 'Return of the Jedi'},
-    {time: new Date(1999, 4,19), episode: 1, name: 'The Phantom Menace'},
-    {time: new Date(2002, 4,16), episode: 2, name: 'Attack of the Clones'},
-    {time: new Date(2005, 4,19), episode: 3, name: 'Revenge of the Sith'},
-    {time: new Date(2015,11,18), episode: 7, name: 'Dust'},
-];
-
-
-var timelineT1 = new d3KitTimeline('#t1', {
-    direction: 'right',
-    initialWidth: widthChord/2,
-    initialHeight: 250,
-    textFn: function(d){
-        return d.time.getFullYear() + ' - ' + d.name;
-    }
-}).data(data).visualize().resizeToFit();
-
-timelineT1.on('labelMouseover', showTooltip)
-    .on('labelMouseout', hideTooltip());
-
-let comicsData = d3.csv("data/mynewfile.csv");
-console.log(comicsData);
-
-var timelineT2 = new d3KitTimeline('#t2', {
-    direction: 'left',
-    initialWidth: widthChord/2,
-    initialHeight: 250,
-    textFn: function(d){
-        return d.time.getFullYear() + ' - ' + d.name;
-    }
-}).data(data).visualize().resizeToFit();
-
-
-// Define domElement and sourceFile
-var domElement = "#timeline";
-var sourceFile = "data/marvel_timeline.csv";
-// Read in the data and construct the timeline
-d3.csv(sourceFile, function(dataset) {
-    timeline(domElement)
-        .data(dataset)
-        .band("mainBand", 0.8)
-        .band("naviBand", 0.1)
-        .xAxis("mainBand")
-        .tooltips("mainBand")
-        .xAxis("naviBand")
-        .labels("mainBand")
-        .brush("naviBand", ["mainBand"])
-        .redraw();
-});
 
 //Parsets
 var chart = d3v3.parsets()

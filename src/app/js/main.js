@@ -341,7 +341,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
 				//div.style.zIndex = -1;
                 divText.className = "title-character-info-box";
                 divText.innerHTML = "<div>" + characterDeck + "</div>" +
-                    "<br/>More info on link: <a target=\"_blank\" href=\""+characterUrl+"\"> click here</a>";
+                    "<br/>More info on link: <a target=\"_blank\" href=\""+characterUrl+"\"> "+characterUrl+ "</a>";
 				//divText.style.zIndex = 100
                 console.log(divText.innerHTML)
                 console.log(characterUrl)

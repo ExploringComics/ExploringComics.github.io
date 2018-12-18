@@ -230,9 +230,9 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
         .style("stroke", "black")
         .style("opacity", 0.7)
         .attr("d", d3.arc().innerRadius(rOut).outerRadius(rInner))
-        // .on("mouseover", fade(0, "visible", false))
-        // .on("mouseout", fade(1, "hidden", false))
-        .on("click", fade(0, "visible", true));
+        .on("mouseover", fade(0, "visible", false))
+        .on("mouseout", fade(1, "hidden", false))
+        //.on("click", fade(0, "visible", true));
 
     let pathLabels = g.append("text")
         .each(function (d) {
@@ -357,7 +357,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
 				//div.style.zIndex = -1;
                 divText.className = "title-character-info-box";
                 divText.innerHTML = "<div>" + characterDeck + "</div>" +
-                    "<br/>More info on link: <a target=\"_blank\" href=\""+characterUrl+"\"> "+characterUrl+ "</a>";
+                    "<br/>More info on link: <a target=\"_blank\" rel=\"noopener noreferrer\" href='"+characterUrl+"'> click here</a>";
 				//divText.style.zIndex = 100
                 document.getElementById('character-info-box').appendChild(divText);
 				characterInfoBox.prevChar = characterInfoBox.currChar;

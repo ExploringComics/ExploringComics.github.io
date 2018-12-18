@@ -65,6 +65,3 @@ _Deadline_: December 18th
 - Screencast
 - Process Book finished
 
-# Questions for the Professor
-TODO
-

@@ -11,6 +11,9 @@ let characterPopupBox;
 let characterInfoBox;
 let lastLayout; //store layout between updates
 
+let matrix;
+let charIds;
+
 // Colors based on the groups
 const genderColor = {
     '0': "#FFD700",
@@ -62,32 +65,46 @@ const teamMap = {
 
 var lookupColorCharacterId = teamColor;
 var colorField = 'team';
+let sortType = 'ascending';
 
 $('input[type=radio][name=options]').change(function() {
-    if (this.id == 'gender') {
+    if (this.id === 'gender') {
         lookupColorCharacterId = genderColor;
-		colorField = 'gender'
+		colorField = 'gender';
 		characterIdsDataFile = 'data/characters_gender_sort.csv';
 		loadChords();
     }
-    else if (this.id == 'origin') {
+    else if (this.id === 'origin') {
         lookupColorCharacterId = originColor;
-		colorField = 'characterOrigin'
+		colorField = 'characterOrigin';
 		characterIdsDataFile = 'data/characters_origin_sort.csv';
 		loadChords();
     }
-	else if (this.id == 'team') {
+	else if (this.id === 'team') {
         lookupColorCharacterId = teamColor;
-		colorField = 'team'
+		colorField = 'team';
 		characterIdsDataFile = 'data/characters_team_sort.csv';
 		loadChords();
     }
 });
 
+// $('input[type=radio][name=sort-options]').change(function() {
+//     if (this.id === 'ascending') {
+//         // lookupColorCharacterId = genderColor;
+//         // colorField = 'gender';
+//         // characterIdsDataFile = 'data/characters_gender_sort.csv';
+//         sortType = 'ascending';
+//         drawChord(matrix, charIds);
+//     }
+//     else if (this.id === 'descending') {
+//         // lookupColorCharacterId = originColor;
+//         // colorField = 'characterOrigin';
+//         // characterIdsDataFile = 'data/characters_origin_sort.csv';
+//         sortType = 'descending';
+//         drawChord(matrix, charIds);
+//     }
+// });
 
-
-
-//let colorCharacterId = '#008080';
 
 // size of the visualization
 const wChord = 900,
@@ -118,7 +135,15 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
     labels = labels.filter( function(el) {
         return !filteredCharacterIds.includes(el['characterId']);
     } );
+
     let chord = d3.chord().padAngle(paddingChord);
+
+    // let chord;
+    // switch (sortType) {
+    //     case 'ascending': chord = d3.chord().padAngle(paddingChord).sortGroups(d3.ascending).sortChords(d3.ascending); break;
+    //     case 'descending': chord = d3.chord().padAngle(paddingChord).sortGroups(d3.descending).sortChords(d3.descending); break;
+    // }
+    // console.log(chord);
 
     if(firstCall){
         /*characterPopupBox = d3.select("#chord")
@@ -206,9 +231,8 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
         .style("opacity", 0.7)
         .attr("d", d3.arc().innerRadius(rOut).outerRadius(rInner))
         .on("mouseover", fade(0, "visible", false))
-        .on("mouseout", fade(1, "hidden", false));
-        
-
+        .on("mouseout", fade(1, "hidden", false))
+        //.on("click", fade(0, "visible", true));
 
     let pathLabels = g.append("text")
         .each(function (d) {
@@ -254,7 +278,13 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
 
             // Popup box when element is clicked
             if (showInfos === "visible") {
-
+                // clear previous text in the box
+                let list_info = document.getElementById("character-info-box");
+                if (list_info.hasChildNodes()) {
+                    while (list_info.hasChildNodes()) {
+                        list_info.removeChild(list_info.firstChild);
+                    }
+                }
                 // Fill in popup box
                 //let characterId = labels[i]['characterId'];
                 let characterImage = labels[i]['characterImage'];
@@ -289,13 +319,13 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
                 document.getElementById('character-popup-box').appendChild(div);*/
 
                 // Fill in info box
-                // clear previous text in the box
-                let list_info = document.getElementById("character-info-box");
-                if (list_info.hasChildNodes()) {
-                    while (list_info.hasChildNodes()) {
-                        list_info.removeChild(list_info.firstChild);
-                    }
-                }
+                // // clear previous text in the box
+                // let list_info = document.getElementById("character-info-box");
+                // if (list_info.hasChildNodes()) {
+                //     while (list_info.hasChildNodes()) {
+                //         list_info.removeChild(list_info.firstChild);
+                //     }
+                // }
 
                 var p = document.createElement('p');
                 p.className = "title-character-info-box";
@@ -330,7 +360,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
                     "<br/>More info on link: <a target=\"_blank\" rel=\"noopener noreferrer\" href='"+characterUrl+"'> click here</a>";
 				//divText.style.zIndex = 100
                 document.getElementById('character-info-box').appendChild(divText);
-				characterInfoBox.prevChar = characterInfoBox.currChar
+				characterInfoBox.prevChar = characterInfoBox.currChar;
 				characterInfoBox.currChar = characterName
             }
 
@@ -341,7 +371,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
 			
             characterInfoBox
                 .style("left", (svg.width) + "px")
-                .style("top", (svg.height) + "px")
+                .style("top", (svg.height) + "px");
 			
 			
 			if(fromClick){
@@ -393,8 +423,8 @@ function loadChords(){
             /***
              * Function treats and reads the data, call functions to build the relationships matrix and draw the Chord diagram
              */
-            let matrix = getMatrixCommonActors(relationships, filteredCharacterIds);
-
+            matrix = getMatrixCommonActors(relationships, filteredCharacterIds);
+            charIds = characterIds;
             drawChord(matrix, characterIds);
         });
 }

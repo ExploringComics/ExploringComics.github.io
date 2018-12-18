@@ -1,4 +1,4 @@
-let characterIdsDataFile = 'data/characterIds.csv';
+let characterIdsDataFile = 'data/characters_team_sort.csv';
 let relationshipsDataFile = 'data/relationships.csv';
 
 const colorConnection = "#E0E0E0";
@@ -10,6 +10,82 @@ let svg;
 let characterPopupBox;
 let characterInfoBox;
 let lastLayout; //store layout between updates
+
+// Colors based on the groups
+const genderColor = {
+    '0': "#FFD700",
+    '1': "#3CB371",
+    '2': "#DB7093"
+};
+
+// Colors based on the groups
+const originColor = {
+    'Human': "#DB7093",
+    'Alien': "#3CB371",
+    'Animal': "#8B4513",
+    'Mutant': "#006400",
+    'God/Eternal': "#FFD700",
+    'Other': "#7e7878",
+    'Cyborg':"#2F4F4F",
+    'Infection':"#00FFFF",
+    'Robot':"#4B0082",
+    'Radiation':"#B22222"
+};
+
+// Colors based on the groups
+const teamColor = {
+    'avengers': "#DB7093",
+    'defenders': "#3CB371",
+    'guardians-of-the-galaxy': "#8B4513",
+    'hydra': "#006400",
+    'injustice-league': "#FFD700",
+    'justice-league': "#7e7878",
+    'masters-of-evil':"#2F4F4F",
+    'shield':"#00FFFF",
+    'suicide-squad':"#4B0082",
+    'x-men':"#B22222"
+};
+
+const teamMap = {
+    'avengers': "Avengers",
+	'defenders': "Defenders",
+	'guardians-of-the-galaxy': "Guardians of the Galaxy",
+	'hydra': "HYDRA",
+	'injustice-league': "Injustice League",
+	'justice-league': "Justice League",
+	'masters-of-evil':"Masters of Evil",
+	'shield':"S.H.I.E.L.D.",
+	'suicide-squad':"Suicide Squad",
+	'x-men':"X-Men"
+}
+
+
+var lookupColorCharacterId = teamColor;
+var colorField = 'team';
+
+$('input[type=radio][name=options]').change(function() {
+    if (this.id == 'gender') {
+        lookupColorCharacterId = genderColor;
+		colorField = 'gender'
+		characterIdsDataFile = 'data/characters_gender_sort.csv';
+		loadChords();
+    }
+    else if (this.id == 'origin') {
+        lookupColorCharacterId = originColor;
+		colorField = 'characterOrigin'
+		characterIdsDataFile = 'data/characters_origin_sort.csv';
+		loadChords();
+    }
+	else if (this.id == 'team') {
+        lookupColorCharacterId = teamColor;
+		colorField = 'team'
+		characterIdsDataFile = 'data/characters_team_sort.csv';
+		loadChords();
+    }
+});
+
+
+
 
 //let colorCharacterId = '#008080';
 
@@ -25,19 +101,9 @@ const marginChord = {top: 10, right: 10, bottom: 10, left: 10},
     widthChord = wChord - marginChord.left - marginChord.right,
     heightChord = hChord - marginChord.top - marginChord.bottom;
 
-// Colors based on the groups
-const lookupColorCharacterId = {
-    'Human': "#DB7093",
-    'Alien': "#3CB371",
-    'Animal': "#8B4513",
-    'Mutant': "#006400",
-    'God/Eternal': "#FFD700",
-    'Other': "#7e7878",
-    'Cyborg':"#2F4F4F",
-    'Infection':"#00FFFF",
-    'Robot':"#4B0082",
-    'Radiation':"#B22222"
-};
+sortingMethod = 'ascending';
+
+//var clickFlag = false;
 
 function drawChord(matrix, labels) { // try to improve those callings and refactor
     /**
@@ -55,17 +121,20 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
     let chord = d3.chord().padAngle(paddingChord);
 
     if(firstCall){
-        characterPopupBox = d3.select("#chord")
+        /*characterPopupBox = d3.select("#chord")
             .append("div")
             .attr("class", "character-popup-box")
             .attr("id", "character-popup-box")
-            .style("visibility", "hidden");
+            .style("visibility", "hidden");*/
 
         characterInfoBox = d3.select("#chord")
             .append("div")
             .attr("class", "character-info-box")
             .attr("id", "character-info-box")
             .style("visibility", "hidden");
+		characterInfoBox.visible = false;
+		characterInfoBox.prevChar = "";
+		characterInfoBox.currChar = ".";
 
         svg = d3.select("#chord")
             .append("svg:svg")
@@ -73,7 +142,8 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
             .attr("width", widthChord)
             .attr("height", heightChord)
             .append("svg:g")
-            .attr("transform", "translate(" + widthChord / 2 + "," + heightChord / 2 + ")");
+            .attr("transform", "translate(" + widthChord / 2 + "," + heightChord / 2 + ")")
+			.style("z-index", -1);
 
         firstCall = 0;
     }
@@ -123,18 +193,21 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
         .enter().append("g")
         .attr("class", "group");
 
+		
+		
     let paths = g.append("path")
         .style("stroke", function (d) {
-            return d => d3.rgb(lookupColorCharacterId[labels[d.index]['characterOrigin']]).darker() //lookupColorCharacterId[labels[d.index]['characterOrigin']];
+            return d => d3.rgb(lookupColorCharacterId[labels[d.index][colorField]]).darker() //lookupColorCharacterId[labels[d.index]['characterOrigin']];
         })
         .style("fill", function (d) {
-            return lookupColorCharacterId[labels[d.index]['characterOrigin']];
+            return lookupColorCharacterId[labels[d.index][colorField]];
         })
         .style("stroke", "black")
         .style("opacity", 0.7)
         .attr("d", d3.arc().innerRadius(rOut).outerRadius(rInner))
-        .on("click", fade(0, "visible"))
-        .on("mouseout", fade(1, "hidden"));
+        .on("mouseover", fade(0, "visible", false))
+        .on("mouseout", fade(1, "hidden", false));
+        
 
 
     let pathLabels = g.append("text")
@@ -153,7 +226,8 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
         })
         .text(function (d, i) {
             return labels[i]['characterName'];
-        });
+        })
+		.on('click', fade(0, "visible", true));
 
     paths.transition()
         .duration(1500)
@@ -168,7 +242,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
         .remove()
         .transition().duration(100).attr("opacity", 1);
 
-    function fade(opacity, showInfos) {
+    function fade(opacity, showInfos, fromClick) {
         /**
          * Show information of the selected characterId when the mouse is on and hide other characterIds
          *
@@ -177,30 +251,25 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
          */
 
         return function (g, i) {
-            svg.selectAll("g.chord path")
-                .filter(function (d) {
-                    return d.source.index !== i && d.target.index !== i;
-                })
-                .transition()
-                .style("opacity", opacity);
 
             // Popup box when element is clicked
             if (showInfos === "visible") {
 
                 // Fill in popup box
-                let characterId = labels[i]['characterId'];
+                //let characterId = labels[i]['characterId'];
                 let characterImage = labels[i]['characterImage'];
                 let characterOrigin = labels[i]['characterOrigin'];
                 let characterName = labels[i]['characterName'];
-                let characterGender = ((labels[i]['gender']===1) ? 'Male' : 'Female');
+                let characterGender = ((labels[i]['gender']==='1') ? 'Male' : (labels[i]['gender']==='2') ? 'Female': 'Other');
                 let characterDeck = labels[i]['deck'];
                 let characterUrl = labels[i]['siteDetailUrl'];
                 let characterAliases = labels[i]['aliases'];
                 let characterBirth = ((labels[i]['birth']=='') ? ' - ' : labels[i]['birth']);
                 let characterRealName = labels[i]['realName'];
+                let characterTeam = labels[i]['team'];
 
                 // clear previous text in the box
-                let list = document.getElementById("character-popup-box");
+                /*let list = document.getElementById("character-popup-box");
                 if (list.hasChildNodes()) {
                     while (list.hasChildNodes()) {
                         list.removeChild(list.firstChild);
@@ -217,7 +286,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
                 div.className = "title-character-popup-box";
                 div.innerHTML = "<b>Origin:</b> " + characterOrigin +
                     "<img src=\"" + characterImage + "\" alt=\"Flowers in Chania\" style=\"width:80px;height:80px;\">";
-                document.getElementById('character-popup-box').appendChild(div);
+                document.getElementById('character-popup-box').appendChild(div);*/
 
                 // Fill in info box
                 // clear previous text in the box
@@ -235,38 +304,81 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
                 document.getElementById('character-info-box').appendChild(p);
 
                 var div = document.createElement('div');
+				//div.style.zIndex = -1;
                 //div.className = "title-character-info-box";
                 div.innerHTML = "<div class=\"row\">" +
-                    "<div class=\"col-lg-6 col-md-6 col-sm-6\" style='font-size: 9pt'>" +
-                        "<p><b>Id:</b> " + characterId + "</p>" +
+                    "<div class=\"col-lg-12 col-md-12 col-sm-12\" style='font-size: 9pt'>" +
                         "<p><b>Real Name:</b> " + characterRealName + "</p>" +
                         "<p><b>Aliases:</b> " + characterAliases + "</p>" +
+                        "<p><b>Team:</b> " + teamMap[characterTeam] + "</p>" +
+					"</div>"+
+					"<div class=\"col-lg-6 col-md-6 col-sm-6\" style='font-size: 9pt'>" +
                         "<p><b>Birth:</b> " + characterBirth + "</p>" +
                         "<p><b>Origin:</b> " + characterOrigin + "</p>" +
                         "<p><b>Gender:</b> " + characterGender + "</p>" +
                     "</div>"+
                     "<div class=\"col-lg-6 col-md-6 col-sm-6\">" +
-                        "<img src=\"" + characterImage + "\" alt=\"Flowers in Chania\" style=\"width:110px;height:110px;\">" +
+                        "<img src=\"" + characterImage + "\" alt=\"Superhero\" style=\"width:110px;height:110px;\">" +
                     "</div></div><br/>";
                 document.getElementById('character-info-box').appendChild(div);
-
+				//div.style.zIndex = 1
+				
                 var divText = document.createElement('div');
+				//div.style.zIndex = -1;
                 divText.className = "title-character-info-box";
                 divText.innerHTML = "<div>" + characterDeck + "</div>" +
-                    "<br/>More info on link: <a href='"+characterUrl+"'> click here</a>";
+                    "<br/>More info on link: <a target=\"_blank\" rel=\"noopener noreferrer\" href='"+characterUrl+"'> click here</a>";
+				//divText.style.zIndex = 100
                 document.getElementById('character-info-box').appendChild(divText);
-
+				characterInfoBox.prevChar = characterInfoBox.currChar
+				characterInfoBox.currChar = characterName
             }
 
-            characterPopupBox
+            /*characterPopupBox
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 50) + "px")
-                .style("visibility", showInfos);
-
+                .style("visibility", showInfos);*/
+			
             characterInfoBox
                 .style("left", (svg.width) + "px")
                 .style("top", (svg.height) + "px")
-                .style("visibility", showInfos);
+			
+			
+			if(fromClick){
+				//characterInfoBox.style("visibility", characterInfoBox.visible && characterInfoBox.prevChar === characterInfoBox.currChar ? "hidden" : "visible");
+				if(characterInfoBox.visible && characterInfoBox.prevChar === characterInfoBox.currChar){
+					characterInfoBox.style("visibility", "hidden");
+					svg.selectAll("g.chord path")
+					.transition()
+					.style("opacity", 1);
+					characterInfoBox.visible = false;
+				}else{
+					characterInfoBox.style("visibility", "visible");
+					svg.selectAll("g.chord path")
+					.transition()
+					.style("opacity", 1);
+					svg.selectAll("g.chord path")
+					.filter(function (d) {
+						return d.source.index !== i && d.target.index !== i;
+					})
+					.transition()
+					.style("opacity", 0);
+					
+					characterInfoBox.visible = true;
+				}
+				
+			}else{
+				characterInfoBox.style("visibility", showInfos);
+				
+				svg.selectAll("g.chord path")
+					.filter(function (d) {
+						return d.source.index !== i && d.target.index !== i;
+					})
+					.transition()
+					.style("opacity", opacity);
+				
+				characterInfoBox.visible = !characterInfoBox.visible;
+			}
         }
     }
 
@@ -286,7 +398,6 @@ function loadChords(){
             drawChord(matrix, characterIds);
         });
 }
-
 
 function chordTween(oldLayout) {
     //this function will be called once per update cycle
@@ -424,32 +535,25 @@ d3.select("#clear_button")
     .on("click", returnAllCharacterIds);
 
 // Timeline
-var testData = [
-    {times: [{"starting_time": 1355752800000}, {"starting_time": 1355767900000, "ending_time": 1355774400000}]},
-    {times: [{label: "first female character", "starting_time": 1355759910000 }], id: 1488},
-    {times: [{label: "first gay character", "starting_time": 1355761910000}]}
-];
 
-var timeline = d3v3.timeline()
-    .display("circle")
-    // .beginning(1355752800000) // we can optionally add beginning and ending times to speed up rendering a little
-    // .ending(1355774400000)
-    .tickFormat({
-        format: d3v3.time.format("%Y"),
-        tickTime: d3v3.time.hours,
-        tickInterval: 1,
-        tickSize: 6
-    })
-    .stack()
-    .click((d, i, datum) => {console.log(datum)});
 
-d3v3.select("#timeline")
-    .append("svg")
-    .attr("width", widthChord)
-    .datum(testData)
-    .call(timeline);
+// Define domElement and sourceFile
+var domElement = "#timeline";
+var sourceFile = "data/marvel_timeline.csv";
+// Read in the data and construct the timeline
+d3.csv(sourceFile, function(dataset) {
+    timeline(domElement)
+        .data(dataset)
+        .band("mainBand", 0.8)
+        .band("naviBand", 0.1)
+        .xAxis("mainBand")
+        .tooltips("mainBand")
+        .xAxis("naviBand")
+        .labels("mainBand")
+        .brush("naviBand", ["mainBand"])
+        .redraw();
+});
 
-	
 //Parsets
 var chart = d3v3.parsets()
       .dimensions([ "Sex", "Alignment", "Alive", "Identity"]);
@@ -463,7 +567,7 @@ d3v3.csv("data/first_bipartite.csv", function(error, csv) {
   vis.datum(csv).call(chart);
 });
 
-//Mosaic Plot
+/*//Mosaic Plot
 d3.json('data/mosaic_ch.json', function (data) {
 	d3.shuffle(data);
 	d3.mosaicPlot(data, {
@@ -512,4 +616,4 @@ d3.json('data/mosaic_ch.json', function (data) {
 	  },
 	  stroke: 'currentColor'
 	});
-  });
+  });*/

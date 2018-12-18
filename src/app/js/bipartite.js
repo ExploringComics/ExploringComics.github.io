@@ -56,8 +56,8 @@ var bp=viz.bP()
 
 g.call(bp);
 
-g.append("text").attr("x",-50).attr("y",-10).style("text-anchor","middle").text("ORIGIN");
-g.append("text").attr("x", 550).attr("y",-10).style("text-anchor","middle").text("ALIGN");
+g.append("text").attr("x",-50).attr("y",-10).style("text-anchor","middle").attr("font-size", 20).text("ORIGIN");
+g.append("text").attr("x", 550).attr("y",-10).style("text-anchor","middle").attr("font-size", 20).text("ALIGN");
 
 
 g.selectAll(".mainBars")
@@ -67,6 +67,7 @@ g.selectAll(".mainBars")
 g.selectAll(".mainBars").append("text").attr("class","label")
     .attr("x",d=>(d.part=="primary"? -30: 30))
     .attr("y",d=>+6)
+	.attr("font-size", "1.05em")
     .text(d=>d.key)
     .attr("text-anchor",d=>(d.part=="primary"? "end": "start"));
 
@@ -75,17 +76,22 @@ g.selectAll(".mainBars").append("text").attr("class","perc")
     .attr("y",d=>+6)
     .text(function(d){ return d3.format("0.0%")(d.percent)})
     .attr("text-anchor",d=>(d.part=="primary"? "end": "start"));
+	
 
 function mouseover(d){
     bp.mouseover(d);
     g.selectAll(".mainBars")
         .select(".perc")
         .text(function(d){ return d3.format("0.0%")(d.percent)})
+	/*g.selectAll(".edges")
+        .attr("stroke-width", "0.5px")*/
 }
 function mouseout(d){
     bp.mouseout(d);
     g.selectAll(".mainBars")
         .select(".perc")
         .text(function(d){ return d3.format("0.0%")(d.percent)})
+	/*g.selectAll(".edges")
+        .attr("stroke-width", "0px")*/
 }
 d3.select(self.frameElement).style("height", "800px");

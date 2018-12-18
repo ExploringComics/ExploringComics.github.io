@@ -113,7 +113,7 @@
                     </div>
                 </div>
 				<!-- Bubble Visualization END -->
-				
+
 
 
 
@@ -143,7 +143,7 @@
 
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
-                        <h1>Very Important Superhero</h1>					
+                        <h1>Very Important Superhero</h1>
                         <p class="lead">
 						By now, our other visualizations have provided a way to analyze general statistics about all of the characters that appeared in the comics within the previous few decades. But what about the most famous teams and characters that we have all heard of? We have chosen 10 characters with the largest number of appearances in comic book issues out of each of the 10 most influential teams in the world of comics. It can be seen that the diversity on this selection of memorable characters has dropped significantly.
 						<br/>
@@ -190,17 +190,32 @@
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <h1>A timeline of diversity</h1>
                         <p class="lead">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean interdum odio a aliquam eleifend. Proin ligula urna, faucibus eu varius eget, fringilla molestie nibh. Quisque auctor mauris id dui porta, et ullamcorper tellus fringilla. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur imperdiet porttitor nunc, non auctor orci ornare at. Maecenas fermentum sit amet ipsum sit amet feugiat. Suspendisse non nisi vehicula, congue arcu ut, efficitur arcu.
+                            Comic books offer a unique medium for modern
+                            storytelling, reflecting American culture and values in through
+                            both a visual and narrative aspect . Historically, American comic books have tended to portray
+                            women in a manner relatively consistent with traditional gender norms, albeit to
+                            an exaggerated degree. As such, women in comic
+                            books are depicted in a hypersexualized way, with physical beauty often taking
+                            precedence over their achievements and non-physical qualities.
+                            Additionally, non-white races have often been underrepresented and relegated to
+                            roles subordinate to white characters.
+                            The normative portrayal of women and minorities in comic books has
+                            tended to reflect simplified, exaggerated, and immature view of gender norms
+                            and race relations, although the trend has seen some improvement into the
+                            so-called “Modern Age of Comics”.
                         </p>
                     </div>
+
+                    <!-- Timeline Visualization START -->
+                    <div class="col-md-4" id="timelineHistory"></div>
+                    <div class="col-md-8" id="t1" ></div>
+                    <!-- Timeline Visualization END -->
+
                 </div>
 
-                <!-- Timeline -->
-                <div id="timeline" style="text-align:center"></div>
-                <div id="hoverRes">
-                    <div class="coloredDiv"></div>
-                    <div id="name"></div>
-                </div>
+
+
+
 
             </div>
 
@@ -219,25 +234,34 @@
         <!--<script src="https://d3js.org/d3.v5.min.js"></script>-->
 		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 		<script>
-			d3v3 = d3
+			d3v3 = d3;
 			window.d3 = null
 		</script>
         <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+
+
         <!--<script src="https://vizjs.org/viz.v1.1.0.min.js"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3kit/3.2.0/d3kit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/labella/1.1.4/labella.min.js"></script>
+        <script src="https://cdn.rawgit.com/kristw/d3kit-timeline/master/dist/d3kit-timeline.min.js"></script>
+
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" charset="utf-8"></script>
         <script src=https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.3.0/math.min.js></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-		
+
         <script src="js/bubble.js"></script>
         <script src="js/viz.v1.1.0.min.js"></script>
 		<script src="js/d3.parsets.js"></script>
-        <script src="js/timelines.js"></script>
+        <script src="js/timeline.js"></script>
         <script src="js/core.js"></script>
         <script src="js/mosaic-plot.js"></script>
         <script src="js/data-handlers.js"></script>
+        <script src="data/marvel_timeline.js"></script>
         <script src="js/main.js"></script>
         <script src="js/bipartite.js"></script>
+
     </body>
 </html>

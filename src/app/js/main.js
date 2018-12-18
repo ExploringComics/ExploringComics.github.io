@@ -564,26 +564,6 @@ d3.select("#clear_button")
     .style("opacity", 0)
     .on("click", returnAllCharacterIds);
 
-// Timeline
-
-
-// Define domElement and sourceFile
-var domElement = "#timeline";
-var sourceFile = "data/marvel_timeline.csv";
-// Read in the data and construct the timeline
-d3.csv(sourceFile, function(dataset) {
-    timeline(domElement)
-        .data(dataset)
-        .band("mainBand", 0.8)
-        .band("naviBand", 0.1)
-        .xAxis("mainBand")
-        .tooltips("mainBand")
-        .xAxis("naviBand")
-        .labels("mainBand")
-        .brush("naviBand", ["mainBand"])
-        .redraw();
-});
-
 //Parsets
 var chart = d3v3.parsets()
       .dimensions([ "Sex", "Alignment", "Alive", "Identity"]);

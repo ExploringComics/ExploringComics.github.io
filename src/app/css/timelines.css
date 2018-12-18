@@ -89,3 +89,11 @@
     shape-rendering: crispEdges;
     pointer-events: none;
 }
+
+.timeline{
+    width: 30%;
+    display: inline-block;
+    /*border: 1px solid #ccc;*/
+    /*background-color: #fff;*/
+}
+

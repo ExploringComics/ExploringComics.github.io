@@ -564,9 +564,6 @@ d3.select("#clear_button")
     .style("opacity", 0)
     .on("click", returnAllCharacterIds);
 
-
-
-
 //Parsets
 var chart = d3v3.parsets()
       .dimensions([ "Sex", "Alignment", "Alive", "Identity"]);

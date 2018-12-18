@@ -11,6 +11,9 @@ let characterPopupBox;
 let characterInfoBox;
 let lastLayout; //store layout between updates
 
+let matrix;
+let charIds;
+
 // Colors based on the groups
 const genderColor = {
     '0': "#FFD700",
@@ -62,21 +65,22 @@ const teamMap = {
 
 var lookupColorCharacterId = teamColor;
 var colorField = 'team';
+let sortType = 'ascending';
 
 $('input[type=radio][name=options]').change(function() {
-    if (this.id == 'gender') {
+    if (this.id === 'gender') {
         lookupColorCharacterId = genderColor;
 		colorField = 'gender';
 		characterIdsDataFile = 'data/characters_gender_sort.csv';
 		loadChords();
     }
-    else if (this.id == 'origin') {
+    else if (this.id === 'origin') {
         lookupColorCharacterId = originColor;
 		colorField = 'characterOrigin';
 		characterIdsDataFile = 'data/characters_origin_sort.csv';
 		loadChords();
     }
-	else if (this.id == 'team') {
+	else if (this.id === 'team') {
         lookupColorCharacterId = teamColor;
 		colorField = 'team';
 		characterIdsDataFile = 'data/characters_team_sort.csv';
@@ -84,10 +88,23 @@ $('input[type=radio][name=options]').change(function() {
     }
 });
 
+// $('input[type=radio][name=sort-options]').change(function() {
+//     if (this.id === 'ascending') {
+//         // lookupColorCharacterId = genderColor;
+//         // colorField = 'gender';
+//         // characterIdsDataFile = 'data/characters_gender_sort.csv';
+//         sortType = 'ascending';
+//         drawChord(matrix, charIds);
+//     }
+//     else if (this.id === 'descending') {
+//         // lookupColorCharacterId = originColor;
+//         // colorField = 'characterOrigin';
+//         // characterIdsDataFile = 'data/characters_origin_sort.csv';
+//         sortType = 'descending';
+//         drawChord(matrix, charIds);
+//     }
+// });
 
-
-
-//let colorCharacterId = '#008080';
 
 // size of the visualization
 const wChord = 900,
@@ -122,12 +139,11 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
     let chord = d3.chord().padAngle(paddingChord);
 
     // let chord;
-    // switch (colorField) {
-    //     case 'team': chord = d3.chord().padAngle(paddingChord); break;
-    //     case 'origin': chord = d3.chord().padAngle(paddingChord).sortGroups(d3.ascending).sortChords(d3.ascending); break;
-    //     case 'gender': chord = d3.chord().padAngle(paddingChord).sortGroups(d3.descending).sortChords(d3.descending); break;
+    // switch (sortType) {
+    //     case 'ascending': chord = d3.chord().padAngle(paddingChord).sortGroups(d3.ascending).sortChords(d3.ascending); break;
+    //     case 'descending': chord = d3.chord().padAngle(paddingChord).sortGroups(d3.descending).sortChords(d3.descending); break;
     // }
-    console.log(chord);
+    // console.log(chord);
 
     if(firstCall){
         /*characterPopupBox = d3.select("#chord")
@@ -343,8 +359,6 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
                 divText.innerHTML = "<div>" + characterDeck + "</div>" +
                     "<br/>More info on link: <a target=\"_blank\" href=\""+characterUrl+"\"> "+characterUrl+ "</a>";
 				//divText.style.zIndex = 100
-                console.log(divText.innerHTML)
-                console.log(characterUrl)
                 document.getElementById('character-info-box').appendChild(divText);
 				characterInfoBox.prevChar = characterInfoBox.currChar;
 				characterInfoBox.currChar = characterName
@@ -361,7 +375,6 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
 			
 			
 			if(fromClick){
-			    console.log('Hello');
 				//characterInfoBox.style("visibility", characterInfoBox.visible && characterInfoBox.prevChar === characterInfoBox.currChar ? "hidden" : "visible");
 				if(characterInfoBox.visible && characterInfoBox.prevChar === characterInfoBox.currChar){
 					characterInfoBox.style("visibility", "hidden");
@@ -385,7 +398,6 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
 				}
 				
 			}else{
-			    console.log('Hellowww')
 				characterInfoBox.style("visibility", showInfos);
 				
 				svg.selectAll("g.chord path")
@@ -411,8 +423,8 @@ function loadChords(){
             /***
              * Function treats and reads the data, call functions to build the relationships matrix and draw the Chord diagram
              */
-            let matrix = getMatrixCommonActors(relationships, filteredCharacterIds);
-
+            matrix = getMatrixCommonActors(relationships, filteredCharacterIds);
+            charIds = characterIds;
             drawChord(matrix, characterIds);
         });
 }

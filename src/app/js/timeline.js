@@ -15,6 +15,8 @@ let characterTimelineBox = d3.select("#timelineCharacter")
     .append("div")
     .attr("class", "character-info-box")
     .attr("id", 'character-timeline-box')
+    .style("margin", "5% -25%")
+    .style("height", "550px")
     .style("visibility", "hidden");
 
 function getCharacterTimelineBoxHtml(d) {
@@ -52,13 +54,8 @@ function getHtmlHistory(element, d) {
 
 function showCharacterHistoryInfo(d) {
 
-    const boxWidth = d3.select("#timelineCharacter").width;
-    const boxHeight = d3.select("#timelineCharacter").height;
-
     characterTimelineBox
         .html(getCharacterTimelineBoxHtml(d))
-        .style("left", boxWidth + "px")
-        .style("top", boxHeight + "px")
         .style("visibility", "visible");
 
     // show historical facts

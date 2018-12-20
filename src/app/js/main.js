@@ -1,5 +1,5 @@
 let characterIdsDataFile = 'data/characters_team_sort.csv';
-let relationshipsDataFile = 'data/relationships.csv';
+let relationshipsDataFile = 'data/relationships_team.csv';
 
 const colorConnection = "#E0E0E0";
 
@@ -72,18 +72,21 @@ $('input[type=radio][name=options]').change(function() {
         lookupColorCharacterId = genderColor;
 		colorField = 'gender';
 		characterIdsDataFile = 'data/characters_gender_sort.csv';
+		relationshipsDataFile ='data/relationships_gender.csv'
 		loadChords();
     }
     else if (this.id === 'origin') {
         lookupColorCharacterId = originColor;
 		colorField = 'characterOrigin';
 		characterIdsDataFile = 'data/characters_origin_sort.csv';
+		relationshipsDataFile ='data/relationships_origin.csv'
 		loadChords();
     }
 	else if (this.id === 'team') {
         lookupColorCharacterId = teamColor;
 		colorField = 'team';
 		characterIdsDataFile = 'data/characters_team_sort.csv';
+		relationshipsDataFile ='data/relationships_team.csv'
 		loadChords();
     }
 });

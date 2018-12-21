@@ -52,28 +52,6 @@ function getHtmlHistory(element, d) {
     return "<h3>"+d.decades+"</h3>" + d.decade_background;
 }
 
-function showCharacterHistoryInfo(d) {
-
-    characterTimelineBox
-        .html(getCharacterTimelineBoxHtml(d))
-        .style("visibility", "visible");
-
-    // show historical facts
-    d3.select("#timelineHistory")
-        .append("text")
-        .html(getHtmlHistory(d3v3.select(this), d))
-}
-
-function hideCharacterHistoryInfo () {
-    // hide tooltip
-    characterTimelineBox
-        .style("visibility", "hidden");
-
-    // remove text
-    d3.select("#timelineHistory")
-        .select("text").remove();
-}
-
 const timeline = new d3KitTimeline('#timelineBar', {
     direction: 'right',
     // initialWidth: timelineWidth/2,
@@ -86,6 +64,50 @@ const timeline = new d3KitTimeline('#timelineBar', {
     }
 }).data(timelineData).visualize().resizeToFit();
 
+var clicked = false;
+
 timeline
-    .on('labelMouseover', showCharacterHistoryInfo)
-    .on('labelMouseout', hideCharacterHistoryInfo);
+    .on('labelClick', toggleCharacterHistoryInfo)
+    //.on('labelMouseout', hideCharacterHistoryInfo);
+
+var prevChar = null;	
+	
+function toggleCharacterHistoryInfo(d){
+	if(!clicked){
+		clicked = !clicked;
+		prevChar = d;
+		return showCharacterHistoryInfo(d);
+	}
+	else if(clicked && prevChar != d){
+		hideCharacterHistoryInfo(prevChar)
+		prevChar = d;
+		return showCharacterHistoryInfo(d);
+	} else{
+		clicked = !clicked;
+		return hideCharacterHistoryInfo(d);
+	}
+}
+
+d3.selectAll(".label-g")
+        .style("cursor", "pointer");
+
+function showCharacterHistoryInfo(d) {	
+    characterTimelineBox
+        .html(getCharacterTimelineBoxHtml(d))
+        .style("visibility", "visible");
+
+    // show historical facts
+    d3.select("#timelineHistory")
+        .append("text")
+        .html(getHtmlHistory(d3v3.select(this), d))
+}
+
+function hideCharacterHistoryInfo(d) {
+    // hide tooltip
+    characterTimelineBox
+        .style("visibility", "hidden");
+
+    // remove text
+    d3.select("#timelineHistory")
+        .select("text").remove();
+}

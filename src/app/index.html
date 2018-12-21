@@ -166,16 +166,37 @@
 				  <label class="btn btn-secondary">
 					<input type="radio" name="options" id="gender" autocomplete="off"> Gender
 				  </label>
+				</div>			
+				<div class="row" style ="text-align: center;margin-top:1%;padding-left:1%;">				
+					<ul class="legend" style="display: none;" id="gender-color">
+						<li><span style="background: #DB7093;"></span>Female</li>
+						<li><span style="background: #3CB371;"></span>Male</li>
+						<li><span style="background: #FFD700;"></span>Other</li>
+					</ul>
+					
+					<ul class="legend" style="display: none;" id="origin-color">
+						<li><span style="background: #3CB371;"></span>Alien</li>
+						<li><span style="background: #FFD700;"></span>God/Eternal</li>
+						<li><span style="background: #DB7093;"></span>Human</li>
+						<li><span style="background: #006400;"></span>Mutant</li>
+						<li><span style="background: #7e7878;"></span>Other</li>
+						<li><span style="background: #B22222;"></span>Radiation</li>
+						<li><span style="background: #4B0082;"></span>Robot</li>
+					</ul>
+					
+					<ul class="legend" style="display: flex;" id="team-color">
+						<li><span style="background: #DB7093;"></span>Avengers</li>
+						<li><span style="background: #3CB371;"></span>Defenders</li>
+						<li><span style="background: #8B4513;"></span>Guardians of the Galaxy</li>
+						<li><span style="background: #006400;"></span>HYDRA</li>
+						<li><span style="background: #FFD700;"></span>Injustice League</li>
+						<li><span style="background: #7e7878;"></span>Justice League</li>
+						<li><span style="background: #2F4F4F;"></span>Masters of Evil</li>
+						<li><span style="background: #00FFFF;"></span>S.H.I.E.L.D.</li>
+						<li><span style="background: #4B0082;"></span>Suicide Squad</li>
+						<li><span style="background: #B22222;"></span>X-Men</li>
+					</ul>
 				</div>
-
-                <!--<div class="btn-group btn-group-toggle" data-toggle="buttons">-->
-                    <!--<label class="btn btn-success active">-->
-                        <!--<input type="radio" name="sort-options" id="ascending" autocomplete="off" checked> Ascending-->
-                    <!--</label>-->
-                    <!--<label class="btn btn-success">-->
-                        <!--<input type="radio" name="sort-options" id="descending" autocomplete="off"> Descending-->
-                    <!--</label>-->
-                <!--</div>-->
 
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4"></div>
@@ -205,13 +226,33 @@
                             so-called “Modern Age of Comics”.
                         </p>
                     </div>
-
+					<br/>
                     <!-- Timeline Visualization START -->
                     <div class="col-lg-4 col-md-4 col-sm-4" id="timelineHistory"></div>
-                    <div class="col-lg-4 col-md-4 col-sm-4" id="timelineBar" ></div>
+                    <div class="col-lg-4 col-md-4 col-sm-4" id="timelineBar" >
+					<div class="row" style ="text-align: center;padding-left:16%">				
+						<ul class="legend" style="display: inline;" id="gender-color">
+							<li><span style="background: rgb(204, 0, 0);"></span>Marvel</li>
+							<li><span style="background: rgb(51, 133, 255);"></span>DC</li>
+						</ul>
+					</div>
+					</div>
                     <div class="col-lg-4 col-md-4 col-sm-4" id="timelineCharacter"></div>
                     <!-- Timeline Visualization END -->
+					<br/>
 
+                </div>
+				
+				<div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <h1>Very Important Superhero</h1>
+                        <p class="lead">
+						By now, our other visualizations have provided a way to analyze general statistics about all of the characters that appeared in the comics within the previous few decades. But what about the most famous teams and characters that we have all heard of? We have chosen 10 characters with the largest number of appearances in comic book issues out of each of the 10 most influential teams in the world of comics. It can be seen that the diversity on this selection of memorable characters has dropped significantly.
+						<br/>
+						<br/>
+						Look into the chord diagram and unfold some of the most interesting details about your favorite characters by clicking on their names or toggle the buttons and explore the distribution of characters by team, origin and gender.
+                        </p>
+                    </div>
                 </div>
 
 

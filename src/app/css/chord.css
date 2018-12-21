@@ -65,3 +65,43 @@ p.title-character-info-box {
     cursor: pointer;
 }
 
+
+/* basic positioning */
+.legend {
+	list-style: none;
+	justify-content: center;
+	display: flex;
+	text-align: center;
+	
+	margin: 0;
+	padding: 0;
+	}
+	
+.legend li {
+	float: left; margin-right: 5px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	}
+	
+.legend span { width: 20px;
+			  height: 20px;
+			  margin: 5px;
+			  border: 1px solid rgba(0, 0, 0, .2);  
+			  display:inline-block;
+			  float: left;
+vertical-align: middle; }
+
+.color-box {
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, .2);  
+  display:inline-block;
+  float: left;
+}
+
+.color-desc {
+  height: 20px;
+  margin: 5px;
+  display:inline-block;

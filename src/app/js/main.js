@@ -69,22 +69,34 @@ let sortType = 'ascending';
 
 $('input[type=radio][name=options]').change(function() {
     if (this.id === 'gender') {
+		d3.select("#"+colorField+"-color")
+		.style("display", "none")
         lookupColorCharacterId = genderColor;
-		colorField = 'gender';
+		colorField = 'gender';		
+		d3.select("#"+colorField+"-color")
+		.style("display", "flex")
 		characterIdsDataFile = 'data/characters_gender_sort.csv';
 		relationshipsDataFile ='data/relationships_gender.csv'
 		loadChords();
     }
-    else if (this.id === 'origin') {
+    else if (this.id === 'origin') {		
+		d3.select("#"+colorField+"-color")
+		.style("display", "none")
         lookupColorCharacterId = originColor;
-		colorField = 'characterOrigin';
+		colorField = 'origin';
+		d3.select("#"+colorField+"-color")
+		.style("display", "flex")
 		characterIdsDataFile = 'data/characters_origin_sort.csv';
 		relationshipsDataFile ='data/relationships_origin.csv'
 		loadChords();
     }
-	else if (this.id === 'team') {
+	else if (this.id === 'team') {		
+		d3.select("#"+colorField+"-color")
+		.style("display", "none")
         lookupColorCharacterId = teamColor;
 		colorField = 'team';
+		d3.select("#"+colorField+"-color")
+		.style("display", "flex")
 		characterIdsDataFile = 'data/characters_team_sort.csv';
 		relationshipsDataFile ='data/relationships_team.csv'
 		loadChords();
@@ -291,7 +303,7 @@ function drawChord(matrix, labels) { // try to improve those callings and refact
                 // Fill in popup box
                 //let characterId = labels[i]['characterId'];
                 let characterImage = labels[i]['characterImage'];
-                let characterOrigin = labels[i]['characterOrigin'];
+                let characterOrigin = labels[i]['origin'];
                 let characterName = labels[i]['characterName'];
                 let characterGender = ((labels[i]['gender']==='1') ? 'Male' : (labels[i]['gender']==='2') ? 'Female': 'Other');
                 let characterDeck = labels[i]['deck'];

@@ -122,8 +122,8 @@ $('input[type=radio][name=options]').change(function() {
 
 
 // size of the visualization
-const wChord = 900,
-    hChord = 900,
+const wChord = 850,
+    hChord = 850,
     rInner = hChord / 2.6,
     rOut = rInner - 30,
     paddingChord = 0.02;

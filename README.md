@@ -66,7 +66,6 @@ _Deadline_: December 18th
 - Process Book finished
 
 # Screen cast
-<div align="center">
 <a href="https://www.youtube.com/watch?v=EN9JdhcNljs" target="_blank"><img src="http://img.youtube.com/vi/EN9JdhcNljs/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
-</div>
+alt="Exploring Comics" width="600" height="450" border="10" /></a>
+

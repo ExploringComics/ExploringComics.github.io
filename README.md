@@ -1,6 +1,6 @@
 <div align="center">
   <p>
-  <img src="https://assets5.domestika.org/project-items/001/868/985/e8e24835862413.570645ed44513-big.gif?1487327675" width="150" />
+  <img src="images/selfie.webp" width="150" />
   </p>
   <p>
     <a href="">
